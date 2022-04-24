@@ -1,0 +1,306 @@
+@mixin flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(32, 32, 32);
+    height: 100vh;
+}
+
+main {
+    .crypto_container {
+        font-family: 'Montserrat', Arial;
+        height: 100%;
+        background-color: rgb(27, 26, 26);
+        color: rgb(253, 244, 244);
+        //border: 1px solid red;
+        width: 100%;
+        .blockchain {
+            //border: 1px solid white;
+            .partie_crypto {
+                @include flex();
+                //border: 1px solid salmon;
+                .image_btc {
+                    //border: 1px solid aqua;
+                    width: 45%;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                        box-shadow: 0px 3px 10px #C29224;
+                        border-radius: 10px;
+                    }
+                }
+                .image_btc:hover,
+                .definition_blockchain:hover {
+                    box-shadow: 0px 5px 10px #C29224;
+                }
+                .definition_blockchain {
+                    width: 45%;
+                    p,
+                    ul {
+                        font-size: x-large;
+                        padding: 0.7rem;
+                    }
+                    ul {
+                        padding-left: 2.5rem;
+                    }
+                    h3 {
+                        font-size: xx-large;
+                        padding: 1rem;
+                    }
+                }
+            }
+            .text_btc {
+                //border: 1px solid red;
+                padding: 0 15%;
+                p,
+                h3,
+                ul {
+                    padding: 1rem;
+                }
+                p,
+                ul {
+                    font-size: larger;
+                }
+                h3 {
+                    font-size: x-large;
+                    text-align: center;
+                }
+            }
+        }
+        .bloc_bnb {
+            .partie_bnb {
+                @include flex();
+                .image_bnb {
+                    width: 45%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .definition_Binance {
+                    width: 45%;
+                    p {
+                        font-size: x-large;
+                    }
+                }
+            }
+            .text_bnb {
+                padding: 0 15%;
+                p,
+                h3,
+                ul {
+                    padding: 0.8rem;
+                }
+                p,
+                ul {
+                    font-size: larger;
+                }
+                h3 {
+                    font-size: x-large;
+                    text-align: center;
+                }
+            }
+        }
+        .bloc_defi {
+            .partie_defi {
+                @include flex();
+                .image_defi {
+                    width: 45%;
+                    img {
+                        width: 100%;
+                        box-shadow: 0 3px 10px #18A284;
+                        border-radius: 10px;
+                    }
+                }
+                .image_defi:hover,
+                .definition_defi:hover {
+                    box-shadow: 0px 5px 12px #18A284;
+                }
+                .definition_defi {
+                    width: 45%;
+                    p {
+                        font-size: x-large;
+                    }
+                }
+            }
+            .texte_defi {
+                padding: 0 15%;
+                p,
+                h3,
+                ul {
+                    padding: 1rem;
+                }
+                p,
+                ul {
+                    font-size: larger;
+                }
+                h3 {
+                    font-size: x-large;
+                    text-align: center;
+                }
+                ul {
+                    padding-left: 2rem;
+                }
+            }
+        }
+        .bloc_meme {
+            //border: 1px solid white;
+            .partie_meme {
+                .image_shiba {
+                    padding: 1rem;
+                    width: 25%;
+                    float: left;
+                    padding: 1rem;
+                    border-radius: 50%;
+                    shape-outside: circle();
+                    img {
+                        width: 100%;
+                        shape-outside: circle();
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                }
+                .texte_meme {
+                    //border: 1px solid white;
+                    padding: 1rem;
+                    p {
+                        font-size: larger;
+                        padding: 0.5rem;
+                    }
+                }
+            }
+        }
+        .bloc_minage {
+            .partie_minage {
+                @include flex();
+                //border: 1px solid white;
+                width: 100%;
+                justify-content: space-around;
+                .image_minage {
+                    width: 45%;
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                        object-fit: cover;
+                        box-shadow: 0px 3px 10px #5F7BD2;
+                    }
+                }
+                .image_minage:hover,
+                .definition_minage:hover {
+                    box-shadow: 0px 3px 10px #5F7BD2;
+                }
+                .definition_minage {
+                    width: 45%;
+                    p {
+                        font-size: xx-large;
+                    }
+                }
+            }
+            .texte_minage {
+                padding: 0 15%;
+                p,
+                h3,
+                h4 {
+                    padding: 1rem;
+                }
+                p,
+                h4 {
+                    font-size: larger;
+                }
+                h3 {
+                    font-size: x-large;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin widthColumn {
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+@media screen and (max-width:666px) {
+    /*
+    .partie_bnb,
+    .partie_crypto,
+    .partie_defi,
+    .partie_meme,
+    .partie_minage {
+        @include flexColumn();
+    }
+    .image_btc,
+    .definition_blockchain,
+    .image_bnb,
+    .definition_Binance {
+        @include widthColumn();
+    }
+    */
+    main {
+        .crypto_container {
+            .blockchain {
+                .partie_crypto {
+                    @include flexColumn();
+                    .image_btc,
+                    .definition_blockchain {
+                        @include widthColumn();
+                    }
+                }
+                .text_btc {
+                    padding: 0 1rem;
+                }
+            }
+            .bloc_bnb {
+                .partie_bnb {
+                    @include flexColumn();
+                    .image_bnb,
+                    .definition_Binance {
+                        @include widthColumn();
+                    }
+                }
+                .text_bnb {
+                    padding: 0 1rem;
+                }
+            }
+            .bloc_defi {
+                .partie_defi {
+                    @include flexColumn();
+                    .image_defi,
+                    .definition_defi {
+                        @include widthColumn();
+                    }
+                }
+                .texte_defi {
+                    padding: 0 1rem;
+                }
+            }
+            .bloc_minage {
+                .partie_minage {
+                    @include flexColumn();
+                    .image_minage,
+                    .definition_minage {
+                        @include widthColumn();
+                    }
+                }
+                .texte_minage {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
+}

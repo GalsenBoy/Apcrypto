@@ -1,0 +1,128 @@
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #070320;
+    .container {
+        height: 100%;
+        @include flex();
+        form {
+            width: 75%;
+            height: 80%;
+            .container_formulaire {
+                @include flex();
+                justify-content: space-between;
+                height: 100%;
+                gap: 5px;
+                .div_image {
+                    height: 100%;
+                    width: 50%;
+                    border-radius: 17px;
+                    background-color: #18152A;
+                    @include flex();
+                    img {
+                        width: 50%;
+                        height: 50%;
+                        object-fit: cover;
+                    }
+                }
+                .div_formulaire {
+                    @extend .div_image;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #18152A;
+                    justify-content: space-around;
+                    input {
+                        border: 1px solid rgb(56, 55, 55);
+                        margin-top: 8px;
+                        padding: 3px 0;
+                        font-size: larger;
+                        background-color: #18152A;
+                        color: white;
+                    }
+                    input:focus {
+                        border-bottom: 2px solid black;
+                    }
+                    label {
+                        color: white;
+                        opacity: 0.7;
+                        font-size: 1.5rem;
+                    }
+                    label:hover {
+                        opacity: 1;
+                    }
+                    #valider {
+                        cursor: pointer;
+                    }
+                    button {
+                        padding: 12px 25px 12px 25px;
+                        border-radius: 22px;
+                        background-color: #18152A;
+                        border: 1px solid white;
+                        color: white;
+                        font-size: larger;
+                        @extend #valider;
+                    }
+                    button:hover {
+                        background-color: white;
+                        color: #18152A;
+                    }
+                     ::placeholder {
+                        opacity: 0.5;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:954px) {
+    body {
+        .container {
+            form {
+                .container_formulaire {
+                    width: 100%;
+                    gap: 0;
+                    .div_image {
+                        img {
+                            height: 150px;
+                            width: 90px;
+                            object-fit: cover;
+                        }
+                    }
+                    .div_formulaire {
+                        .check {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            align-items: center;
+                            justify-content: space-around;
+                        }
+                        label {
+                            font-size: large;
+                        }
+                        input {
+                            font-size: large;
+                            width: 7rem;
+                        }
+                        button,
+                         ::placeholder {
+                            font-size: small;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin radius {
+    border-radius: 17px;
+    padding: 8px 25px;
+    border: 2px solid white;
+}
+
+body {
+    background-color: rgb(32, 32, 32);
+}
+
+main {
+    .communaute_container {
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid salmon;
+        display: grid;
+        grid-template-columns: 1fr 40%;
+        .analyse {
+            border: 1px solid green;
+            //padding-left: 20%;
+        }
+        .partage {
+            border: 1px solid blue;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .technique,
+            .fondamentale {
+                //max-width: fit-content;
+                width: fit-content;
+                margin-bottom: 1rem;
+                @include radius();
+                font-size: small;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+
+/*
+@media screen and (max-width:864) {
+    main {
+        .communaute_container {
+            .partage {
+                .technique {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+*/

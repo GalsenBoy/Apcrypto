@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #202020;
+}
+
+main .communaute_container {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid salmon;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 40%;
+      grid-template-columns: 1fr 40%;
+}
+
+main .communaute_container .analyse {
+  border: 1px solid green;
+}
+
+main .communaute_container .partage {
+  border: 1px solid blue;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .communaute_container .partage .technique,
+main .communaute_container .partage .fondamentale {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: 17px;
+  padding: 8px 25px;
+  border: 2px solid white;
+  font-size: small;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/*
+@media screen and (max-width:864) {
+    main {
+        .communaute_container {
+            .partage {
+                .technique {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+*/
+/*# sourceMappingURL=communatute.css.map */

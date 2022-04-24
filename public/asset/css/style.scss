@@ -1,0 +1,628 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    $theme:#110D26;
+    $color:rgb(253, 244, 244);
+    //$lie:#1F1B34;
+    $billy:(#1F1B34, #3d317a);
+    @mixin flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @mixin color_marge_paragraphe {
+        color: $color;
+        margin: 1rem;
+    }
+    
+    @mixin animation {
+        animation-name: opacity;
+        animation-duration: 3s;
+    }
+    
+    @mixin radius {
+        border-radius: 17px;
+        padding: 8px 25px;
+        border: 2px solid $color;
+    }
+    
+    body {
+        //background-color: #1c1542;
+        height: 100vh;
+        background-color: rgb(32, 32, 32);
+        .container {
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            //position: relative;
+            /*
+            .chargement {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(226, 216, 216);
+                @include flex();
+            }
+            */
+        }
+    }
+    /*
+    .lettre {
+        color: white;
+        font-size: 80px;
+        letter-spacing: 15px;
+        margin-bottom: 150px;
+        animation: chargement 1.2s linear infinite;
+    }
+    
+    .lettre:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    
+    .lettre:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .lettre:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    
+    .lettre:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+    
+    .lettre:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+    
+    .lettre:nth-child(6) {
+        animation-delay: 0.6s;
+    }
+    
+    .lettre:nth-child(7) {
+        animation-delay: 0.7s;
+    }
+    
+    .lettre:nth-child(8) {
+        animation-delay: 0.8s;
+    }
+    
+    .lettre:nth-child(9) {
+        animation-delay: 0.9s;
+    }
+    
+    .lettre:nth-child(10) {
+        animation-delay: 1s;
+    }
+    
+    .lettre:nth-child(11) {
+        animation-delay: 1.1s;
+    }
+    
+    .chargement-affiche {
+        opacity: 0;
+        transition: opacity 0.4s ease-out;
+    }
+    */
+    
+    header {
+        background-color: rgb(32, 32, 32);
+        position: fixed;
+        width: 100%;
+        .header_container {
+            //margin-top: 5px;
+            display: flex;
+            //position: relative;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            //border: 1px solid white;
+            .hamburger {
+                background-color: transparent;
+                width: 75px;
+                height: 50px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                position: relative;
+                display: none;
+                .container-lignes {
+                    width: 50px;
+                    height: 40px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    pointer-events: none;
+                    .ligne {
+                        position: absolute;
+                        border-radius: 10px;
+                        width: 100%;
+                        height: 5px;
+                        background: $color;
+                    }
+                    .ligne:nth-child(1) {
+                        top: 0px;
+                    }
+                    .ligne:nth-child(2) {
+                        top: 20px;
+                    }
+                    .ligne:nth-child(3) {
+                        top: 40px;
+                    }
+                    .ligne:nth-child(1),
+                    .ligne:nth-child(3) {
+                        transform: rotate(0deg);
+                        transition: transform 0.4s ease-in-out, top 0.4s 0.4s ease-in-out;
+                    }
+                    .ligne:nth-child(2) {
+                        transition: opacity 0.4s 0.4s ease-in-out;
+                    }
+                }
+            }
+            .hamburger.active .ligne:nth-child(1) {
+                top: 18px;
+                transform: rotate(45deg);
+                transition: top 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out;
+            }
+            .hamburger.active .ligne:nth-child(2) {
+                opacity: 0;
+                transition: opacity 0.4s ease-in-out;
+            }
+            .hamburger.active .ligne:nth-child(3) {
+                top: 18px;
+                transform: rotate(-45deg);
+                transition: top 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out;
+            }
+            .logo {
+                //border: 1px salmon dotted;
+                width: 80px;
+                height: 80px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    @include animation();
+                    cursor: pointer;
+                }
+                title {
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+            ul {
+                list-style: none;
+                position: relative;
+                @include animation();
+                @include flex();
+                li a {
+                    color: $color;
+                    text-decoration: none;
+                    padding: 0px 17px;
+                    font-size: 1.8rem;
+                    opacity: 0.7;
+                }
+                li i {
+                    color: $color;
+                    opacity: 0.7;
+                    cursor: pointer;
+                    font-size: large;
+                }
+                li a:hover,
+                li i:hover {
+                    opacity: 1;
+                }
+                li a:hover .sous_menu {
+                    display: block;
+                }
+                ul {
+                    list-style: none;
+                    display: flex;
+                    align-content: space-around;
+                    flex-direction: column;
+                    position: absolute;
+                    display: none;
+                    top: 40px;
+                    height: auto;
+                    width: 250px;
+                    background-color: rgb(226, 224, 224);
+                    color: $color;
+                    animation-name: opacity;
+                    animation-duration: 1.2s;
+                    li a {
+                        color: black;
+                        display: block;
+                        width: 100%;
+                        padding: 8px 12px;
+                        text-align: center;
+                        font-size: larger;
+                        font-family: serif;
+                    }
+                    li a:hover {
+                        background-color: rgb(32, 32, 32);
+                        color: rgb(255, 249, 249);
+                    }
+                    li {
+                        border: 1px solid rgb(32, 32, 32);
+                    }
+                }
+            }
+            .acces {
+                .btn_connexion,
+                .btn_inscription {
+                    @include radius();
+                    cursor: pointer;
+                    @include animation();
+                }
+                .btn_connexion {
+                    background-color: transparent;
+                    color: $color;
+                    font-size: large;
+                    margin-right: 10px;
+                }
+                .btn_connexion:hover {
+                    background-color: rgb(228, 220, 220);
+                    color: $theme;
+                    animation-name: btn;
+                    animation-duration: 2s;
+                }
+                .btn_inscription {
+                    background-color: $color;
+                    color: $theme;
+                    font-size: large;
+                }
+                .btn_inscription:hover {
+                    background-color: #47464d;
+                    color: $color;
+                    animation-name: btn;
+                    animation-duration: 2s;
+                }
+            }
+        }
+    }
+    
+    main {
+        font-family: 'Yantramanav', sans-serif;
+        margin-top: 10rem;
+        display: flex;
+        justify-content: center;
+        color: $color;
+        .main_container {
+            //width: 100%;
+            height: 100%;
+            //border: 1px white solid;
+            .principale {
+                //border: 1px solid white;
+                padding: 5rem 0;
+                margin-bottom: 5rem;
+                background-color: rgb(27, 26, 26);
+                color: $color;
+                display: flex;
+                justify-content: space-around;
+                .image_blockchain {
+                    width: 45%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-fit: cover;
+                        box-shadow: 0px 15px 30px #28303E;
+                    }
+                }
+                .titre {
+                    padding-left: 1.7rem;
+                    width: 50%;
+                    h1 {
+                        font-size: 50px;
+                    }
+                    ul {
+                        padding-top: 1rem;
+                        height: 30%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding-left: 2rem;
+                        li a {
+                            text-decoration: none;
+                            color: $color;
+                            font-size: 1.5rem;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+            .cryptommonnaie {
+                //border: 1px solid white;
+                padding: 5rem 0;
+                margin: 5rem 0;
+                background-color: rgb(27, 26, 26);
+                display: flex;
+                margin-top: 3rem;
+                justify-content: space-around;
+                align-items: center;
+                .image_bitcoin {
+                    width: 40%;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                        box-shadow: 0px 15px 30px #611211;
+                    }
+                }
+                .citation {
+                    padding-left: 2rem;
+                    width: 40%;
+                    blockquote {
+                        width: 100%;
+                        padding: 25px;
+                        border: 1px solid salmon;
+                        color: $color;
+                        box-sizing: border-box;
+                        border-left-width: 10px;
+                        .blockquote__text {
+                            font-family: Georgia, 'Times New Roman', Times, serif;
+                            font-style: italic;
+                            font-size: 2rem;
+                            line-height: 1.5;
+                        }
+                    }
+                    .blockquote__text:not(:last-child) {
+                        margin-bottom: 1em;
+                    }
+                    .blockquote__text--credit {
+                        font-weight: bold;
+                        font-size: medium;
+                        text-align: right;
+                    }
+                    .blockquote--quote::before {
+                        content: "\201c";
+                        font-size: 100px;
+                        color: salmon;
+                        display: block;
+                        margin-bottom: -40px;
+                        margin-top: -20px;
+                    }
+                }
+            }
+            .meme_coin {
+                margin: 5rem 0;
+                //border: 1px solid white;
+                padding: 5rem 0;
+                color: $color;
+                display: flex;
+                justify-content: space-around;
+                background-color: rgb(27, 26, 26);
+                .card {
+                    box-shadow: 0 15px 50px black;
+                    transition: 0.3s;
+                    border-radius: 17px;
+                    width: 40%;
+                    display: flex;
+                    background: rgb(18, 18, 18);
+                    flex-direction: column;
+                    align-items: center;
+                    .image_shiba {
+                        width: 35%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .texte_shiba {
+                        width: 50%;
+                        //background-color: rgb(165, 158, 158);
+                        padding: 2px 16px;
+                        text-align: center;
+                        font-size: large;
+                    }
+                }
+                .card:hover {
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                }
+                .radius {
+                    width: 40%;
+                    box-sizing: border-box;
+                    background: rgb(18, 18, 18);
+                    border-radius: 17px;
+                    box-shadow: 0 15px 50px black;
+                    opacity: 0;
+                    .image_doge {
+                        width: 30%;
+                        border-radius: 50%;
+                        float: left;
+                        shape-outside: circle();
+                        padding: 1rem;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .texte_doge {
+                        padding-top: 2rem;
+                        font-size: x-large;
+                    }
+                }
+                .radius:hover {
+                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                }
+            }
+            .meta {
+                //border: 1px solid white;
+                background-color: rgb(27, 26, 26);
+                margin-top: 1rem;
+                //border: 1px solid white;
+                display: flex;
+                justify-content: space-around;
+                .texte_meta {
+                    //border: 1px solid white;
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    p {
+                        font-size: 3rem;
+                        font-family: Helvetica, Arial, sans-serif;
+                    }
+                }
+            }
+        }
+    }
+    
+    footer {
+        background-color: red;
+    }
+    
+    .radius.show {
+        opacity: 1;
+        transition: opacity 2s;
+    }
+    
+    @keyframes opacity {
+        0% {
+            opacity: 0
+        }
+        ;
+        100% {
+            opacity: 1
+        }
+        ;
+    }
+    
+    @keyframes btn {
+        0% {
+            opacity: 0.5
+        }
+        ;
+        100% {
+            opacity: 1
+        }
+        ;
+    }
+    /*
+    @keyframes chargement {
+        0% {
+            color: #fff900;
+            text-shadow: 0 0 7px #fff900;
+        }
+        90% {
+            color: white;
+            text-shadow: none;
+        }
+        100% {
+            color: #fff900;
+            text-shadow: 0 0 7px #fff900;
+        }
+    }
+    */
+    
+    @media screen and (max-width:980px) {
+        header {
+            color: black;
+            .header_container {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                ul {
+                    position: absolute;
+                    top: 0px;
+                    height: 66rem;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    transform: translateX(-100%);
+                    background-color: #202020;
+                    //transition: transform 1.2s;
+                    .fa-angle-down {
+                        display: none;
+                    }
+                    .fa-angle-down,
+                    li {
+                        ul {
+                            visibility: hidden;
+                        }
+                    }
+                }
+                .acces {
+                    position: absolute;
+                    //background-color: $theme;
+                    width: 100%;
+                    padding-bottom: 1rem;
+                    top: 66rem;
+                    display: flex;
+                    justify-content: center;
+                    transform: translateX(-100%);
+                    z-index: 1;
+                    .btn_connexion {
+                        margin-right: 2rem;
+                    }
+                }
+                .hamburger {
+                    display: block;
+                    z-index: 1;
+                }
+                .logo {
+                    z-index: 1;
+                    margin-top: 0.5rem;
+                    height: 92px;
+                    width: 92px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+        main {
+            .main_container {
+                .titre_metavers {
+                    margin-top: 0.7rem;
+                }
+            }
+        }
+        .open .menu,
+        .open .acces {
+            transform: translateX(0);
+            transition: 1.2s;
+        }
+    }
+    
+    @mixin flexColumn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    @mixin widthColumn {
+        width: 100%;
+        margin: 2rem 0;
+    }
+    
+    @media screen and (max-width:666px) {
+        main {
+            .main_container {
+                .principale {
+                    @include flexColumn();
+                    .image_blockchain,
+                    .titre {
+                        @include widthColumn();
+                    }
+                }
+                .cryptommonnaie {
+                    @include flexColumn();
+                    .image_bitcoin,
+                    .citation {
+                        @include widthColumn();
+                    }
+                }
+                .meta {
+                    @include flexColumn();
+                    .image_meta,
+                    .texte_meta {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }

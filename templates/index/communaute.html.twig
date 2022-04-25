@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Communauté -
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+	<main>
+
+		<div class="communaute_container">
+			{% for analyse in analyse %}
+				<div class="analyse">
+					<div>
+						<label for="">Nom de l'actif</label>
+						<p>{{analyse.actif}}</p>
+						
+					</div>
+					<div>
+						<label for=""></label>
+						<p>{{analyse.analyse}}</p>
+					</div>
+					<div>
+						<label for="">Plan de l'analyse
+						</label>
+						<textarea name="" id="" cols="30" rows="10">{{analyse.explication}}</textarea>
+					</div>
+					<div>
+						<p>analyse.date |date("d/m/Y")</p>
+					</div>
+
+				</div>
+
+				<div class="partage">
+					<button class="technique">Partager une analyse technique</button>
+					<button class="fondamentale">Partager une analyse fondamentales</button>
+				</div>
+			{% endfor %}
+		</div>
+
+	</main>
+
+{% endblock %}

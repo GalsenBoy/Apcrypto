@@ -4,40 +4,43 @@
 	{{ parent() }}
 {% endblock %}
 
+
+
 {% block body %}
-
 	<main>
-
-		<div class="communaute_container">
+		<div class="communaute_container" style="border:1px solid red;width:70%">
+			<div class="partage">
+				<button class="technique"> <a href="{{ path('analyse_create')}}">Partager une analyse technique</a> </button>
+				<button class="fondamentale">Partager une analyse fondamentales</button>
+			</div>
 			{% for analyse in analyse %}
 				<div class="analyse">
-					<div>
-						<label for="">Nom de l'actif</label>
-						<p>{{analyse.actif}}</p>
-						
+					<div class="actif" style="display:flex;
+					background:green;
+					justify-content:space-evenly">
+						<label style="font-size:larger" for="">Actif :</label>
+						<p style="font-size:larger">{{analyse.actif}}</p>
 					</div>
-					<div>
-						<label for=""></label>
-						<p>{{analyse.analyse}}</p>
+					<div style="display:flex;
+					background:green;
+					justify-content:space-evenly">
+						<label for="">Lien vers tradingview</label>
+						<a>{{analyse.analyse}}</a>
 					</div>
-					<div>
+					<div class="display:flex;align-items:center;border:1px:solid,red">
 						<label for="">Plan de l'analyse
 						</label>
-						<textarea name="" id="" cols="30" rows="10">{{analyse.explication}}</textarea>
+						<textarea name="" id="" cols="40" rows="10">{{analyse.explication}}</textarea>
 					</div>
 					<div>
-						<p>analyse.date |date("d/m/Y")</p>
+						<p>{{analyse.date |date("d/m/Y")}}</p>
 					</div>
-
-				</div>
-
-				<div class="partage">
-					<button class="technique">Partager une analyse technique</button>
-					<button class="fondamentale">Partager une analyse fondamentales</button>
+					<div>  
+					<a href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}"type="button">Supprier l'analyse</a>
+					<a href="{{ path('analyse_update', {'analyseId' : analyse.id}) }}"type="button">modifier l'analyse</a>
+					</div>
 				</div>
 			{% endfor %}
 		</div>
-
 	</main>
-
 {% endblock %}

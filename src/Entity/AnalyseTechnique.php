@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\AnalyseTechniqueRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AnalyseTechniqueRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: AnalyseTechniqueRepository::class)]
 class AnalyseTechnique
@@ -24,6 +25,8 @@ class AnalyseTechnique
 
     #[ORM\Column(type: 'datetime')]
     private $date;
+
+
 
     public function getId(): ?int
     {

@@ -1,55 +1,81 @@
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #202020;
+    background-color: #1b1a1a;
 }
 
 main .communaute_container {
-  font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid salmon;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 40%;
-      grid-template-columns: 1fr 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1b1a1a;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 40%;
+    grid-template-columns: 1fr 40%;
+    color: white;
 }
 
 main .communaute_container .analyse {
-  border: 1px solid green;
+    padding-left: 20%;
+}
+
+main .communaute_container .analyse div {
+    margin: 1rem;
+    border: 1px solid green;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+main .communaute_container .analyse div input {
+    padding: 3px 2px;
+    border-radius: 17px;
+    border: none;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+main .communaute_container .analyse div p {
+    border: 1px solid wheat;
 }
 
 main .communaute_container .partage {
-  border: 1px solid blue;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    border: 1px solid blue;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 main .communaute_container .partage .technique,
 main .communaute_container .partage .fondamentale {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-bottom: 1rem;
-  border-radius: 17px;
-  padding: 8px 25px;
-  border: 2px solid white;
-  font-size: small;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 1rem;
+    border-radius: 17px;
+    padding: 8px 25px;
+    border: 2px solid white;
+    font-size: small;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
+
 
 /*
 @media screen and (max-width:864) {
@@ -64,4 +90,6 @@ main .communaute_container .partage .fondamentale {
     }
 }
 */
+
+
 /*# sourceMappingURL=communatute.css.map */

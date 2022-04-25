@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\AnalyseTechnique;
 use App\Form\AnalyseTechniqueType;
+use Doctrine\ORM\Query\Expr\Func;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,29 +52,12 @@ class IndexController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse =$analyseRepository->findAll();
+        //$analyse =$analyseRepository->findBy(['id' => 'DESC']);
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,
         ]);
     }
 
-/*
-    #[Route('/communaute/analyse', name: 'app_index')]
-    public function listeblog(ManagerRegistry $managerRegistry): Response
-    {
-        //Cette méthode affiche notre page d'accueil et la liste des Posts les plus récents
-        //Nous récupérons la liste de nos posts via l'Entity Manager et le Repository pertinent
-        $entityManager = $managerRegistry->getManager();
-        $analyseRepository = $entityManager->getRepository(Post::class);
-        //Nous récupérons les Categories à afficher:
-        //Nous récupérons notre liste de posts
-        $analyse = $analyseRepository->findBy([], ['id' => 'DESC'], 6);
-
-        return $this->render('index/communate.html.twig', 
-        [
-            'analyse' => $analyse,
-        ]);
-    }
-    */
 
     #[Route('analyse/creer', name:'analyse_create')]
     public function createAnalyse(Request $request, ManagerRegistry $managerRegistry):Response
@@ -94,7 +78,7 @@ class IndexController extends AbstractController
             //Condition supplémentaire: on ne persiste que si l'affirmation que $title ET $text sont tous les deux null est INVALIDE
             $entityManager->persist($analyse);
             $entityManager->flush();
-            return $this->redirectToRoute('app_index');
+            return $this->redirectToRoute('app_communaute');
         }
         //Si le formulaire n'est pas rempli ou valide, nous transmettons une page web présentant notre formulaire à l'Utilisateur
         return $this->render('index/dataform.html.twig',[
@@ -103,6 +87,43 @@ class IndexController extends AbstractController
             'analyse' => $analyse,
         ]);
     }
+
+    #[Route('analyse/delete{analyseId}',name:'analyse_delete')]
+    public function deleteAnalyse(int $analyseId = 0 ,ManagerRegistry $managerRegistry):Response
+    {
+        $entityManager = $managerRegistry->getManager();
+        $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
+        $analyse = $analyseRepository->find($analyseId);
+        if(!$analyse){
+            return $this->redirectToRoute('app_communaute');
+        }
+        $entityManager->remove($analyse);
+        $entityManager->flush();
+        return $this->redirectToRoute('app_communaute');
+    }
+
+    #[Route('analyse/update{analyseId}',name:'analyse_update')]
+        public function updateAnalyse(int $analyseId = 0, ManagerRegistry $managerRegistry, Request $request):Response
+        {
+            $entityManager = $managerRegistry->getManager();
+            $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
+            $analyse = $analyseRepository->find($analyseId);
+            if(!$analyse){
+                return $this->redirectToRoute('app_communaute');
+            }
+            $analyseForm = $this->createForm(AnalyseTechniqueType::class,$analyse);
+            $analyseForm->handleRequest($request);
+            if($analyseForm->isSubmitted()&& $analyseForm->isValid()){
+                $entityManager->persist($analyse);
+                $entityManager->flush();
+                return $this->redirectToRoute('app_communaute');
+            }
+        return $this->render('index/dataform.html.twig',[
+            'formName' => "Partage d'analyse",
+            'dataForm' => $analyseForm->createView(),
+        ]);
+    }
+    
     
 }
     

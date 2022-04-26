@@ -33,11 +33,15 @@
 		<div>
 			<div>
 				<h2>Liste des commentaire</h2>
-                {% for commentaire in analyse.commentaire %}
-                    
+                {% for commentaires in analyse.commentaires %}
+                   <p>Publié par {{commentaires.pseudo}} le {{commentaires.date|date("d/m/Y H:i")}} </p>
+                   <div style="background:salmon">{{commentaires.contenu}}</div>
+                   <p>
+                   <a style="color:gray" href="ajout-commentaire" data-reponse data-id="{{ commentaires.id}}">Répondre</a>
+                   </p>
                 {% endfor %}
 			</div>
-			<div>
+			<div id=" ajout-commentaire">
 				<h2>ajouter des commentaire</h2>
 				{{form(dataForm)}}
 				</div>

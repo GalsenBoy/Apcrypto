@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Communauté -
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<main>
+		<div class="communaute_container" style="border:1px solid red;width:70%">
+			<div class="analyse">
+				<div class="actif" style="display:flex;
+																													background:green;
+																													justify-content:space-evenly">
+					<label style="font-size:larger" for="">Actif :</label>
+					<p style="font-size:larger">{{analyse.actif}}</p>
+				</div>
+				<div style="display:flex;
+																													background:green;
+																													justify-content:space-evenly">
+					<label for="">Lien vers tradingview</label>
+					<a>{{analyse.analyse}}</a>
+				</div>
+				<div class="display:flex;align-items:center;border:1px:solid,red">
+					<label for="">Plan de l'analyse
+					</label>
+					<textarea name="" id="" cols="40" rows="10">{{analyse.explication}}</textarea>
+				</div>
+				<div>
+					<p>{{analyse.date |date("d/m/Y")}}</p>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<h2>Liste des commentaire</h2>
+                {% for commentaire in analyse.commentaire %}
+                    
+                {% endfor %}
+			</div>
+			<div>
+				<h2>ajouter des commentaire</h2>
+				{{form(dataForm)}}
+				</div>
+
+			</div>
+		</main>
+	{% endblock %}

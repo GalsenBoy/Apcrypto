@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\AnalyseTechnique;
+use App\Entity\Commentaire;
 use App\Form\AnalyseTechniqueType;
-use Doctrine\ORM\Query\Expr\Func;
+use App\Form\CommentaireType;
+use DateTime;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -53,9 +55,50 @@ class IndexController extends AbstractController
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse =$analyseRepository->findAll();
         //$analyse =$analyseRepository->findBy(['id' => 'DESC']);
+
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,
         ]);
+    }
+
+    #[Route('analyse/display/{analyseId}', name:'analyse_display')]
+    public function displayAnalyse(int $analyseId, ManagerRegistry $managerRegistry, Request $request):Response
+    {
+        $entityManager = $managerRegistry->getManager();
+        $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
+        $analyse = $analyseRepository->find($analyseId);
+
+        if(!$analyse){
+            return $this->redirectToRoute('app_communaute');
+        }
+
+        //Partie commentaire
+        //On crée le commentaire
+        $commentaire = new Commentaire;
+        //On génère le formulaire
+        $commentaireForm = $this->createForm(CommentaireType::class,$commentaire);
+        $commentaireForm->handleRequest($request);
+
+        if($commentaireForm->isSubmitted()&& $commentaireForm->isValid()){
+            $commentaire->setDate(new DateTime());
+            $commentaire->setAnalysetechnique($analyse);
+            $entityManager->persist($commentaire);
+            $entityManager->flush();
+            return $this->redirectToRoute('app_communaute');
+        }
+
+        return $this->render('index/display_analyse.html.twig',[
+            'analyse' => $analyse,
+            'coommentaire' => $commentaire,
+            'formName' => "Commentaire",
+            'dataForm' => $commentaireForm->createView(),
+
+        ]);
+
+
+
+
+
     }
 
 
@@ -66,9 +109,6 @@ class IndexController extends AbstractController
       
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
-        //Nous récupérons les Categories à afficher:
-        //$categoryRepository = $entityManager->getRepository(Category::class);
-        //$categories = $categoryRepository->findAll();
         //Une fois que nous avons notre Entity Manager, nous créons une instance de Tag et nous la lions à un formulaire externalisé de type TagType
         $analyse = new AnalyseTechnique;
         $analyseForm = $this->createForm(AnalyseTechniqueType::class, $analyse);

@@ -34,7 +34,7 @@ class AnalyseTechniqueType extends AbstractType
                 ]
             ])
             ->add('date')
-            ->add('submit', SubmitType::class, [
+            ->add('envoyer', SubmitType::class, [
                 'label' => 'Valider',
                 'attr' => [
                     'style' => 'margin:50px;'

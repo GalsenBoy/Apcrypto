@@ -20,31 +20,37 @@ main .communaute_container {
 }
 
 main .communaute_container .analyse {
+    border: 1px solid green;
     padding-left: 20%;
+    background-color: #202020;
 }
 
 main .communaute_container .analyse div {
     margin: 1rem;
-    border: 1px solid green;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
-main .communaute_container .analyse div input {
-    padding: 3px 2px;
-    border-radius: 17px;
-    border: none;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-}
-
+main .communaute_container .analyse div label,
 main .communaute_container .analyse div p {
-    border: 1px solid wheat;
+    font-size: large;
+}
+
+main .communaute_container .analyse div div {
+    border: 1px solid white;
+    padding: 8px 50px;
+    border-radius: 17px;
+}
+
+main .communaute_container .analyse div div a {
+    color: white;
 }
 
 main .communaute_container .partage {
@@ -60,6 +66,7 @@ main .communaute_container .partage {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    background: #202020;
 }
 
 main .communaute_container .partage .technique,
@@ -78,18 +85,18 @@ main .communaute_container .partage .fondamentale {
 
 
 /*
-@media screen and (max-width:864) {
-    main {
-        .communaute_container {
-            .partage {
-                .technique {
-                    padding: 0;
-                }
-            }
-        }
-    }
-}
-*/
+  @media screen and (max-width:864) {
+      main {
+          .communaute_container {
+              .partage {
+                  .technique {
+                      padding: 0;
+                  }
+              }
+          }
+      }
+  }
+  */
 
 
 /*# sourceMappingURL=communatute.css.map */

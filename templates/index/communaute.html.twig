@@ -5,42 +5,76 @@
 {% endblock %}
 
 
-
 {% block body %}
 	<main>
-		<div class="communaute_container" style="border:1px solid red;width:70%">
-			<div class="partage">
-				<button class="technique"> <a href="{{ path('analyse_create')}}">Partager une analyse technique</a> </button>
-				<button class="fondamentale">Partager une analyse fondamentales</button>
-			</div>
+		<div style=" font-family: Arial, Helvetica, sans-serif;
+					background-color: rgb(27, 26, 26);
+					width:100%;
+					color: white;">
+			
 			{% for analyse in analyse %}
-				<div class="analyse">
-					<div class="actif" style="display:flex;
-					background:green;
-					justify-content:space-evenly">
-						<label style="font-size:larger" for="">Actif :</label>
-						<p style="font-size:larger">{{analyse.actif}}</p>
+				<div class="analyse" style="border:1px solid red; margin-bottom:50px; ">
+					<div style="margin: 1rem;display: flex;justify-content: space-evenly; align-items: center;">
+						<label for="">Nom de l'actif  :</label>
+						<div style="//border: 1px solid white;
+                    				padding: 8px 30px;
+									background:transparent;
+                    				//border-radius: 17px;">{{analyse.actif}}</div>
+						</div>
+
+					<div style="margin: 1rem;               
+                				display: flex;
+                				justify-content: space-evenly;
+               					align-items: center;">
+						<label for="">Lien vers tradingview:</label>
+						<div style="border: 1px solid white;
+                    				padding: 8px 30px;
+                    				border-radius: 17px;">
+							<a style="color:white" href="{{analyse.analyse}}">Lien vers tradingview</a>
+						</div>
 					</div>
-					<div style="display:flex;
-					background:green;
-					justify-content:space-evenly">
-						<label for="">Lien vers tradingview</label>
-						<a>{{analyse.analyse}}</a>
+
+					<div style="margin: 1rem;                
+                				display: flex;
+                				justify-content: space-evenly;
+               					align-items: center;">
+						<label for="">Plan de l'analyse  :</label>
+						<textarea name="" id="" cols="30" rows="10">{{analyse.explication}}</textarea>
 					</div>
-					<div class="display:flex;align-items:center;border:1px:solid,red">
-						<label for="">Plan de l'analyse
-						</label>
-						<textarea name="" id="" cols="40" rows="10">{{analyse.explication}}</textarea>
+
+					<div style="margin: 1rem;              
+                				display: flex;
+                				justify-content: space-evenly;
+                				align-items: center;">
+						<p style=" font-size: large;">Publié le
+							{{analyse.date |date("d/m/Y")}}
+						</p>
 					</div>
+
 					<div>
-						<p>{{analyse.date |date("d/m/Y")}}</p>
-					</div>
-					<div>  
-					<a href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}"type="button">Supprier l'analyse</a>
-					<a href="{{ path('analyse_update', {'analyseId' : analyse.id}) }}"type="button">modifier l'analyse</a>
+						<a href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">Supprier l'analyse</a>
+						<a href="{{ path('analyse_update', {'analyseId' : analyse.id}) }}" type="button">modifier l'analyse</a>
 					</div>
 				</div>
 			{% endfor %}
+			</diV>
+			<div style="
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background: rgb(32, 32, 32);">
+				<button style="  border-radius: 17px;
+				padding: 8px 25px;
+				border: 2px solid white;
+				width: fit-content;
+				margin-bottom: 1rem;
+				font-size: small;
+				flex-wrap: wrap;">
+					<a href="{{ path('analyse_create')}}">Partager une analyse technique</a>
+				</button>
+				<button class="fondamentale">Partager une analyse fondamentales</button>
+			</div>
 		</div>
 	</main>
 {% endblock %}

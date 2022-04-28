@@ -17,39 +17,25 @@ body {
 main {
     .communaute_container {
         font-family: Arial, Helvetica, sans-serif;
-        //border: 1px solid salmon;
         background-color: rgb(27, 26, 26);
         display: grid;
         grid-template-columns: 1fr 40%;
         color: white;
-        .analyse {
-            // border: 1px solid green;
-            padding-left: 20%;
-            div {
-                margin: 1rem;
-                border: 1px solid green;
-                display: flex;
-                justify-content: space-evenly;
-                input {
-                    padding: 3px 2px;
-                    border-radius: 17px;
-                    border: none;
-                    align-self: center;
-                }
-                p {
-                    border: 1px solid wheat;
-                }
-            }
+        .analyse_container {
+            border-radius: 17px;
+            padding: 16px;
+            background-color: red;
+            margin: 1rem;
         }
         .partage {
-            border: 1px solid blue;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            background: rgb(32, 32, 32);
             .technique,
             .fondamentale {
-                //max-width: fit-content;
                 width: fit-content;
                 margin-bottom: 1rem;
                 @include radius();

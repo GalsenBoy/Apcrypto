@@ -6,46 +6,42 @@
 
 {% block body %}
 	<main>
-		<div class="communaute_container" style="border:1px solid red;width:70%">
-			<div class="analyse">
-				<div class="actif" style="display:flex;
-																													background:green;
-																													justify-content:space-evenly">
-					<label style="font-size:larger" for="">Actif :</label>
-					<p style="font-size:larger">{{analyse.actif}}</p>
+        <div>
+            <div class="" style="border-radius: 17px;padding: 16px;background-color: rgb(23,23,23);margin: 1rem;">
+                <div class="analyse">
+                    <div>
+                        <p style="padding: 10px 0;font-size:larger">
+                            Nom de l'actif : {{analyse.actif}}  
+                        </p>
+						<p style="padding: 10px 0;font-size:larger">
+						Lien vers tradingview :
+						<a style="color:beige" href="{{analyse.analyse}}">Analyse technique </a>
+						</p>
+                        <p style="padding: 10px 0;font-size:larger">
+                            Plan : {{analyse.explication}}
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <p style="padding: 10px 0; font-size:larger">Publié le {{analyse.date |date("d/m/Y à H:i")}}</p>
+                </div>
+				<div style="padding: 18px 0 10px 0">
+					<a style="text-decoration:none;color:red;border-radius: 17px; padding: 8px 20px;border: 2px solid red;" 
+    				href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">Supprier l'analyse</a>
+					<a style="text-decoration:none;color:gray; border-radius: 17px; padding: 8px 20px;border: 2px solid gray;" href="{{ path('analyse_update', {'analyseId' : analyse.id}) }}" type="button">Modifier l'analyse</a>
 				</div>
-				<div style="display:flex;
-																													background:green;
-																													justify-content:space-evenly">
-					<label for="">Lien vers tradingview</label>
-					<a>{{analyse.analyse}}</a>
-				</div>
-				<div class="display:flex;align-items:center;border:1px:solid,red">
-					<label for="">Plan de l'analyse
-					</label>
-					<textarea name="" id="" cols="40" rows="10">{{analyse.explication}}</textarea>
-				</div>
-				<div>
-					<p>{{analyse.date |date("d/m/Y")}}</p>
-				</div>
-			</div>
-		</div>
+            </div>
 		<div>
-			<div>
-				<h2>Liste des commentaire</h2>
-                {% for commentaires in analyse.commentaires %}
-                   <p>Publié par {{commentaires.pseudo}} le {{commentaires.date|date("d/m/Y H:i")}} </p>
-                   <div style="background:salmon">{{commentaires.contenu}}</div>
-                   <p>
-                   <a style="color:gray" href="ajout-commentaire" data-reponse data-id="{{ commentaires.id}}">Répondre</a>
-                   </p>
-                {% endfor %}
-			</div>
-			<div id=" ajout-commentaire">
-				<h2>ajouter des commentaire</h2>
-				{{form(dataForm)}}
-				</div>
-
-			</div>
-		</main>
-	{% endblock %}
+		<div style="border:1px solid red;border-radius: 17px;padding: 16px;background-color: rgb(23,23,23);margin: 1rem;">
+			<h2>Liste des commentaire</h2>
+            {% for commentaires in analyse.commentaires %}
+            	<p style="font-size:large;padding:8px 0 3px 0;">Publié par {{commentaires.pseudo}} le {{commentaires.date|date("d/m/Y à H:i")}} </p>
+                <div style="font-size:large; border-radius:12px; padding:16px; background-color:rgb(10,10,10); margin: 0.5rem 0; width:fit-content">{{commentaires.contenu}}</div>
+            {% endfor %}
+		</div>
+	</main>
+	<div >
+		<h2>ajouter des commentaire</h2>
+		{{form(dataForm)}}
+	</div>
+{% endblock %}

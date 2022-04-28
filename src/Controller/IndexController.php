@@ -67,11 +67,9 @@ class IndexController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->find($analyseId);
-
         if(!$analyse){
             return $this->redirectToRoute('app_communaute');
         }
-
         //Partie commentaire
         //On crée le commentaire
         $commentaire = new Commentaire;
@@ -92,21 +90,11 @@ class IndexController extends AbstractController
             'coommentaire' => $commentaire,
             'formName' => "Commentaire",
             'dataForm' => $commentaireForm->createView(),
-
         ]);
-
-
-
-
-
     }
-
-
     #[Route('analyse/creer', name:'analyse_create')]
     public function createAnalyse(Request $request, ManagerRegistry $managerRegistry):Response
     {
-        
-      
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
         //Une fois que nous avons notre Entity Manager, nous créons une instance de Tag et nous la lions à un formulaire externalisé de type TagType

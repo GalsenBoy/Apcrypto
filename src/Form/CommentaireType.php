@@ -20,16 +20,19 @@ class CommentaireType extends AbstractType
             ->add('email',EmailType::class,[
                 'label' => 'Votre e-mail',
                 'attr' =>[
-                     'style' => 'margin:50px;'
+                     'style' => 'margin:50px;padding:6px 0'
                 ]
             ])
             ->add('pseudo',TextType::class,[
-                'label' => 'Votre pseudo'
+                'label' => 'Votre pseudo',
+                'attr' =>[
+                    'style' => 'margin:42px;padding:6px 0'
+               ]
             ])
             ->add('contenu',TextareaType::class,[
                 'label' => 'Commenter',
                 'attr' =>[
-                    'style' => 'margin:50px;'
+                    'style' => 'margin-left: 50px;padding-right:10px',
                 ]
             ])
             //->add('active')

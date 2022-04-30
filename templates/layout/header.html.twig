@@ -1,73 +1,86 @@
 <div class="container">
-		<header>
-			<div class="header_container">
-				<div class="logo">
-                    <img src="{{ asset('asset/img/logo.png') }}" alt="metavers"/>
-				</div>
-				<button class="hamburger">
-					<div class="container-lignes">
-						<div class="ligne"></div>
-						<div class="ligne"></div>
-						<div class="ligne"></div>
-					</div>
-				</button>
-				<ul class="menu">
-					<li class="lien">
-						<a id="crypto" href="">Cryptomonnaie
-							<i class="fa-solid fa-angle-down" id="bas"></i>
-						</a>
-						<ul id="ul_crypto" class="sous_menu">
-							<li>
-								<a href="">BNB Chain</a>
-							</li>
-							<li>
-								<a href="">DeFi</a>
-							</li>
-							<li>
-								<a href="">Les Mèmes coin</a>
-							</li>
-							<li>
-								<a href="">Le minage</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a id="nft" href="">NFT
-							<i class="fa-solid fa-angle-down" id="bas"></i>
-						</a>
-						<ul id="ul_nft">
-							<li>
-								<a href="">Les top collections</a>
-							</li>
-							<li>
-								<a href="">L'histoire des NFT</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a id="metavers" href="">Métavers
-							<i class="fa-solid fa-angle-down"></i>
-						</a>
-						<ul id="ul_metavers">
-							<li>
-								<a href="">Les origines du Métaverse</a>
-							</li>
-							<li>
-								<a href="">L'univers des Métaverse</a>
-							</li>
-							<li>
-								<a href="">L'entrée en jeu de Meta</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="">Communauté</a>
-						<a href=""></a>
-					</li>
-				</ul>
-				<div class="acces" id="acces">
-					<button class="btn_connexion">Connexion</button>
-					<button class="btn_inscription">Inscription</button>
-				</div>
+	<header>
+		<div class="header_container">
+			<div class="logo">
+				<img src="{{ asset('asset/img/logo.png') }}" alt="metavers"/>
 			</div>
-		</header>
+			<button class="hamburger">
+				<div class="container-lignes">
+					<div class="ligne"></div>
+					<div class="ligne"></div>
+					<div class="ligne"></div>
+				</div>
+			</button>
+			<ul class="menu">
+				<li class="lien">
+					<a id="crypto" href="">Cryptomonnaie
+						<i class="fa-solid fa-angle-down" id="bas"></i>
+					</a>
+					<ul id="ul_crypto" class="sous_menu">
+						<li>
+							<a href="">BNB Chain</a>
+						</li>
+						<li>
+							<a href="">DeFi</a>
+						</li>
+						<li>
+							<a href="">Les Mèmes coin</a>
+						</li>
+						<li>
+							<a href="">Le minage</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a id="nft" href="">NFT
+						<i class="fa-solid fa-angle-down" id="bas"></i>
+					</a>
+					<ul id="ul_nft">
+						<li>
+							<a href="">Les top collections</a>
+						</li>
+						<li>
+							<a href="">L'histoire des NFT</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a id="metavers" href="">Métavers
+						<i class="fa-solid fa-angle-down"></i>
+					</a>
+					<ul id="ul_metavers">
+						<li>
+							<a href="">Les origines du Métaverse</a>
+						</li>
+						<li>
+							<a href="">L'univers des Métaverse</a>
+						</li>
+						<li>
+							<a href="">L'entrée en jeu de Meta</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Communauté</a>
+					<a href=""></a>
+				</li>
+			</ul>
+			<div class="acces" id="acces">
+				{% if app.user %}
+					<button class="btn_connexion">
+						<a href="{{path('app_logout')}}">DEconnexion</a>
+					</button>
+
+				{% else %}
+					<button class="btn_connexion">
+						<a href="{{path('app_login')}}">Connexion</a>
+					</button>
+					<button class="btn_inscription">
+					<a href="{{path('app_register')}}">Inscription</a>
+					</button>
+				{% endif %}
+
+
+			</div>
+		</div>
+	</header>

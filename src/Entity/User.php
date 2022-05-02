@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
+use Webmozart\Assert\Assert;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
@@ -17,25 +18,44 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'integer')]
     private $id;
 
+
+    /**
+     * @Assert\Email( message = "The email '{{ value }}' is not a valid email.")
+     * @Assert\NotBlank()
+     */
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
 
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
+    /**
+     * @Assert\NotBlank()
+     */
     #[ORM\Column(type: 'string')]
     private $password;
 
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Regex(pattern="/\d/",match=false,message="Votre nom ne peut pas contenir un chiffre")
+     */
     #[ORM\Column(type: 'string', length: 100)]
     private $nom;
 
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Regex(pattern="/\d/",match=false,message="Votre prénom ne peut pas contenir un chiffre")
+     */
     #[ORM\Column(type: 'string', length: 100)]
     private $prenom;
 
+    /**
+     * @Assert\NotBlank()
+     */
     #[ORM\Column(type: 'string', length: 100)]
     private $pseudo;
 
-    #[ORM\OneToMany(targetEntity:'App\Entity\Commentaire', mappedBy: 'user')]
+    #[ORM\OneToMany(targetEntity: 'App\Entity\Commentaire', mappedBy: 'user')]
     #[ORM\JoinColumn(nullable: true)]
     private $commentaires;
 

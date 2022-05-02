@@ -31,10 +31,9 @@
                     <p style="padding: 10px 0; font-size:larger">Publié le {{analyse.date |date("d/m/Y à H:i")}}</p>
                 </div>
 				<div style="padding: 18px 0 10px 0">
-						<a style="text-decoration:none;color:red;border-radius: 17px; padding: 8px 20px;border: 2px solid red;" 
-    					href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">Supprier l'analyse</a>
-						<a style="text-decoration:none;color:gray; border-radius: 17px; padding: 8px 20px;border: 2px solid gray;" href="{{ path('analyse_update', {'analyseId' : analyse.id}) }}" type="button">Modifier l'analyse</a>
-					</div>
+					<a style="text-decoration:none;color:blue;border-radius: 17px; padding: 8px 20px;border: 2px solid blue;" 
+    				href="{{ path('analyse_display', {'analyseId' : analyse.id}) }}" type="button">Commenter</a>
+				</div>
             </div>
 			{% endfor %}
             <div class="partage">

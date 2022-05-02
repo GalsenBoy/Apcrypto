@@ -87,7 +87,7 @@ class IndexController extends AbstractController
 
         return $this->render('index/display_analyse.html.twig',[
             'analyse' => $analyse,
-            'coommentaire' => $commentaire,
+            'commentaire' => $commentaire,
             'formName' => "Commentaire",
             'dataForm' => $commentaireForm->createView(),
         ]);

@@ -34,11 +34,17 @@ class Commentaire
     #[ORM\JoinColumn(nullable: false)]
     private $analysetechnique;
 
+    #[ORM\ManyToOne(targetEntity:'App\Entity\User', inversedBy: 'commentaires')]
+    #[ORM\JoinColumn(nullable: true)]
+    private $user;
+
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'reponse')]
     private $commentaireParent;
 
     #[ORM\OneToMany(mappedBy: 'commentaireParent', targetEntity: self::class)]
     private $reponse;
+
+
 
     public function __construct()
     {

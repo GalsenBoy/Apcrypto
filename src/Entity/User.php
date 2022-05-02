@@ -35,6 +35,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 100)]
     private $pseudo;
 
+    #[ORM\OneToMany(targetEntity:'App\Entity\Commentaire', mappedBy: 'user')]
+    #[ORM\JoinColumn(nullable: true)]
+    private $commentaires;
+
     public function getId(): ?int
     {
         return $this->id;

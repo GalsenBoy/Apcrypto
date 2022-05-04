@@ -314,8 +314,8 @@ header .header_container .acces .btn_connexion {
 }
 
 header .header_container .acces .btn_connexion:hover {
-  background-color: #e4dcdc;
-  color: #110D26;
+  background-color: #202020;
+  color: black;
   -webkit-animation-name: btn;
           animation-name: btn;
   -webkit-animation-duration: 2s;

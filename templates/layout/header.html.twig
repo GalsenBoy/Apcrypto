@@ -68,19 +68,17 @@
 			<div class="acces" id="acces">
 				{% if app.user %}
 					<button class="btn_connexion">
-						<a href="{{path('app_logout')}}">Déconnexion</a>
+						<a style="text-decoration:none;color: white; opacity:0.7" href="{{path('app_logout')}}">Déconnexion</a>
 					</button>
 
 				{% else %}
 					<button class="btn_connexion">
-						<a href="{{path('app_login')}}">Connexion</a>
+						<a style="text-decoration:none;color: white; opacity:0.7" href="{{path('app_login')}}">Connexion</a>
 					</button>
 					<button class="btn_inscription">
-					<a href="{{path('app_register')}}">Inscription</a>
+					<a style="text-decoration:none;color: rgb(32,32,32);" href="{{path('app_register')}}">Inscription</a>
 					</button>
 				{% endif %}
-
-
 			</div>
 		</div>
 	</header>

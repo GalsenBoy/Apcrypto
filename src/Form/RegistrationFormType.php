@@ -20,22 +20,64 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('nom',TextType::class,[
-                'label' => 'Nom'
+                'label' => 'Nom',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez entrer un nom',
+                    ]),
+                    new Length([
+                        'min' => 2,
+                        'minMessage' => 'Votre mot de passe ne doit pas être inférieur {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 100,
+                    ]),
+                ],
+                
             ])
             ->add('prenom',TextType::class,[
-                'label' => 'Prenom'
+                'label' => 'Prenom',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez entrer un prénom',
+                    ]),
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => 'Votre prénom ne doit pas être inférieur {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 100,
+                    ]),
+                ],
             ])
             ->add('email',EmailType::class,[
-                'label' => 'Email'
+                'label' => 'Email',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez entrer un adresse e-mail valide',
+                    ]),
+                ],
             ])
             ->add('pseudo',TextType::class,[
-                'label' => 'Pseudo'
+                'label' => 'Pseudo',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez entrer un pseudo',
+                    ]),
+                    new Length([
+                        'min' => 5,
+                        'minMessage' => 'Votre pseudo ne doit pas être moins de {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 4096,
+                    ]),
+                ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
                         'message' => 'You should agree to our terms.',
+                    ]),
+                    new NotBlank([
+                        'message' => 'Veuillez cocher la case',
                     ]),
                 ],
                 'label' => 'J\'accepte les termes d\'utilisation en m\'inscrivant '
@@ -50,11 +92,12 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Please enter a password',
                     ]),
                     new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'min' => 8,
+                        'minMessage' => 'Votre mot de passe ne doit pas être inférieur {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
+                    
                 ],
             ])
         ;

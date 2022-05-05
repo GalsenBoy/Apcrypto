@@ -116,20 +116,6 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('analyse/delete{analyseId}', name: 'analyse_delete')]
-    public function deleteAnalyse(int $analyseId = 0, ManagerRegistry $managerRegistry): Response
-    {
-        $entityManager = $managerRegistry->getManager();
-        $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
-        $analyse = $analyseRepository->find($analyseId);
-        if (!$analyse) {
-            return $this->redirectToRoute('app_communaute');
-        }
-        $entityManager->remove($analyse);
-        $entityManager->flush();
-        return $this->redirectToRoute('app_communaute');
-    }
-
     #[Route('analyse/update{analyseId}', name: 'analyse_update')]
     public function updateAnalyse(int $analyseId = 0, ManagerRegistry $managerRegistry, Request $request): Response
     {

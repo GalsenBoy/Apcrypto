@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
-//use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -25,9 +27,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
+    /**
+    * @Assert\Regex("/[a-zA-Z][0-9a-zA-Z .,\'-]{8,15}/")
+    */ 
     #[ORM\Column(type: 'string')]
     private $password;
 
+    
     #[ORM\Column(type: 'string', length: 100)]
     private $nom;
 
@@ -37,9 +43,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 100)]
     private $pseudo;
 
+    #[ORM\Column(type: 'boolean')]
+    private $estActif = false;
+
     #[ORM\OneToMany(targetEntity: 'App\Entity\Commentaire', mappedBy: 'user')]
     #[ORM\JoinColumn(nullable: true)]
     private $commentaires;
+
+    public function __construct()
+    {
+        $this->commentaires = new ArrayCollection();
+    }
 
    
     public function getId(): ?int
@@ -144,6 +158,56 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPseudo(string $pseudo): self
     {
         $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of estActif
+     */ 
+    public function getEstActif(): ?bool
+    {
+        return $this->estActif;
+    }
+
+    /**
+     * Set the value of estActif
+     *
+     * @return  self
+     */ 
+    public function setEstActif($estActif):self
+    {
+        $this->estActif = $estActif;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaire $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaire $commentaire): self
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getUser() === $this) {
+                $commentaire->setUser(null);
+            }
+        }
 
         return $this;
     }

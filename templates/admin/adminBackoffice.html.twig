@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Backoffice -
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div style="margin-top:100px">
+		<table>
+			<tr style="border:1px solid">
+				<th>Id</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Pseudo</th>
+				<th>E-mail</th>
+				<th>Vérification du compte</th>
+			</tr>
+			{% for user in user %}
+				<tr>
+					<td>{{user.id}}</td>
+					<td>{{user.nom}}</td>
+					<td>{{user.prenom}}</td>
+					<td>{{user.pseudo}}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

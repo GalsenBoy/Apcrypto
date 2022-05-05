@@ -27,7 +27,7 @@ class Mail
             //->priority(Email::PRIORITY_HIGH)
             ->subject($subject)
             ->text($text)
-            ->html('<p>See Twig integration for better HTML integration!</p>');
+            ->html('<p>Pour activer votre compte veuillez cliquer sur le lien suivant</p>');
 
         $this->mailer->send($email);
 

@@ -21,6 +21,7 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('nom',TextType::class,[
                 'label' => 'Nom',
+                'required' => true,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un nom',
@@ -36,6 +37,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('prenom',TextType::class,[
                 'label' => 'Prenom',
+                'required' => true,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un prénom',
@@ -50,6 +52,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('email',EmailType::class,[
                 'label' => 'Email',
+                'required' => true,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un adresse e-mail valide',
@@ -58,6 +61,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('pseudo',TextType::class,[
                 'label' => 'Pseudo',
+                'required' => true,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un pseudo',
@@ -72,6 +76,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
+                'required' => true,
                 'constraints' => [
                     new IsTrue([
                         'message' => 'You should agree to our terms.',
@@ -86,6 +91,7 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
+                'required' => true,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
@@ -97,7 +103,7 @@ class RegistrationFormType extends AbstractType
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
-                    
+
                 ],
             ])
         ;

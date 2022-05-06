@@ -54,7 +54,7 @@ class IndexController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->findAll();
-        //$analyse =$analyseRepository->findBy(['id' => 'DESC']);
+        //$analyse =$analyseRepository->findBy(['date'],['date' => 'DESC']);
 
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,

@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
 
@@ -16,9 +17,9 @@ class Mail
         $this->mailer=$mailer;
     }
 
-    public function sendEmail(string $from, string $to, string $subject, string $text): void
+    public function sendEmail(string $from, string $to, string $subject, string $text,string $token): void
     {
-        $email = (new Email())
+        $email = (new TemplatedEmail())
             ->from($from)
             ->to($to)
             //->cc('cc@example.com')
@@ -27,7 +28,12 @@ class Mail
             //->priority(Email::PRIORITY_HIGH)
             ->subject($subject)
             ->text($text)
-            ->html('<p>Pour activer votre compte veuillez cliquer sur le lien suivant</p>');
+            ->htmlTemplate('mailer/index.html.twig')
+            ->context([
+                'expiration_date' =>new \DateTime('+7 days'),
+                'token' => $token
+            ]);
+            
 
         $this->mailer->send($email);
 

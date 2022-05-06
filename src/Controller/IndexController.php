@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\AnalyseTechnique;
 use App\Entity\Commentaire;
+use App\Entity\User;
 use App\Form\AnalyseTechniqueType;
 use App\Form\CommentaireType;
 use DateTime;

@@ -37,7 +37,12 @@
             </div>
 			{% endfor %}
             <div class="partage">
-                <button class="technique"> <a href="{{ path('analyse_create')}}">Partager une analyse technique</a> </button>
+                {% if app.user %}
+                    <button class="technique"> <a href="{{ path('analyse_create')}}">Partager une analyse technique</a> </button>
+                {% else %}
+                <p>Connecte vous pour partager une analyse technique</p>
+                {% endif %}
+                    
                 <button class="fondamentale">Partager une analyse fondamentales</button>
             </div>
         </div>

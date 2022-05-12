@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Service\Mail;
 use App\Form\RegistrationFormType;
 use App\Security\UserAuthenticator;
+use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -64,11 +65,13 @@ class RegistrationController extends AbstractController
 
 
     #[Route('/confirmationCompte/{tokenId}', name: 'app_confirmation')]
-    public function confirmation(string $tokenId,ManagerRegistry $managerRegistry)
+    public function confirmation(string $tokenId,ManagerRegistry $managerRegistry,int $validite = 7200)
     {
         $entityManager = $managerRegistry->getManager();
         $userRepository = $entityManager->getRepository(User::class);
         $user = $userRepository->findOneBy(['token' => $tokenId]);
+        $now = new DateTimeImmutable();
+        $exp = $now->getTimestamp() + $validite;
         if($user){
             $user->setToken(token:null);
             $user->setestActif(true);

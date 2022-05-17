@@ -14,8 +14,6 @@ main .communaute_container {
   background-color: #1b1a1a;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 40%;
-      grid-template-columns: 1fr 40%;
   color: white;
 }
 

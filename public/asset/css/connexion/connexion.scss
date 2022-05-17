@@ -11,12 +11,11 @@
 }
 
 body {
-    height: 100vh;
-    background-color: #202020;
+    background-color: #070320;
 }
 
-.container_post {
-    height: 100%;
+.container_connexion {
+    height: 600px;
     @include flex();
     form {
         width: 40%;
@@ -26,10 +25,10 @@ body {
             height: 100%;
             gap: 5px;
             justify-content: space-between;
-            .logo_connexion {
+            .div_image {
                 height: 100%;
                 width: 50%;
-                background-color: #1B1A1A;
+                background-color: #18152A;
                 border-radius: 17px;
                 @include flex();
                 img {
@@ -41,19 +40,19 @@ body {
             .div_formulaire {
                 height: 100%;
                 width: 50%;
+                background-color: #18152A;
                 border-radius: 17px;
                 @include flex();
                 text-align: center;
                 flex-direction: column;
-                background-color: #1B1A1A;
+                background-color: #18152A;
                 justify-content: space-evenly;
                 input {
                     border: 1px solid rgb(56, 55, 55);
                     margin-top: 8px;
                     padding: 3px 0;
-                    font-size: large;
-                    width: fit-content;
-                    background-color: #1B1A1A;
+                    font-size: larger;
+                    background-color: #18152A;
                     color: white;
                 }
                 label {
@@ -70,12 +69,12 @@ body {
                     border: 1px solid white;
                     color: white;
                     font-size: larger;
-                    background-color: #1B1A1A;
+                    background-color: #18152A;
                     cursor: pointer;
                 }
                 button:hover {
                     background-color: white;
-                    color: #1B1A1A;
+                    color: #18152A;
                 }
                  ::placeholder {
                     opacity: 0.5;
@@ -87,23 +86,21 @@ body {
 }
 
 @media screen and(max-width:1043px) {
-    body {
-        .container_post {
-            form {
-                width: 500px;
-                .container_formulaire {
-                    width: 100%;
-                    .logo_connexion {
-                        img {
-                            height: 150px;
-                            width: 90px;
-                            object-fit: cover;
-                        }
+    .container_connexion {
+        form {
+            width: 500px;
+            .container_formulaire {
+                width: 100%;
+                .div_image {
+                    img {
+                        height: 150px;
+                        width: 90px;
+                        object-fit: cover;
                     }
-                    .div_formulaire {
-                        input {
-                            width: 9rem;
-                        }
+                }
+                .div_formulaire {
+                    input {
+                        width: 9rem;
                     }
                 }
             }

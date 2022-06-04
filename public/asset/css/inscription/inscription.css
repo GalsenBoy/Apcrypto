@@ -6,29 +6,15 @@
 }
 
 body {
-  height: 100vh;
   background: #202020;
 }
 
-.container_inscription {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.container_inscription form {
+form {
   width: 75%;
-  height: 80%;
+  height: 500px;
 }
 
-.container_inscription form .container_formulaire {
+form .container_inscription {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,7 +31,7 @@ body {
   gap: 5px;
 }
 
-.container_inscription form .container_formulaire .logo_inscription {
+form .container_inscription .logo_inscription {
   height: 100%;
   width: 50%;
   border-radius: 17px;
@@ -61,14 +47,14 @@ body {
           align-items: center;
 }
 
-.container_inscription form .container_formulaire .logo_inscription img {
+form .container_inscription .logo_inscription img {
   width: 50%;
   height: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription {
+form .container_inscription .formulaire_inscription {
   height: 100%;
   width: 50%;
   border-radius: 17px;
@@ -93,7 +79,7 @@ body {
       justify-content: space-around;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription input {
+form .container_inscription .formulaire_inscription input {
   border: 1px solid #383737;
   margin-top: 8px;
   padding: 3px 0;
@@ -102,25 +88,25 @@ body {
   color: white;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription input:focus {
+form .container_inscription .formulaire_inscription input:focus {
   border-bottom: 2px solid black;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription label {
+form .container_inscription .formulaire_inscription label {
   color: white;
   opacity: 0.7;
   font-size: 1.5rem;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription label:hover {
+form .container_inscription .formulaire_inscription label:hover {
   opacity: 1;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription #valider, .container_inscription form .container_formulaire .formulaire_inscription button {
+form .container_inscription .formulaire_inscription #valider, form .container_inscription .formulaire_inscription button {
   cursor: pointer;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription button {
+form .container_inscription .formulaire_inscription button {
   padding: 12px 25px 12px 25px;
   border-radius: 22px;
   background-color: #1B1A1A;
@@ -129,43 +115,46 @@ body {
   font-size: larger;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription button:hover {
+form .container_inscription .formulaire_inscription button:hover {
   background-color: white;
   color: #1B1A1A;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription ::-webkit-input-placeholder {
+form .container_inscription .formulaire_inscription ::-webkit-input-placeholder {
   opacity: 0.5;
   color: white;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription :-ms-input-placeholder {
+form .container_inscription .formulaire_inscription :-ms-input-placeholder {
   opacity: 0.5;
   color: white;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription ::-ms-input-placeholder {
+form .container_inscription .formulaire_inscription ::-ms-input-placeholder {
   opacity: 0.5;
   color: white;
 }
 
-.container_inscription form .container_formulaire .formulaire_inscription ::placeholder {
+form .container_inscription .formulaire_inscription ::placeholder {
   opacity: 0.5;
   color: white;
 }
 
 @media screen and (max-width: 954px) {
-  .container_inscription form .container_formulaire {
+  form {
+    width: 100%;
+  }
+  form .container_inscription {
     width: 100%;
     gap: 0;
   }
-  .container_inscription form .container_formulaire .logo_inscription img {
+  form .container_inscription .logo_inscription img {
     height: 150px;
     width: 90px;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .container_inscription form .container_formulaire .formulaire_inscription .check {
+  form .container_inscription .formulaire_inscription .check {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -179,27 +168,27 @@ body {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  .container_inscription form .container_formulaire .formulaire_inscription label {
+  form .container_inscription .formulaire_inscription label {
     font-size: large;
   }
-  .container_inscription form .container_formulaire .formulaire_inscription input {
+  form .container_inscription .formulaire_inscription input {
     font-size: large;
     width: 7rem;
   }
-  .container_inscription form .container_formulaire .formulaire_inscription button,
-  .container_inscription form .container_formulaire .formulaire_inscription ::-webkit-input-placeholder {
+  form .container_inscription .formulaire_inscription button,
+  form .container_inscription .formulaire_inscription ::-webkit-input-placeholder {
     font-size: small;
   }
-  .container_inscription form .container_formulaire .formulaire_inscription button,
-  .container_inscription form .container_formulaire .formulaire_inscription :-ms-input-placeholder {
+  form .container_inscription .formulaire_inscription button,
+  form .container_inscription .formulaire_inscription :-ms-input-placeholder {
     font-size: small;
   }
-  .container_inscription form .container_formulaire .formulaire_inscription button,
-  .container_inscription form .container_formulaire .formulaire_inscription ::-ms-input-placeholder {
+  form .container_inscription .formulaire_inscription button,
+  form .container_inscription .formulaire_inscription ::-ms-input-placeholder {
     font-size: small;
   }
-  .container_inscription form .container_formulaire .formulaire_inscription button,
-  .container_inscription form .container_formulaire .formulaire_inscription ::placeholder {
+  form .container_inscription .formulaire_inscription button,
+  form .container_inscription .formulaire_inscription ::placeholder {
     font-size: small;
   }
 }

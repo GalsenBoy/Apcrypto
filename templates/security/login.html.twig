@@ -32,12 +32,14 @@
 					<label for="inputPassword">Mot de passe</label>
 					<br>
 					<input class="input" type="password" placeholder="Password" name="password" id="inputPassword" autocomplete="current-password" required>
+					<a href="{{path('app_forgot_password_request')}}">J'ai oublié mon mot de passe</a>
 				</div>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<div>
 					<button type="submit">
 						Connexion</button>
 				</div>
+				
 			</div>
 		</div>
 	</form>

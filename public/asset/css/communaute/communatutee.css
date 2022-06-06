@@ -1,0 +1,103 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #110D26;
+}
+
+.analyse_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.analyse_container .partager {
+  padding: 1rem 0;
+}
+
+.analyse_container .partager button {
+  border-radius: 20px;
+  padding: 1px 10px 3px 10px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.analyse_container .communaute_container {
+  border: 1px solid black;
+  background-color: #0c091c;
+  color: white;
+  width: 50%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.analyse_container .communaute_container .persona {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5rem;
+}
+
+.analyse_container .communaute_container .persona .avatar {
+  border: 1px solid red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.analyse_container .communaute_container .persona .identite {
+  margin-left: 0.5rem;
+}
+
+.analyse_container .communaute_container .persona .identite p {
+  font-size: small;
+}
+
+.analyse_container .communaute_container .persona .identite:nth-child(1) {
+  text-decoration: underline;
+}
+
+.analyse_container .communaute_container .analyse {
+  padding: 1rem;
+}
+
+.analyse_container .communaute_container .analyse p {
+  padding: 0.3rem;
+}
+
+.analyse_container .communaute_container .commentaire {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+}
+
+.analyse_container .communaute_container .commentaire button {
+  border-radius: 20px;
+  padding: 3px 10px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: #110D26;
+}
+
+@media screen and (max-width: 444px) {
+  .analyse_container .communaute_container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=communatutee.css.map */

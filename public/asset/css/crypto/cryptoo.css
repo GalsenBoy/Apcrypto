@@ -1,0 +1,391 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #202020;
+  height: 100vh;
+}
+
+main .crypto_container {
+  font-family: 'Montserrat', Arial;
+  height: 100%;
+  background-color: #0C091C;
+  color: #fdf4f4;
+  width: 100%;
+}
+
+main .crypto_container .blockchain .partie_crypto {
+  margin-bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .crypto_container .blockchain .partie_crypto .image_btc {
+  width: 40%;
+}
+
+main .crypto_container .blockchain .partie_crypto .image_btc img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0px 3px 10px #C29224;
+          box-shadow: 0px 3px 10px #C29224;
+  border-radius: 10px;
+}
+
+main .crypto_container .blockchain .partie_crypto .image_btc:hover,
+main .crypto_container .blockchain .partie_crypto .definition_blockchain:hover {
+  -webkit-box-shadow: 0px 5px 10px #C29224;
+          box-shadow: 0px 5px 10px #C29224;
+}
+
+main .crypto_container .blockchain .partie_crypto .definition_blockchain {
+  width: 40%;
+}
+
+main .crypto_container .blockchain .partie_crypto .definition_blockchain p,
+main .crypto_container .blockchain .partie_crypto .definition_blockchain ul {
+  font-size: large;
+  padding: 0.7rem;
+  list-style-type: disc;
+}
+
+main .crypto_container .blockchain .partie_crypto .definition_blockchain ul {
+  padding-left: 2.5rem;
+}
+
+main .crypto_container .blockchain .partie_crypto .definition_blockchain h3 {
+  font-size: x-large;
+  padding: 1rem;
+}
+
+main .crypto_container .blockchain .text_btc {
+  padding: 0 15%;
+  margin-bottom: 5rem;
+}
+
+main .crypto_container .blockchain .text_btc p,
+main .crypto_container .blockchain .text_btc h3,
+main .crypto_container .blockchain .text_btc ul {
+  padding: 1rem;
+}
+
+main .crypto_container .blockchain .text_btc p,
+main .crypto_container .blockchain .text_btc ul {
+  font-size: large;
+}
+
+main .crypto_container .blockchain .text_btc h3 {
+  font-size: x-large;
+  text-align: center;
+}
+
+main .crypto_container .bloc_bnb .partie_bnb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5rem;
+}
+
+main .crypto_container .bloc_bnb .partie_bnb .image_bnb {
+  width: 45%;
+}
+
+main .crypto_container .bloc_bnb .partie_bnb .image_bnb img {
+  width: 100%;
+}
+
+main .crypto_container .bloc_bnb .partie_bnb .definition_Binance {
+  width: 45%;
+}
+
+main .crypto_container .bloc_bnb .partie_bnb .definition_Binance p {
+  font-size: larger;
+}
+
+main .crypto_container .bloc_bnb .text_bnb {
+  padding: 0 15%;
+  margin-bottom: 5rem;
+}
+
+main .crypto_container .bloc_bnb .text_bnb p,
+main .crypto_container .bloc_bnb .text_bnb h3,
+main .crypto_container .bloc_bnb .text_bnb ul {
+  padding: 0.8rem;
+}
+
+main .crypto_container .bloc_bnb .text_bnb p,
+main .crypto_container .bloc_bnb .text_bnb ul {
+  font-size: large;
+  list-style: disc;
+}
+
+main .crypto_container .bloc_bnb .text_bnb h3 {
+  font-size: x-large;
+  text-align: center;
+}
+
+main .crypto_container .bloc_defi .partie_defi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5rem;
+}
+
+main .crypto_container .bloc_defi .partie_defi .image_defi {
+  width: 45%;
+}
+
+main .crypto_container .bloc_defi .partie_defi .image_defi img {
+  width: 100%;
+  -webkit-box-shadow: 0 3px 10px #18A284;
+          box-shadow: 0 3px 10px #18A284;
+  border-radius: 10px;
+}
+
+main .crypto_container .bloc_defi .partie_defi .image_defi:hover,
+main .crypto_container .bloc_defi .partie_defi .definition_defi:hover {
+  -webkit-box-shadow: 0px 5px 12px #18A284;
+          box-shadow: 0px 5px 12px #18A284;
+}
+
+main .crypto_container .bloc_defi .partie_defi .definition_defi {
+  width: 45%;
+}
+
+main .crypto_container .bloc_defi .partie_defi .definition_defi p {
+  font-size: larger;
+}
+
+main .crypto_container .bloc_defi .texte_defi {
+  padding: 0 15%;
+  margin-bottom: 5rem;
+}
+
+main .crypto_container .bloc_defi .texte_defi p,
+main .crypto_container .bloc_defi .texte_defi h3,
+main .crypto_container .bloc_defi .texte_defi ul {
+  padding: 1rem;
+  list-style: disc;
+}
+
+main .crypto_container .bloc_defi .texte_defi p,
+main .crypto_container .bloc_defi .texte_defi ul {
+  font-size: larger;
+}
+
+main .crypto_container .bloc_defi .texte_defi h3 {
+  font-size: x-large;
+  text-align: center;
+}
+
+main .crypto_container .bloc_defi .texte_defi ul {
+  padding-left: 2rem;
+}
+
+main .crypto_container .bloc_meme .partie_meme .image_shiba {
+  padding: 1rem;
+  width: 25%;
+  float: left;
+  padding: 1rem;
+  border-radius: 50%;
+  shape-outside: circle();
+}
+
+main .crypto_container .bloc_meme .partie_meme .image_shiba img {
+  width: 100%;
+  shape-outside: circle();
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .crypto_container .bloc_meme .partie_meme .texte_meme {
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+
+main .crypto_container .bloc_meme .partie_meme .texte_meme p {
+  font-size: large;
+  padding: 0.5rem;
+}
+
+main .crypto_container .bloc_minage .partie_minage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5rem;
+  width: 100%;
+  justify-content: space-around;
+}
+
+main .crypto_container .bloc_minage .partie_minage .image_minage {
+  width: 45%;
+}
+
+main .crypto_container .bloc_minage .partie_minage .image_minage img {
+  width: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0px 3px 10px #5F7BD2;
+          box-shadow: 0px 3px 10px #5F7BD2;
+}
+
+main .crypto_container .bloc_minage .partie_minage .image_minage:hover,
+main .crypto_container .bloc_minage .partie_minage .definition_minage:hover {
+  -webkit-box-shadow: 0px 3px 10px #5F7BD2;
+          box-shadow: 0px 3px 10px #5F7BD2;
+}
+
+main .crypto_container .bloc_minage .partie_minage .definition_minage {
+  width: 45%;
+}
+
+main .crypto_container .bloc_minage .partie_minage .definition_minage p {
+  font-size: x-large;
+}
+
+main .crypto_container .bloc_minage .texte_minage {
+  padding: 0 15%;
+}
+
+main .crypto_container .bloc_minage .texte_minage p,
+main .crypto_container .bloc_minage .texte_minage h3,
+main .crypto_container .bloc_minage .texte_minage h4 {
+  padding: 1rem;
+}
+
+main .crypto_container .bloc_minage .texte_minage p,
+main .crypto_container .bloc_minage .texte_minage h4 {
+  font-size: larger;
+}
+
+main .crypto_container .bloc_minage .texte_minage h3 {
+  font-size: x-large;
+  text-align: center;
+}
+
+@media screen and (max-width: 666px) {
+  /*
+    .partie_bnb,
+    .partie_crypto,
+    .partie_defi,
+    .partie_meme,
+    .partie_minage {
+        @include flexColumn();
+    }
+    .image_btc,
+    .definition_blockchain,
+    .image_bnb,
+    .definition_Binance {
+        @include widthColumn();
+    }
+    */
+  main .crypto_container .blockchain .partie_crypto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .crypto_container .blockchain .partie_crypto .image_btc,
+  main .crypto_container .blockchain .partie_crypto .definition_blockchain {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  main .crypto_container .blockchain .text_btc {
+    padding: 0 1rem;
+  }
+  main .crypto_container .bloc_bnb .partie_bnb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .crypto_container .bloc_bnb .partie_bnb .image_bnb,
+  main .crypto_container .bloc_bnb .partie_bnb .definition_Binance {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  main .crypto_container .bloc_bnb .text_bnb {
+    padding: 0 1rem;
+  }
+  main .crypto_container .bloc_defi .partie_defi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .crypto_container .bloc_defi .partie_defi .image_defi,
+  main .crypto_container .bloc_defi .partie_defi .definition_defi {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  main .crypto_container .bloc_defi .texte_defi {
+    padding: 0 1rem;
+  }
+  main .crypto_container .bloc_minage .partie_minage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .crypto_container .bloc_minage .partie_minage .image_minage,
+  main .crypto_container .bloc_minage .partie_minage .definition_minage {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+  main .crypto_container .bloc_minage .texte_minage {
+    padding: 0 1rem;
+  }
+}
+/*# sourceMappingURL=crypto.css.map */

@@ -1,8 +1,8 @@
-<div class="container">
+<div class="app-container">
 	<header>
 		<div class="header_container">
 			<div class="logo">
-				<img src="{{ asset('asset/img/logo.png') }}" alt="metavers"/>
+				<img src="{{ asset('asset/image/logo.png') }}" alt="logo">
 			</div>
 			<button class="hamburger">
 				<div class="container-lignes">
@@ -16,7 +16,7 @@
 					<a id="crypto" href="">Cryptomonnaie
 						<i class="fa-solid fa-angle-down" id="bas"></i>
 					</a>
-					<ul id="ul_crypto" class="sous_menu">
+					<ul id="ul_crypto" class="sous-menu">
 						<li>
 							<a href="">BNB Chain</a>
 						</li>
@@ -35,7 +35,7 @@
 					<a id="nft" href="">NFT
 						<i class="fa-solid fa-angle-down" id="bas"></i>
 					</a>
-					<ul id="ul_nft">
+					<ul id="ul_nft" class="sous-menu">
 						<li>
 							<a href="">Les top collections</a>
 						</li>
@@ -48,7 +48,7 @@
 					<a id="metavers" href="">Métavers
 						<i class="fa-solid fa-angle-down"></i>
 					</a>
-					<ul id="ul_metavers">
+					<ul id="ul_metavers" class="sous-menu">
 						<li>
 							<a href="">Les origines du Métaverse</a>
 						</li>
@@ -61,24 +61,32 @@
 					</ul>
 				</li>
 				<li>
-					<a href="">Communauté</a>
-					<a href=""></a>
+					<a href="">Communauté
+						<i class="fa-solid fa-angle-down"></i>
+					</a>
+					<ul class="sous-menu">
+						<li>
+							<a href="">Analyse technique</a>
+						</li>
+						<li>
+							<a href="">Analyse fondamentale</a>
+						</li>
+					</ul>
 				</li>
-			</ul>
-			<div class="acces" id="acces">
-				{% if app.user %}
-					<button class="btn_connexion">
-						<a style="text-decoration:none;color: white; opacity:0.7" href="{{path('app_logout')}}">Déconnexion</a>
-					</button>
+				<div class="acces" id="acces">
+					{% if app.user %}
+						<button class="btn_connexion">
+							<a style="text-decoration:none;color: white; opacity:0.7" href="{{path('app_logout')}}">Déconnexion</a>
+						</button>
 
-				{% else %}
-					<button class="btn_connexion">
-						<a style="text-decoration:none;color: white; opacity:0.7" href="{{path('app_login')}}">Connexion</a>
-					</button>
-					<button class="btn_inscription">
-					<a style="text-decoration:none;color: rgb(32,32,32);" href="{{path('app_register')}}">Inscription</a>
-					</button>
-				{% endif %}
+					{% else %}
+						<button class="btn_connexion">
+							<a style="text-decoration:none;color: white; opacity:0.7" href="{{path('app_login')}}">Connexion</a>
+						</button>
+						<button class="btn_inscription">
+							<a style="text-decoration:none;color: rgb(32,32,32);" href="{{path('app_register')}}">Inscription</a>
+						</button>
+					{% endif %}
+				</ul>
 			</div>
-		</div>
-	</header>
+		</header>

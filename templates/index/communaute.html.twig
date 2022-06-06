@@ -7,44 +7,49 @@
 
 {% block body %}
 	 <main>
-        <div class="communaute_container">
-		{% for analyse in analyse %}
-            <div class="analyse_container" style="border-radius: 17px;
-            padding: 16px;
-            background-color: rgb(23,23,23);
-            margin: 1rem;">
-                <div class="analyse">
-                    <div>
-                        <p style="padding: 10px 0;font-size:larger">
-                            Nom de l'actif : {{analyse.actif}}  
-                        </p>
-						<p style="padding: 10px 0;font-size:larger">
-						Lien vers tradingview :
-						<a style="color:beige" href="{{analyse.analyse}}">Analyse technique </a>
+		<div style="margin:2rem" class="analyse_container">
+			<div class="partager">
+				{% if app.user %}
+					<button>
+						<a  style="color:#110D26" href="{{ path('analyse_create')}}">Partager une analyse technique</a>
+					</button>
+				{% else %}
+					<p>Connectez vous pour partager une analyse technique</p>
+				{% endif %}
+				<button>Partager une analyse fondamentale</button>
+			</div>
+			<div  class="communaute_container">
+				{% for analyse in analyse %}
+					<div class="persona">
+						<div class="avatar"></div>
+						<div class="identite">
+							<p class="pseudo">Pseudo</p>
+							<p id="date">Publié le
+								{{analyse.date |date("d/m/Y à H:i")}}</p>
+						</div>
+					</div>
+					<div class="analyse">
+						<p class="texte_analyse">
+							Nom de l'actif :
+							{{analyse.actif}}
 						</p>
-                        <p style="padding: 10px 0;font-size:larger">
-                            Plan : {{analyse.explication}}
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <p style="padding: 10px 0; font-size:larger">Publié le {{analyse.date |date("d/m/Y à H:i")}}</p>
-                </div>
-				<div style="padding: 18px 0 10px 0">
-					<a style="text-decoration:none;color:blue;border-radius: 17px; padding: 8px 20px;border: 2px solid blue;" 
-    				href="{{ path('analyse_display', {'analyseId' : analyse.id}) }}" type="button">Commenter</a>
+						<p class="texte_analyse">
+							Analyse technique :
+							<a style="color:beige" href="{{analyse.analyse}}">Voir l'analyse technique
+							</a>
+						</p>
+						<p class="texte_analyse">
+							Plan de l'analyse :
+							{{analyse.explication}}
+						</p>
+					</div>
+					<div class="commentaire">
+						<button>
+							<a style="color:#110D26"  href="{{ path('analyse_display', {'analyseId' : analyse.id}) }}" type="button">Commenter</a>
+							</button>
+					</div>
+					{% endfor %}
 				</div>
-            </div>
-			{% endfor %}
-            <div class="partage">
-                {% if app.user %}
-                    <button class="technique"> <a href="{{ path('analyse_create')}}">Partager une analyse technique</a> </button>
-                {% else %}
-                <p>Connecte vous pour partager une analyse technique</p>
-                {% endif %}
-                    
-                <button class="fondamentale">Partager une analyse fondamentales</button>
-            </div>
-        </div>
-    </main>
+			</div>
+		</main>
 {% endblock %}

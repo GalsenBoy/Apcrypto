@@ -33,6 +33,10 @@ class RegistrationFormType extends AbstractType
                         'max' => 100,
                     ]),
                 ],
+                'attr' => [
+                    'class' => 'input'
+                ]
+                
                 
             ])
             ->add('prenom',TextType::class,[
@@ -49,6 +53,9 @@ class RegistrationFormType extends AbstractType
                         'max' => 100,
                     ]),
                 ],
+                'attr' => [
+                    'class' => 'input'
+                ]
             ])
             ->add('email',EmailType::class,[
                 'label' => 'Email',
@@ -58,6 +65,9 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez entrer un adresse e-mail valide',
                     ]),
                 ],
+                'attr' => [
+                    'class' => 'input'
+                ]
             ])
             ->add('pseudo',TextType::class,[
                 'label' => 'Pseudo',
@@ -73,6 +83,9 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+                'attr' => [
+                    'class' => 'input'
+                ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -85,7 +98,10 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez cocher la case',
                     ]),
                 ],
-                'label' => 'J\'accepte les termes d\'utilisation en m\'inscrivant '
+                'label' => 'J\'accepte les termes d\'utilisation en m\'inscrivant ',
+                'attr' => [
+                    'class' => 'checkbox'
+                ]
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -105,6 +121,9 @@ class RegistrationFormType extends AbstractType
                     ]),
 
                 ],
+                'attr' => [
+                    'class' => 'input'
+                ]
             ])
         ;
     }

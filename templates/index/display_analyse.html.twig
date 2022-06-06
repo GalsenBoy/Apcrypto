@@ -3,44 +3,53 @@
 {% block title %}Communauté -
 	{{ parent() }}
 {% endblock %}
-
 {% block body %}
 	<main>
-        <div>
-            <div class="" style="border-radius: 17px;padding: 16px;background-color: rgb(23,23,23);margin: 1rem;">
-                <div class="analyse">
-                    <div>
-                        <p style="padding: 10px 0;font-size:larger">
-                            Nom de l'actif : {{analyse.actif}}  
-                        </p>
-						<p style="padding: 10px 0;font-size:larger">
-						Lien vers tradingview :
-						<a style="color:beige" href="{{analyse.analyse}}">Analyse technique </a>
-						</p>
-                        <p style="padding: 10px 0;font-size:larger">
-                            Plan : {{analyse.explication}}
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <p style="padding: 10px 0; font-size:larger">Publié le {{analyse.date |date("d/m/Y à H:i")}}</p>
-                </div>
-            </div>
-		<div>
-		<div style="border:1px solid red;border-radius: 17px;padding: 16px;background-color: rgb(23,23,23);margin: 1rem;">
-			<h2>Liste des commentaire</h2>
-            {% for commentaires in analyse.commentaires %}
-            	<p style="font-size:large;padding:8px 0 3px 0;">Publié par {{commentaires.pseudo}} le {{commentaires.date|date("d/m/Y à H:i")}} </p>
-                <div style="font-size:large; border-radius:12px; padding:16px; background-color:rgb(10,10,10); margin: 0.5rem 0; width:fit-content">{{commentaires.contenu}}</div>
-            {% endfor %}
+		<div style="margin:2rem" class="analyse_container">
+			<div class="communaute_container">
+				<div class="persona">
+					<div class="avatar"></div>
+					<div class="identite">
+						<p class="pseudo">Pseudo</p>
+						<p id="date">Publié le
+							{{analyse.date |date("d/m/Y à H:i")}}</p>
+					</div>
+				</div>
+				<div class="analyse">
+					<p class="texte_analyse">
+						Nom de l'actif :
+						{{analyse.actif}}
+					</p>
+					<p class="texte_analyse">
+						Analyse technique :
+						<a style="color:beige" href="{{analyse.analyse}}">Voir l'analyse technique
+						</a>
+					</p>
+					<p class="texte_analyse">
+						Plan de l'analyse :
+						{{analyse.explication}}
+					</p>
+				</div>
+			</div>
+			<div style="border:2px solid black;border-radius: 17px;padding: 16px;background-color: #110D26;margin-top: 1rem;">
+				<h2>Liste des commentaire</h2>
+				{% for commentaires in analyse.commentaires %}
+					<p style="font-size:large;padding:8px 0 3px 0;">Publié par
+						{{commentaires.pseudo}}
+						le
+						{{commentaires.date|date("d/m/Y à H:i")}}
+					</p>
+					<div style="font-size:large; border-radius:12px; padding:16px; background-color:#0C091C; margin: 0.5rem 0; width:fit-content">{{commentaires.contenu}}</div>
+				{% endfor %}
+			</div>
 		</div>
 	</main>
 	<div style="color:white;font-size:large;display:flex">
-     {% if app.user %}
-		<h2>Ajouter des commentaire</h2>
-		{{form(dataForm)}}
-    {% else %}
-        <p>Veuillez vous connecter pour effectuer un commentaire:</p>
-    {% endif %}
-	</div>
-{% endblock %}
+		{% if app.user %}
+			<h2>Ajouter des commentaire</h2>
+			{{form(dataForm)}}
+				{% else %}
+					<p>Veuillez vous connecter pour effectuer un commentaire:</p>
+			{% endif %}
+		</div>
+	{% endblock %}

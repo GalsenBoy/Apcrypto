@@ -4,14 +4,14 @@
 {% endblock %}
 
 {% block body %}
-	 <main>
+	<main>
 		<div class="analyse_container">
-			<div class="communaute_container">
-				{% for analyse in analyse %}
+			{% for analyse in analyse %}
+				<div style="margin-bottom:3rem" class="communaute_container">
 					<div class="persona">
 						<div class="avatar"></div>
 						<div class="identite">
-							<p class="pseudo">{{analyse.id}}</p>
+							<p class="pseudo">Pseudo</p>
 							<p id="date">Publié le
 								{{analyse.date |date("d/m/Y à H:i")}}</p>
 						</div>
@@ -35,10 +35,10 @@
 						<button>
 							<a style="color:#110D26" href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">
 							Supprimer</a>
-							</button>
+						</button>
 					</div>
-					{% endfor %}
 				</div>
-			</div>
-		</main>
+			{% endfor %}
+		</div>
+	</main>
 {% endblock %}

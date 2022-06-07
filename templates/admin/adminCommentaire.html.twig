@@ -3,7 +3,7 @@
 	{{ parent() }}
 {% endblock %}
 {% block body %}
-	<div style="border:1px solid red;border-radius: 17px;padding: 16px;background-color: rgb(23,23,23);margin: 1rem; margin-top:100px;color:white">
+	<div style="border-radius: 17px;padding: 16px;background-color:#0C091C;margin: 1rem; margin-top:100px;color:white">
 		<h2 >Liste des commentaire :</h2>
 		{% for commentaires in commentaires %}
 			<p style="font-size:large;padding:8px 0 3px 0;">Publié par
@@ -11,7 +11,7 @@
 				le
 				{{commentaires.date|date("d/m/Y à H:i")}}
 			</p>
-			<div style="font-size:large; border-radius:12px; padding:16px; background-color:rgb(10,10,10); margin: 0.5rem 0; width:fit-content">{{commentaires.contenu}}</div>
+			<div style="font-size:large; border-radius:12px; padding:16px; background-color:#110D26; margin: 0.5rem 0; width:fit-content">{{commentaires.contenu}}</div>
 			<div style="padding: 18px 0 10px 0">
 				<a style="text-decoration:none;color:red;border-radius: 17px; padding: 8px 20px;border: 2px solid red;" href="{{ path('commentaire_delete', {'commentairesId' : commentaires.id}) }}" type="button">Supprier le commentaire</a>
 			</div>

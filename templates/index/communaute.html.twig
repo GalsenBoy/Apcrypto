@@ -6,26 +6,26 @@
 
 
 {% block body %}
-	 <main>
-		<div style="margin-bottom:2rem" class="analyse_container">
+	<main>
+		<div class="analyse_container">
 			<div class="partager">
 				{% if app.user %}
 					<button>
-						<a  style="color:#110D26" href="{{ path('analyse_create')}}">Partager une analyse technique</a>
+						<a style="color:#110D26" href="{{ path('analyse_create')}}">Partager une analyse technique</a>
 					</button>
 				{% else %}
 					<button>
-						<a  style="color:#110D26" href="{{ path('app_login')}}">Partager une analyse technique</a>
+						<a style="color:#110D26" href="{{ path('app_login')}}">Partager une analyse technique</a>
 					</button>
 				{% endif %}
 				<button>Partager une analyse fondamentale</button>
 			</div>
-			<div   class="communaute_container">
-				{% for analyse in analyse %}
+			{% for analyse in analyse %}
+				<div style="margin-bottom:3rem" class="communaute_container">
 					<div class="persona">
 						<div class="avatar"></div>
 						<div class="identite">
-							<p class="pseudo"></p>
+							<p class="pseudo">Pseudo</p>
 							<p id="date">Publié le
 								{{analyse.date |date("d/m/Y à H:i")}}</p>
 						</div>
@@ -47,11 +47,11 @@
 					</div>
 					<div class="commentaire">
 						<button>
-							<a style="color:#110D26"  href="{{ path('analyse_display', {'analyseId' : analyse.id}) }}" type="button">Commenter</a>
-							</button>
+							<a style="color:#110D26" href="{{ path('analyse_display', {'analyseId' : analyse.id}) }}" type="button">Commenter</a>
+						</button>
 					</div>
-					{% endfor %}
 				</div>
-			</div>
-		</main>
+			{% endfor %}
+		</div>
+	</main>
 {% endblock %}

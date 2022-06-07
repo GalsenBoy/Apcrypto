@@ -25,7 +25,6 @@ body {
         border: 1px solid black;
         background-color: #0c091c;
         color: white;
-        width: 50%;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         .persona {
@@ -68,10 +67,12 @@ body {
     }
 }
 
-@media screen and (max-width:444px) {
-    .analyse_container {
-        .communaute_container {
-            width: 100%;
+@media screen and (max-width:666px) {
+    .partager {
+        button {
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: center;
         }
     }
 }

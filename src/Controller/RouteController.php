@@ -40,4 +40,13 @@ class RouteController extends AbstractController
             'controller_name' => 'IndexController',
         ]);
     }
+
+    #[Route('/metaversTwo', name: 'app_metavers_two')]
+    public function metaverseTwo(): Response
+    {
+        return $this->render('index/metaTwo.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
 }

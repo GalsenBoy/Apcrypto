@@ -60,6 +60,7 @@ class IndexController extends AbstractController
             'commentaire' => $commentaire,
             'formName' => "Commentaire",
             'dataForm' => $commentaireForm->createView(),
+            
         ]);
     }
     #[Route('analyse/creer', name: 'analyse_create')]

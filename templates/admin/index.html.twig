@@ -6,22 +6,12 @@
 {% block body %}
 	 <main>
 		<div class="analyse_container">
-			<div class="partager">
-				{% if app.user %}
-					<button>
-						<a href="{{ path('analyse_create')}}">Partager une analyse technique</a>
-					</button>
-				{% else %}
-					<p>Connectez vous pour partager une analyse technique</p>
-				{% endif %}
-				<button>Partager une analyse fondamentale</button>
-			</div>
 			<div class="communaute_container">
 				{% for analyse in analyse %}
 					<div class="persona">
 						<div class="avatar"></div>
 						<div class="identite">
-							<p class="pseudo">Pseudo</p>
+							<p class="pseudo">{{analyse.id}}</p>
 							<p id="date">Publié le
 								{{analyse.date |date("d/m/Y à H:i")}}</p>
 						</div>
@@ -43,8 +33,8 @@
 					</div>
 					<div class="commentaire">
 						<button>
-							<a  href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">
-							</a>Commenter
+							<a style="color:#110D26" href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">
+							Supprimer</a>
 							</button>
 					</div>
 					{% endfor %}

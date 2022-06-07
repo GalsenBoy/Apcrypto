@@ -18,26 +18,28 @@ class AnalyseTechniqueType extends AbstractType
             ->add('actif',TextType::class,[
                 'label' => "Nom de l'actif",
                 'attr' => [
-                    'style' => 'margin:50px;'
+                    'style' => 'margin-top:50px;',
+                    'class' => 'input',
                 ]
             ])
             ->add('analyse',TextType::class,[
                 'label' => "Lien vers tradingview",
                 'attr' => [
-                    'style' => 'margin:50px;'
+                    'class' => 'input',
                 ]
             ])
             ->add('explication',TextareaType::class,[
                 'label' => "Plan de l'analyse",
                 'attr' => [
-                    'style' => 'margin:50px;'
+                    'class' => 'textarea',
                 ]
             ])
             ->add('date')
             ->add('envoyer', SubmitType::class, [
-                'label' => 'Valider',
+                'label' => 'Soumettre',
                 'attr' => [
-                    'style' => 'margin:50px;'
+                    'class' => 'button is-link is-info',
+                    'style' => 'margin-top:1rem'
                 ]
             ])
         ;

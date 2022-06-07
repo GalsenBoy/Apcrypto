@@ -50,12 +50,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\JoinColumn(nullable: true)]
     private $commentaires;
 
+
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $token;
 
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
+        $this->analysetechnique = new ArrayCollection();
     }
 
    
@@ -226,4 +228,5 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
 }

@@ -455,6 +455,7 @@ main .main_container .meme_coin .card {
 }
 
 main .main_container .meme_coin .card .image_shiba {
+  padding-top: 1rem;
   width: 27%;
 }
 
@@ -464,7 +465,7 @@ main .main_container .meme_coin .card .image_shiba img {
 
 main .main_container .meme_coin .card .texte_shiba {
   width: 85%;
-  padding: 2px 16px;
+  padding: 5px 16px;
   text-align: center;
   font-size: large;
   color: #fdf4f4;
@@ -500,7 +501,7 @@ main .main_container .meme_coin .radius .image_doge img {
 }
 
 main .main_container .meme_coin .radius .texte_doge {
-  padding-top: 2rem;
+  padding: 2rem 1rem 1rem 1rem;
   font-size: larger;
 }
 

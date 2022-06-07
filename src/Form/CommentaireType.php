@@ -20,19 +20,20 @@ class CommentaireType extends AbstractType
             ->add('email',EmailType::class,[
                 'label' => 'Votre e-mail',
                 'attr' =>[
-                     'style' => 'margin:50px;padding:6px 0'
+                     'style' => 'margin-top:50px;',
+                     'class' => 'input'
                 ]
             ])
             ->add('pseudo',TextType::class,[
                 'label' => 'Votre pseudo',
                 'attr' =>[
-                    'style' => 'margin:42px;padding:6px 0'
+                    'class' => 'input'
                ]
             ])
             ->add('contenu',TextareaType::class,[
                 'label' => 'Commenter',
                 'attr' =>[
-                    'style' => 'margin-left: 50px;padding-right:10px',
+                    'class' => 'input'
                 ]
             ])
             //->add('active')
@@ -45,7 +46,8 @@ class CommentaireType extends AbstractType
             ->add('envoyer', SubmitType::class, [
                 'label' => 'Valider',
                 'attr' => [
-                    'style' => 'margin:50px;'
+                    'class' => 'button is-link is-info',
+                    'style' => 'margin-top:1rem'
                 ]
             ])
             ;

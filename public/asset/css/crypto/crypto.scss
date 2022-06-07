@@ -245,21 +245,6 @@ main {
 }
 
 @media screen and (max-width:666px) {
-    /*
-    .partie_bnb,
-    .partie_crypto,
-    .partie_defi,
-    .partie_meme,
-    .partie_minage {
-        @include flexColumn();
-    }
-    .image_btc,
-    .definition_blockchain,
-    .image_bnb,
-    .definition_Binance {
-        @include widthColumn();
-    }
-    */
     main {
         .crypto_container {
             .blockchain {

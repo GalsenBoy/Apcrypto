@@ -329,13 +329,13 @@
                     transition: 0.3s;
                     border-radius: 17px;
                     width: 45%;
-                    //border: 1px solid white;
                     height: 50%;
                     display: flex;
                     background: #0a061e;
                     flex-direction: column;
                     align-items: center;
                     .image_shiba {
+                        padding-top: 1rem;
                         width: 27%;
                         img {
                             width: 100%;
@@ -343,7 +343,7 @@
                     }
                     .texte_shiba {
                         width: 85%;
-                        padding: 2px 16px;
+                        padding: 5px 16px;
                         text-align: center;
                         font-size: large;
                         color: $color;
@@ -371,7 +371,7 @@
                         }
                     }
                     .texte_doge {
-                        padding-top: 2rem;
+                        padding: 2rem 1rem 1rem 1rem;
                         font-size: larger;
                     }
                 }

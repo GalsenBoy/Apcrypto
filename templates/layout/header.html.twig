@@ -13,7 +13,7 @@
 			</button>
 			<ul class="menu">
 				<li class="lien">
-					<a id="crypto" href="">Cryptomonnaie
+					<a id="crypto" href="{{ path('app_index')}}">Cryptomonnaie
 						<i class="fa-solid fa-angle-down" id="bas"></i>
 					</a>
 					<ul id="ul_crypto" class="sous-menu">
@@ -32,7 +32,7 @@
 					</ul>
 				</li>
 				<li>
-					<a id="nft" href="">NFT
+					<a id="nft" href="{{ path('app_nft')}}">NFT
 						<i class="fa-solid fa-angle-down" id="bas"></i>
 					</a>
 					<ul id="ul_nft" class="sous-menu">
@@ -45,7 +45,7 @@
 					</ul>
 				</li>
 				<li>
-					<a id="metavers" href="">Métavers
+					<a id="metavers" href="{{ path('app_metavers')}}">Métavers
 						<i class="fa-solid fa-angle-down"></i>
 					</a>
 					<ul id="ul_metavers" class="sous-menu">
@@ -61,12 +61,12 @@
 					</ul>
 				</li>
 				<li>
-					<a href="">Communauté
+					<a href="{{ path('app_communaute')}}">Communauté
 						<i class="fa-solid fa-angle-down"></i>
 					</a>
 					<ul class="sous-menu">
 						<li>
-							<a href="">Analyse technique</a>
+							<a href="{{ path('app_communaute')}}">Analyse technique</a>
 						</li>
 						<li>
 							<a href="">Analyse fondamentale</a>

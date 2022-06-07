@@ -5,8 +5,8 @@
 {% block body %}
     <h1>Reset your password</h1>
 
-    {{ form_start(resetForm,{'attr':{'style':'margin-top:70px'}}) }}
+    {{ form_start(resetForm,{'attr':{'style':'margin-top:70px','class' :'input'}}) }}
         {{ form_row(resetForm.plainPassword) }}
-        <button class="btn btn-primary">Reset password</button>
+        <button class="button is-link is-info">Reset password</button>
     {{ form_end(resetForm) }}
 {% endblock %}

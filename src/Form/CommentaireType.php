@@ -37,7 +37,7 @@ class CommentaireType extends AbstractType
                 ]
             ])
             //->add('active')
-            //->add('date')
+            
             //->add('analysetechnique')
             ->add('commentaireParent',HiddenType::class,[
                 'mapped' => false

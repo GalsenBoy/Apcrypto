@@ -4,8 +4,9 @@
 {% endblock %}
 
 {% block body %}
-	<h1 style="margin-top:50px">Inscription</h1>
-
+	
+<div class="container ">
+<h1 style="margin-top:50px">Inscription</h1>
 	{{ form_start(registrationForm) }}
 
 	{{ form_row(registrationForm.nom) }}
@@ -20,5 +21,5 @@
 	<button type="submit" class="button is-link is-info">S'inscrire</button>
 	{{ form_end(registrationForm) }}
 
-
+</div>
 {% endblock %}

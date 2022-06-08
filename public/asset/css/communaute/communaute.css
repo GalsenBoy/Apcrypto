@@ -9,6 +9,19 @@ body {
   background-color: #110D26;
 }
 
+.analyseTechnique {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .analyseTechnique .partager {
   padding: 1rem 0;
 }
@@ -73,6 +86,12 @@ body {
   padding: 3px 10px;
   border: 2px solid white;
   cursor: pointer;
+}
+
+.analyseTechnique textarea {
+  resize: none;
+  background: #0C091C;
+  color: white;
 }
 
 @media screen and (max-width: 666px) {

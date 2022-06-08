@@ -34,7 +34,7 @@ class AnalyseTechniqueType extends AbstractType
                     'class' => 'textarea',
                 ]
             ])
-            ->add('date')
+            //->add('date')
             ->add('envoyer', SubmitType::class, [
                 'label' => 'Soumettre',
                 'attr' => [

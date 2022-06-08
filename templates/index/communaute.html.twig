@@ -6,8 +6,8 @@
 
 
 {% block body %}
-	<main >
-		<div style="width:50%" class="analyseTechnique">
+	<main>
+		<div style="width:80%" class="analyseTechnique">
 			<div class="partager">
 				{% if app.user %}
 					<button>
@@ -21,13 +21,14 @@
 				<button>Partager une analyse fondamentale</button>
 			</div>
 			{% for analyse in analyse %}
-				<div style="margin-bottom:3rem" class="analyseContainer">
+				<div style="margin-bottom:3rem; width:100%" class="analyseContainer">
 					<div class="personne">
 						<div class="avata"></div>
 						<div class="identite">
 							<p class="">Pseudo</p>
 							<p id="">Publié le
-								{{analyse.date |date("d/m/Y à H:i")}}</p>
+								{{analyse.date |date("d/m/Y à H:i")}}
+							</p>
 						</div>
 					</div>
 					<div class="analyseT">
@@ -40,10 +41,11 @@
 							<a style="color:beige" href="{{analyse.analyse}}">Voir l'analyse technique
 							</a>
 						</p>
-						<p style=" word-wrap: break-word;" class="texte_analyse">
-							Plan de l'analyse :
+						<label>Plan de l'analyse :</label>
+						<textarea style="border:none" class="texte_analyse" rows="6" cols="120">
+							
 							{{analyse.explication}}
-						</p>
+						</textarea>
 					</div>
 					<div class="commenter">
 						<button>

@@ -3,12 +3,13 @@
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
+<div class="container">
     {% for flash_error in app.flashes('reset_password_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
     <h1>Reset your password</h1>
 
-    {{ form_start(requestForm,{'attr':{'style':'margin-top:70px'}}) }}
+    {{ form_start(requestForm,{'attr':{'style':'margin-top:100px'}}) }}
         {{ form_row(requestForm.email) }}
         <div>
             <small>
@@ -19,4 +20,5 @@
 
         <button class="button is-link is-info">Send password reset email</button>
     {{ form_end(requestForm) }}
+    </div>
 {% endblock %}

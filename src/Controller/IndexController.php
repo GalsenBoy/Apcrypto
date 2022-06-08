@@ -48,7 +48,7 @@ class IndexController extends AbstractController
         $commentaireForm->handleRequest($request);
 
         if ($commentaireForm->isSubmitted() && $commentaireForm->isValid()) {
-            $commentaire->setDate(new DateTime());
+            $commentaire->setDate(new \DateTime("now"));
             $commentaire->setAnalysetechnique($analyse);
             $entityManager->persist($commentaire);
             $entityManager->flush();
@@ -74,6 +74,7 @@ class IndexController extends AbstractController
         //Nous appliquons la Request sur notre formulaire TagType, et si ce dernier est validé, nous le persistons au sein de notre base de données
         $analyseForm->handleRequest($request);
         if ($analyseForm->isSubmitted() && $analyseForm->isValid()) {
+            $analyse->setDate(new \DateTime("now"));
             //Condition supplémentaire: on ne persiste que si l'affirmation que $title ET $text sont tous les deux null est INVALIDE
             $entityManager->persist($analyse);
             $entityManager->flush();

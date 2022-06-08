@@ -4,19 +4,20 @@
 {% endblock %}
 
 {% block body %}
-	<main>
-		<div class="analyse_container">
+	<main >
+		<div style="width:80%" class="analyseTechnique">
 			{% for analyse in analyse %}
-				<div style="margin-bottom:3rem" class="communaute_container">
-					<div class="persona">
-						<div class="avatar"></div>
+				<div style="margin-bottom:3rem;width:100%" class="analyseContainer">
+					<div class="personne">
+						<div class="avata"></div>
 						<div class="identite">
-							<p class="pseudo">Pseudo</p>
-							<p id="date">Publié le
-								{{analyse.date |date("d/m/Y à H:i")}}</p>
+							<p class="">Pseudo</p>
+							<p id="">Publié le
+								{{analyse.date |date("d/m/Y à H:i")}}
+							</p>
 						</div>
 					</div>
-					<div class="analyse">
+					<div class="analyseT">
 						<p class="texte_analyse">
 							Nom de l'actif :
 							{{analyse.actif}}
@@ -26,12 +27,12 @@
 							<a style="color:beige" href="{{analyse.analyse}}">Voir l'analyse technique
 							</a>
 						</p>
-						<p class="texte_analyse">
+						<textarea class="texte_analyse" rows="4" cols="55">
 							Plan de l'analyse :
 							{{analyse.explication}}
-						</p>
+						</textarea>
 					</div>
-					<div class="commentaire">
+					<div class="commenter">
 						<button>
 							<a style="color:#110D26" href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">
 							Supprimer</a>

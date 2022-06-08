@@ -28,6 +28,7 @@ class IndexController extends AbstractController
 
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,
+
         ]);
     }
 
@@ -40,7 +41,9 @@ class IndexController extends AbstractController
         if (!$analyse) {
             return $this->redirectToRoute('app_communaute');
         }
+        
         //Partie commentaire
+        $us = new User;
         //On crée le commentaire
         $commentaire = new Commentaire;
         //On génère le formulaire
@@ -60,6 +63,8 @@ class IndexController extends AbstractController
             'commentaire' => $commentaire,
             'formName' => "Commentaire",
             'dataForm' => $commentaireForm->createView(),
+            'user' => $us
+            
             
         ]);
     }

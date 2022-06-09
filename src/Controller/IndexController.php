@@ -9,6 +9,7 @@ use App\Form\AnalyseTechniqueType;
 use App\Form\CommentaireType;
 use DateTime;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,16 +20,21 @@ class IndexController extends AbstractController
     
 
     #[Route('/communaute', name: 'app_communaute')]
-    public function communaute(ManagerRegistry $managerRegistry): Response
+    public function communaute(Request $request,PaginatorInterface $paginatorInterface,ManagerRegistry $managerRegistry): Response
     {
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->findAll();
+  
+        $analyse = $paginatorInterface->paginate(
+            $analyse,
+            $request->query->getInt(key:'page',default:1),
+            limit:3,
+        );
         //$analyse =$analyseRepository->findBy(['date'],['date' => 'DESC']);
 
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,
-
         ]);
     }
 
@@ -43,7 +49,6 @@ class IndexController extends AbstractController
         }
         
         //Partie commentaire
-        $us = new User;
         //On crée le commentaire
         $commentaire = new Commentaire;
         //On génère le formulaire
@@ -63,7 +68,7 @@ class IndexController extends AbstractController
             'commentaire' => $commentaire,
             'formName' => "Commentaire",
             'dataForm' => $commentaireForm->createView(),
-            'user' => $us
+            
             
             
         ]);

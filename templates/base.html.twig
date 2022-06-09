@@ -11,14 +11,13 @@
 		{% block stylesheets %}
 			<link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-			<link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
-			<link rel="stylesheet" href="{{ asset('asset/css/crypto/crypto.css') }}">
-			<link rel="stylesheet" href="{{ asset('asset/css/nft/nft.css') }}">
-			<link rel="stylesheet" href="{{ asset('asset/css/metaverse/metaverse.css') }}">
-			<link rel="stylesheet" href="{{ asset('asset/css/communaute/communaute.css') }}">
+			<link rel="stylesheet" href="{{asset('asset/css/stylee.css')}}">
+			<link rel="stylesheet" href="{{asset('asset/css/cryptoo/cryptoo.css')}}">
+			<link rel="stylesheet" href="{{asset('asset/css/nftt/nftt.css')}}">
+			<link rel="stylesheet" href="{{asset('asset/css/metaversee/metaversee.css')}}">
+			<link rel="stylesheet" href="{{asset('asset/css/communautee/communautee.css')}}">
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 			<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-			
 		{% endblock %}
 	</head>
 	<body>
@@ -27,12 +26,11 @@
 		{% block body %}{% endblock %}
 	{% include 'layout/footer.html.twig' %}
 		{% block javascripts %}
-			<script src="{{ asset('asset/js/script.js') }}"/>
-			<script src="{{ asset('asset/js/communaute.js') }}"/>
-			<script src="{{ asset('asset/js/crypto.js') }}"/>
-			<script src="{{ asset('asset/js/metavers.js') }}"/>
-			<script src="{{ asset('asset/js/nft.js') }}"/>
+			<script src="{{asset('asset/js/script.js')}}"/>
+			<script src="{{asset('asset/js/communaute.js')}}"/>
+			<script src="{{asset('asset/js/crypto.js')}}"/>
+			<script src="{{asset('asset/js/metavers.js')}}"/>
+			<script src="{{asset('asset/js/nft.js')}}"/>
 		{% endblock %}
-		
 	</body>
 </html>

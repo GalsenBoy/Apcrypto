@@ -119,6 +119,4 @@ class AnalyseTechnique
 
         return $this;
     }
-
-   
 }

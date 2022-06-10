@@ -38,6 +38,11 @@
     "rematrix" "0.3.0"
     "tealight" "0.3.6"
 
+"scrolls.js@^1.0.18":
+  "integrity" "sha512-exppf+k1KYr9bO+0R0C8Y2nwj93vU+Q/h36efIPyrJ/kRvKjcrgo1uvsyZZX55fbaJAQPhcKeKCYYfg6V+IV0g=="
+  "resolved" "https://registry.npmjs.org/scrolls.js/-/scrolls.js-1.0.18.tgz"
+  "version" "1.0.18"
+
 "tealight@0.3.6":
   "integrity" "sha512-Dys3N8jFBThD9pNVpPCyUiu6DfWcTBdqWQJIvnAuVaFkGEdrPBJ43070vVbn6sTlLvn2IQK2zFW4FrVIrTo8eQ=="
   "resolved" "https://registry.npmjs.org/tealight/-/tealight-0.3.6.tgz"

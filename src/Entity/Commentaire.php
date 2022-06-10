@@ -21,7 +21,7 @@ class Commentaire
     #[ORM\Column(type: 'boolean')]
     private $active = false;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255,nullable: true)]
     private $email;
 
     #[ORM\Column(type: 'string', length: 255)]

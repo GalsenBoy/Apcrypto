@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AnalyseFondamentaleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AnalyseFondamentaleRepository::class)]
@@ -21,6 +23,14 @@ class AnalyseFondamentale
 
     #[ORM\Column(type: 'datetime')]
     private $createat;
+
+    #[ORM\OneToMany(mappedBy: 'analyseFondamentale', targetEntity: CommentaireFonda::class, orphanRemoval: true)]
+    private $commentaireFondas;
+
+    public function __construct()
+    {
+        $this->commentaireFondas = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +69,36 @@ class AnalyseFondamentale
     public function setCreateat(\DateTimeInterface $createat): self
     {
         $this->createat = $createat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CommentaireFonda>
+     */
+    public function getCommentaireFondas(): Collection
+    {
+        return $this->commentaireFondas;
+    }
+
+    public function addCommentaireFonda(CommentaireFonda $commentaireFonda): self
+    {
+        if (!$this->commentaireFondas->contains($commentaireFonda)) {
+            $this->commentaireFondas[] = $commentaireFonda;
+            $commentaireFonda->setAnalyseFondamentale($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaireFonda(CommentaireFonda $commentaireFonda): self
+    {
+        if ($this->commentaireFondas->removeElement($commentaireFonda)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaireFonda->getAnalyseFondamentale() === $this) {
+                $commentaireFonda->setAnalyseFondamentale(null);
+            }
+        }
 
         return $this;
     }

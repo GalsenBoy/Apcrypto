@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Communauté -
+	{{ parent() }}
+{% endblock %}
+{% block body %}
+	<main>
+		<div style="margin:2rem" class="analyse_container">
+			<div class="communaute_container">
+				<div class="persona">
+					<div class="avatar"></div>
+					<div class="identite">
+						<p class="pseudo"></p>
+						<p id="date">Publié le
+							{{fondamentale.createat |date("d/m/Y à H:i")}}</p>
+					</div>
+				</div>
+				<div class="analyse">
+					<p class="texte_analyse">
+						Nom de l'actif :
+						{{fondamentale.actifName}}
+					</p>
+					<p class="texte_analyse">
+						Analyse fondamentale :
+						{{fondamentale.ExpliquationFond}}
+					</p>
+				</div>
+			</div>
+			<div style="border:2px solid black;border-radius: 17px;padding: 16px;background-color: #110D26;margin-top: 1rem;">
+				<h2>Liste des commentaire</h2>
+				{% for commentaireFondas in fondamentale.commentaireFondas %}
+					<p style="font-size:large;padding:8px 0 3px 0;">Publié par
+						{{commentaireFondas.nickname}}
+						le
+						{{commentaireFondas.date|date("d/m/Y à H:i")}}
+					</p>
+					<div style="font-size:large; border-radius:12px; padding:16px; background-color:#0C091C; margin: 0.5rem 0; width:fit-content">{{commentaires.contenu}}</div>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+	<div style="color:white;font-size:large;display:flex">
+		{% if app.user %}
+			<h2>Ajouter des commentaire</h2>
+			{{form(dataForm)}}
+				{% else %}
+					<p>Veuillez vous connecter pour effectuer un commentaire:</p>
+			{% endif %}
+		</div>
+	{% endblock %}

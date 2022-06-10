@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bulma": "^0.9.4",
-    "scrollreveal": "^4.0.9"
+    "scrollreveal": "^4.0.9",
+    "scrolls.js": "^1.0.18"
   }
 }

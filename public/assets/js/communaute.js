@@ -6,7 +6,7 @@ commu.reveal('.communaute_container', {
     duration: 2000
 })
 
-commu.reveal('.avatar', {
+commu.reveal('.avata', {
     origin: 'left',
     duration: 2000,
     delay: 700

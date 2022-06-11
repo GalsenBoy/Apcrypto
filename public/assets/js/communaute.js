@@ -1,6 +1,6 @@
 const commu = ScrollReveal();
 
-commu.reveal('.communaute_container', {
+commu.reveal('.analyseContainer', {
     origin: 'left',
     distance: '85px',
     duration: 2000

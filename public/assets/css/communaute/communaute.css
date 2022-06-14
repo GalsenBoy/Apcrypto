@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+.formfield * {
+  vertical-align: middle;
+}
+
 body {
   background-color: #110D26;
 }
@@ -28,8 +32,9 @@ body {
 
 .analyseTechnique .partager button {
   border-radius: 20px;
-  padding: 1px 10px 3px 10px;
+  padding: 3px 10px 3px 10px;
   cursor: pointer;
+  border: none;
 }
 
 .analyseTechnique .analyseContainer {
@@ -38,6 +43,7 @@ body {
   color: white;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  width: 65%;
 }
 
 .analyseTechnique .analyseContainer .personne {
@@ -91,20 +97,13 @@ body {
 .analyseTechnique textarea {
   resize: none;
   background: #0C091C;
+  border: none;
   color: white;
-  padding: 0;
-  margin: 0;
 }
 
 @media screen and (max-width: 666px) {
-  .partager button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 1rem;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+  .analyseTechnique .analyseContainer {
+    width: 95%;
   }
 }
-/*# sourceMappingURL=communaute.css.map */
+/*# sourceMappingURL=communatute.css.map */

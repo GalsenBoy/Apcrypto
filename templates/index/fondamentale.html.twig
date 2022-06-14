@@ -7,20 +7,17 @@
 
 {% block body %}
 	<main>
-		<div style="width:80%" class="analyseTechnique">
+		<div style="width:85%" class="analyseTechnique">
 			<div class="partager">
 				{% if app.user %}
 					<button>
-						<a style="color:#110D26" href="{{ path('analyse_create')}}">Partager une analyse technique</a>
+						<a style="color:#110D26" href="{{ path('fondamentale_create')}}">Partager une analyse fondamentale</a>
 					</button>
 				{% else %}
 					<button>
-						<a style="color:#110D26" href="{{ path('app_login')}}">Partager une analyse technique</a>
+						<a style="color:#110D26" href="{{ path('app_login')}}">Partager une analyse fondamentale</a>
 					</button>
 				{% endif %}
-				<button>
-				<a style="color:#110D26" href="{{ path('fondamentale_create')}}">Partager une analyse fondamentale</a>
-				</button>
 			</div>
 			{% for fondamentale in fondamentale %}
 				<div style="margin-bottom:3rem; width:100%" class="analyseContainer">
@@ -38,10 +35,12 @@
 							Nom de l'actif :
 							{{fondamentale.actifName}}
 						</p>
-						<label>Plan de l'analyse :</label>
-						<textarea style="border:none" class="texte_analyse" rows="6" cols="120">
-							{{fondamentale.ExpliquationFond}}
-						</textarea>
+						<p class="analyseT formfield">
+							<label >Plan de l'analyse :</label>
+							<textarea  rows="5" cols="50">
+								{{fondamentale.ExpliquationFond}}
+							</textarea>
+						</p>
 					</div>
 					<div class="commenter">
 						<button>
@@ -54,4 +53,3 @@
 	</main>
 	{{knp_pagination_render(fondamentale)}}
 {% endblock %}
-

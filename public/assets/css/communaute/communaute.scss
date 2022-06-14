@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.formfield * {
+    vertical-align: middle;
+}
+
 body {
     background-color: #110D26;
 }
@@ -16,8 +20,9 @@ body {
         padding: 1rem 0;
         button {
             border-radius: 20px;
-            padding: 1px 10px 3px 10px;
+            padding: 3px 10px 3px 10px;
             cursor: pointer;
+            border: none;
         }
     }
     .analyseContainer {
@@ -26,6 +31,7 @@ body {
         color: white;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
+        width: 65%;
         .personne {
             display: flex;
             padding: 0.5rem;
@@ -64,18 +70,15 @@ body {
     textarea {
         resize: none;
         background: #0C091C;
+        border: none;
         color: white;
-        padding: 0;
-        margin: 0;
     }
 }
 
 @media screen and (max-width:666px) {
-    .partager {
-        button {
-            display: flex;
-            margin-bottom: 1rem;
-            align-items: center;
+    .analyseTechnique {
+        .analyseContainer {
+            width: 95%;
         }
     }
 }

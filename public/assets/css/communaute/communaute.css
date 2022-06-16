@@ -13,7 +13,7 @@ body {
   background-color: #110D26;
 }
 
-.analyseTechnique {
+main .analyseTechnique {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,57 +26,57 @@ body {
           align-items: center;
 }
 
-.analyseTechnique .partager {
+main .analyseTechnique .partager {
   padding: 1rem 0;
 }
 
-.analyseTechnique .partager button {
+main .analyseTechnique .partager button {
   border-radius: 20px;
   padding: 3px 10px 3px 10px;
   cursor: pointer;
   border: none;
 }
 
-.analyseTechnique .analyseContainer {
+main .analyseTechnique .analyseContainer {
   border: 3px solid black;
   background-color: #0c091c;
   color: white;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  width: 65%;
+  width: 100%;
 }
 
-.analyseTechnique .analyseContainer .personne {
+main .analyseTechnique .analyseContainer .personne {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0.5rem;
 }
 
-.analyseTechnique .analyseContainer .personne .avata {
+main .analyseTechnique .analyseContainer .personne .avata {
   border: 1px solid red;
   border-radius: 50%;
   width: 40px;
   height: 40px;
 }
 
-.analyseTechnique .analyseContainer .personne .identite {
+main .analyseTechnique .analyseContainer .personne .identite {
   margin-left: 0.5rem;
 }
 
-.analyseTechnique .analyseContainer .personne .identite p {
+main .analyseTechnique .analyseContainer .personne .identite p {
   font-size: small;
 }
 
-.analyseTechnique .analyseContainer .analyseT {
+main .analyseTechnique .analyseContainer .analyseT {
   padding: 1rem;
 }
 
-.analyseTechnique .analyseContainer .analyseT p {
+main .analyseTechnique .analyseContainer .analyseT p {
   padding: 0.3rem;
 }
 
-.analyseTechnique .analyseContainer .commenter {
+main .analyseTechnique .analyseContainer .commenter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,14 +87,14 @@ body {
   padding-right: 3rem;
 }
 
-.analyseTechnique .analyseContainer .commenter button {
+main .analyseTechnique .analyseContainer .commenter button {
   border-radius: 20px;
   padding: 3px 10px;
   border: 2px solid white;
   cursor: pointer;
 }
 
-.analyseTechnique textarea {
+main .analyseTechnique textarea {
   resize: none;
   background: #0C091C;
   border: none;
@@ -102,8 +102,11 @@ body {
 }
 
 @media screen and (max-width: 666px) {
-  .analyseTechnique .analyseContainer {
-    width: 95%;
+  main .analyseTechnique {
+    width: 90%;
+  }
+  main .analyseTechnique .analyseContainer {
+    width: 100%;
   }
 }
-/*# sourceMappingURL=communatute.css.map */
+/*# sourceMappingURL=communaute.css.map */

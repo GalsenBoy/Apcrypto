@@ -12,73 +12,79 @@ body {
     background-color: #110D26;
 }
 
-.analyseTechnique {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .partager {
-        padding: 1rem 0;
-        button {
-            border-radius: 20px;
-            padding: 3px 10px 3px 10px;
-            cursor: pointer;
-            border: none;
-        }
-    }
-    .analyseContainer {
-        border: 3px solid black;
-        background-color: #0c091c;
-        color: white;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        width: 65%;
-        .personne {
-            display: flex;
-            padding: 0.5rem;
-            .avata {
-                border: 1px solid red;
-                border-radius: 50%;
-                width: 40px;
-                height: 40px;
+main {
+    .analyseTechnique {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        //width: 95%;
+        .partager {
+            padding: 1rem 0;
+            button {
+                border-radius: 20px;
+                padding: 3px 10px 3px 10px;
+                cursor: pointer;
+                border: none;
             }
-            .identite {
-                margin-left: 0.5rem;
+        }
+        .analyseContainer {
+            border: 3px solid black;
+            background-color: #0c091c;
+            color: white;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            width: 100%;
+            .personne {
+                display: flex;
+                padding: 0.5rem;
+                .avata {
+                    border: 1px solid red;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                }
+                .identite {
+                    margin-left: 0.5rem;
+                    p {
+                        font-size: small;
+                    }
+                }
+            }
+            .analyseT {
+                padding: 1rem;
                 p {
-                    font-size: small;
+                    padding: 0.3rem;
+                }
+            }
+            .commenter {
+                display: flex;
+                justify-content: flex-end;
+                padding-bottom: 1rem;
+                padding-right: 3rem;
+                button {
+                    border-radius: 20px;
+                    padding: 3px 10px;
+                    border: 2px solid white;
+                    cursor: pointer;
                 }
             }
         }
-        .analyseT {
-            padding: 1rem;
-            p {
-                padding: 0.3rem;
-            }
+        textarea {
+            resize: none;
+            background: #0C091C;
+            border: none;
+            color: white;
         }
-        .commenter {
-            display: flex;
-            justify-content: flex-end;
-            padding-bottom: 1rem;
-            padding-right: 3rem;
-            button {
-                border-radius: 20px;
-                padding: 3px 10px;
-                border: 2px solid white;
-                cursor: pointer;
-            }
-        }
-    }
-    textarea {
-        resize: none;
-        background: #0C091C;
-        border: none;
-        color: white;
     }
 }
 
 @media screen and (max-width:666px) {
-    .analyseTechnique {
-        .analyseContainer {
-            width: 95%;
+    main {
+        .analyseTechnique {
+            width: 90%;
+            .analyseContainer {
+                width: 100%;
+            }
         }
     }
 }

@@ -6,12 +6,12 @@
 }
 
 body {
-  background-color: #202020;
   height: 100vh;
 }
 
 main .crypto_container {
   font-family: 'Montserrat', Arial;
+  margin-top: 4rem;
   height: 100%;
   background-color: #0C091C;
   color: #fdf4f4;

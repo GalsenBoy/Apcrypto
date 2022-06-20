@@ -34,10 +34,8 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'class' => 'input'
+                    'class' => 'input',
                 ]
-                
-                
             ])
             ->add('prenom',TextType::class,[
                 'label' => 'Prenom',

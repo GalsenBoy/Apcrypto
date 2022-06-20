@@ -27,9 +27,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
-    /**
-    * @Assert\Regex("/[a-zA-Z][0-9a-zA-Z .,\'-]{8,15}/")
-    */ 
     #[ORM\Column(type: 'string')]
     private $password;
 

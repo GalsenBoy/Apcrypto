@@ -21,37 +21,38 @@ use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends AbstractController
 {
-    
+
 
     #[Route('/communaute', name: 'app_communaute')]
-    public function communaute(Request $request,PaginatorInterface $paginatorInterface,ManagerRegistry $managerRegistry): Response
+    public function communaute(Request $request, PaginatorInterface $paginatorInterface, ManagerRegistry $managerRegistry): Response
     {
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->findAll();
-  
+        
         $analyse = $paginatorInterface->paginate(
             $analyse,
-            $request->query->getInt(key:'page',default:1),
-            limit:3,
+            $request->query->getInt(key: 'page', default: 1),
+            limit: 3,
         );
         //$analyse =$analyseRepository->findBy(['date'],['date' => 'DESC']);
 
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,
+            
         ]);
     }
     #[Route('/analyse/fondamentale', name: 'app_fondamentale')]
-    public function fondamentale(Request $request,PaginatorInterface $paginatorInterface,ManagerRegistry $managerRegistry): Response
+    public function fondamentale(Request $request, PaginatorInterface $paginatorInterface, ManagerRegistry $managerRegistry): Response
     {
         $entityManager = $managerRegistry->getManager();
         $fondamentaleRepository = $entityManager->getRepository(AnalyseFondamentale::class);
         $fondamentale = $fondamentaleRepository->findAll();
-  
+
         $fondamentale = $paginatorInterface->paginate(
             $fondamentale,
-            $request->query->getInt(key:'page',default:1),
-            limit:3,
+            $request->query->getInt(key: 'page', default: 1),
+            limit: 3,
         );
         //$fondamentale =$fondamentaleRepository->findBy(['date'],['date' => 'DESC']);
 
@@ -69,7 +70,7 @@ class IndexController extends AbstractController
         if (!$analyse) {
             return $this->redirectToRoute('app_communaute');
         }
-        
+
         //Partie commentaire
         //On crée le commentaire
         $commentaire = new Commentaire;
@@ -174,7 +175,7 @@ class IndexController extends AbstractController
         if (!$fondamentale) {
             return $this->redirectToRoute('app_communaute');
         }
-        
+
         //Partie commentaire
         //On crée le commentaire
         $commentaireFonda = new CommentaireFonda;

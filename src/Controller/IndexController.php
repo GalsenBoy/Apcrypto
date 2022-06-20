@@ -117,25 +117,25 @@ class IndexController extends AbstractController
         ]);
     }
 
-    #[Route('analyse/update{analyseId}', name: 'analyse_update')]
-    public function updateAnalyse(int $analyseId = 0, ManagerRegistry $managerRegistry, Request $request): Response
+    #[Route('analyse/update{fondamentaleId}', name: 'analyse_update')]
+    public function updateAnalyse(int $fondamentaleId = 0, ManagerRegistry $managerRegistry, Request $request): Response
     {
         $entityManager = $managerRegistry->getManager();
-        $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
-        $analyse = $analyseRepository->find($analyseId);
-        if (!$analyse) {
+        $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
+        $analyseFonda = $analyseFondaRepository->find($fondamentaleId);
+        if (!$analyseFonda) {
             return $this->redirectToRoute('app_communaute');
         }
-        $analyseForm = $this->createForm(AnalyseTechniqueType::class, $analyse);
-        $analyseForm->handleRequest($request);
-        if ($analyseForm->isSubmitted() && $analyseForm->isValid()) {
-            $entityManager->persist($analyse);
+        $analyseFondaForm = $this->createForm(AnalyseFondamentaleType::class, $analyseFonda);
+        $analyseFondaForm->handleRequest($request);
+        if ($analyseFondaForm->isSubmitted() && $analyseFondaForm->isValid()) {
+            $entityManager->persist($analyseFonda);
             $entityManager->flush();
             return $this->redirectToRoute('app_communaute');
         }
         return $this->render('index/dataform.html.twig', [
             'formName' => "Partage d'analyse",
-            'dataForm' => $analyseForm->createView(),
+            'dataForm' => $analyseFondaForm->createView(),
         ]);
     }
 

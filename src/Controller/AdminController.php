@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-
+use App\Entity\AnalyseFondamentale;
 use App\Entity\Commentaire;
 use App\Entity\AnalyseTechnique;
+use App\Entity\CommentaireFonda;
 use App\Entity\User;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,6 +31,19 @@ class AdminController extends AbstractController
         ]);
     }
 
+    #[Route('/admin/fonda', name:'app_admin_fonda')]
+    public function indexFonda(ManagerRegistry $managerRegistry): Response
+    {
+        $entityManager = $managerRegistry->getManager();
+        $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
+        $analyseFonda =$analyseFondaRepository->findAll();
+        //$analyse =$analyseRepository->findBy(['id' => 'DESC']);
+
+        return $this->render('admin/adminFonda.html.twig', [
+            'fondamentale' => $analyseFonda,
+        ]);
+    }
+
     #[Route('/admin/user', name: 'app_admin_user')]
     public function indexUser(ManagerRegistry $managerRegistry): Response
     {
@@ -43,7 +57,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('analyse/delete{analyseId}', name: 'analyse_delete')]
+    #[Route('/admin/analyse/delete{analyseId}', name: 'analyse_delete')]
     public function deleteAnalyse(int $analyseId = 0, ManagerRegistry $managerRegistry): Response
     {
         $entityManager = $managerRegistry->getManager();
@@ -57,6 +71,20 @@ class AdminController extends AbstractController
         return $this->redirectToRoute('app_communaute');
     }
 
+    #[Route('/admin/analyseFonda/delete{fondamentaleId}', name: 'analyse_fondamentale_delete')]
+    public function deleteAnalyseFonda(int $fondamentaleId = 0, ManagerRegistry $managerRegistry): Response
+    {
+        $entityManager = $managerRegistry->getManager();
+        $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
+        $analyseFonda = $analyseFondaRepository->find($fondamentaleId);
+        if (!$analyseFonda) {
+            return $this->redirectToRoute('app_communaute');
+        }
+        $entityManager->remove($analyseFonda);
+        $entityManager->flush();
+        return $this->redirectToRoute('app_communaute');
+    }
+
     #[Route('/admin/commentaire',name:'app_commentaire')]
     public function AdminCommentaire(ManagerRegistry $managerRegistry):Response
     {
@@ -66,7 +94,6 @@ class AdminController extends AbstractController
 
         $commentaireRepository = $entityManager->getRepository(Commentaire::class);
         $commentaire =$commentaireRepository->findAll();
-        //$analyse =$commentaireRepository->findBy(['id' => 'DESC']);
 
         return $this->render('admin/adminCommentaire.html.twig', [
             'commentaires' => $commentaire,
@@ -74,7 +101,24 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('commentaire/delete{commentairesId}',name:'commentaire_delete')]
+    #[Route('/adminFonda/commentaire',name:'app_fonda_commentaire')]
+    public function adminFondaCommentaire(ManagerRegistry $managerRegistry):Response
+    {
+        $entityManager = $managerRegistry->getManager();
+        $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
+        $analyseFonda =$analyseFondaRepository->findAll();
+
+        $commentaireFondaRepository = $entityManager->getRepository(CommentaireFonda::class);
+        $commentaireFonda =$commentaireFondaRepository->findAll();
+        
+
+        return $this->render('admin/adminFondaCom.html.twig', [
+            'commentaireFonda' => $commentaireFonda,
+            'fondamentale' => $analyseFonda,
+        ]);
+    }
+
+    #[Route('/admin/commentaire/delete{commentairesId}',name:'commentaire_delete')]
     public function deleteCommentaire(int $commentairesId = 0 ,ManagerRegistry $managerRegistry):Response
     {
         $entityManager = $managerRegistry->getManager();
@@ -86,5 +130,19 @@ class AdminController extends AbstractController
         $entityManager->remove($commentaire);
         $entityManager->flush();
         return $this->redirectToRoute('app_commentaire');
+    }   
+
+    #[Route('/admin/commentaireFonda/delete{commentaireFondaId}',name:'commentaire_fonda_delete')]
+    public function deleteFondaCommentaire(int $commentaireFondaId = 0 ,ManagerRegistry $managerRegistry):Response
+    {
+        $entityManager = $managerRegistry->getManager();
+        $commentaireFondaRepository = $entityManager->getRepository(CommentaireFonda::class);
+        $commentaireFonda = $commentaireFondaRepository->find($commentaireFondaId);
+        if(!$commentaireFonda){
+            return $this->redirectToRoute('commentaire_fonda_delete');
+        }
+        $entityManager->remove($commentaireFonda);
+        $entityManager->flush();
+        return $this->redirectToRoute('commentaire_fonda_delete');
     }   
 }

@@ -8,17 +8,6 @@
 {% block body %}
 	<main>
 		<div style="width:85%" class="analyseTechnique">
-			<div class="partager">
-				{% if app.user %}
-					<button>
-						<a style="color:#110D26" href="{{ path('fondamentale_create')}}">Partager une analyse fondamentale</a>
-					</button>
-				{% else %}
-					<button>
-						<a style="color:#110D26" href="{{ path('app_login')}}">Partager une analyse fondamentale</a>
-					</button>
-				{% endif %}
-			</div>
 			{% for fondamentale in fondamentale %}
 				<div style="margin-bottom:3rem; width:100%" class="analyseContainer">
 					<div class="personne">
@@ -44,15 +33,12 @@
 					</div>
 					<div class="commenter">
 						<button>
-							<a style="color:#110D26" href="{{ path('analyse_fondamentale_display', {'fondamentaleId' : fondamentale.id}) }}" type="button">Commenter</a>
-						</button>
-						<button>
-							<a style="color:#110D26" href="{{ path('analyse_update', {'fondamentaleId' : fondamentale.id}) }}" type="button">Modifier</a>
+							<a style="color:#110D26" href="{{ path('analyse_fondamentale_delete', {'fondamentaleId' : fondamentale.id}) }}" type="button">Supprimer</a>
 						</button>
 					</div>
 				</div>
 			{% endfor %}
 		</div>
 	</main>
-	{{knp_pagination_render(fondamentale)}}
+	
 {% endblock %}

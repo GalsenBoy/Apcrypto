@@ -4,12 +4,6 @@ nft.reveal('.image_nft', {
     duration: 2000,
     distance: '80px'
 })
-nft.reveal('li', {
-    origin: 'left',
-    duration: 2000,
-    distance: '80px',
-    interval: 150,
-})
 
 /****************** */
 

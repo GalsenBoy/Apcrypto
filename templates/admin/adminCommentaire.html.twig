@@ -13,7 +13,7 @@
 			</p>
 			<div style="font-size:large; border-radius:12px; padding:16px; background-color:#110D26; margin: 0.5rem 0; width:fit-content">{{commentaires.contenu}}</div>
 			<div style="padding: 18px 0 10px 0">
-				<a style="text-decoration:none;color:red;border-radius: 17px; padding: 8px 20px;border: 2px solid red;" href="{{ path('commentaire_delete', {'commentairesId' : commentaires.id}) }}" type="button">Supprier le commentaire</a>
+				<a style="text-decoration:none;color:red;border-radius: 17px; padding: 8px 20px;border: 2px solid red;" href="{{ path('commentaire_delete', {'commentairesId' : commentaires.id}) }}" type="button">Supprimer le commentaire</a>
 			</div>
 		{% endfor %}
 	</div>

@@ -23,7 +23,7 @@ class CommentaireFondaType extends AbstractType
                ]
             ])
             ->add('ContenuFonda',TextareaType::class,[
-                'label' => 'Analyse fondamentale',
+                'label' => 'Commentaire',
                 'attr' =>[
                     'class' => 'input'
                ]
@@ -31,7 +31,7 @@ class CommentaireFondaType extends AbstractType
             //->add('date')
             //->add('analyseFondamentale')
             ->add('envoyer', SubmitType::class, [
-                'label' => 'Valider',
+                'label' => 'Commenter',
                 'attr' => [
                     'class' => 'button is-link is-info',
                     'style' => 'margin-top:1rem'

@@ -153,7 +153,7 @@ class IndexController extends AbstractController
             //Condition supplémentaire: on ne persiste que si l'affirmation que $title ET $text sont tous les deux null est INVALIDE
             $entityManager->persist($fondamentale);
             $entityManager->flush();
-            return $this->redirectToRoute('app_communaute');
+            return $this->redirectToRoute('app_fondamentale');
         }
         //Si le formulaire n'est pas rempli ou valide, nous transmettons une page web présentant notre formulaire à l'Utilisateur
         return $this->render('index/dataform.html.twig', [

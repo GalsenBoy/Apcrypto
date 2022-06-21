@@ -47,7 +47,7 @@
 		</div>
 	</main>
 	<div style="color:white;font-size:large;display:flex">
-		{% if app.user %}
+		{% if app.user and app.user.estactif == true %}
 			<h2>Ajouter des commentaire</h2>
 			{{form(dataForm)}}
 				{% else %}

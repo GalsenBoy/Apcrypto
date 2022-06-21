@@ -6,12 +6,10 @@ use App\Entity\AnalyseFondamentale;
 use App\Entity\AnalyseTechnique;
 use App\Entity\Commentaire;
 use App\Entity\CommentaireFonda;
-use App\Entity\User;
 use App\Form\AnalyseFondamentaleType;
 use App\Form\AnalyseTechniqueType;
 use App\Form\CommentaireFondaType;
 use App\Form\CommentaireType;
-use DateTime;
 use Doctrine\Persistence\ManagerRegistry;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -135,7 +133,7 @@ class IndexController extends AbstractController
             return $this->redirectToRoute('app_communaute');
         }
         return $this->render('index/dataform.html.twig', [
-            'formName' => "Partage d'analyse",
+            'formName' => "Modifier l'analyse fondamentale",
             'dataForm' => $analyseFondaForm->createView(),
         ]);
     }
@@ -159,7 +157,7 @@ class IndexController extends AbstractController
         }
         //Si le formulaire n'est pas rempli ou valide, nous transmettons une page web présentant notre formulaire à l'Utilisateur
         return $this->render('index/dataform.html.twig', [
-            'formName' => "Partage d'fondamentale technique",
+            'formName' => "Partage d'analyse fondamentale ",
             'dataForm' => $fondamentaleForm->createView(),
             'fondamentale' => $fondamentale,
         ]);

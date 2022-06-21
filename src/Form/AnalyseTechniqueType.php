@@ -18,7 +18,6 @@ class AnalyseTechniqueType extends AbstractType
             ->add('actif',TextType::class,[
                 'label' => "Nom de l'actif",
                 'attr' => [
-                    'style' => 'margin-top:50px;',
                     'class' => 'input',
                 ]
             ])
@@ -36,7 +35,7 @@ class AnalyseTechniqueType extends AbstractType
             ])
             //->add('date')
             ->add('envoyer', SubmitType::class, [
-                'label' => 'Soumettre',
+                'label' => 'Partager',
                 'attr' => [
                     'class' => 'button is-link is-info',
                     'style' => 'margin-top:1rem'

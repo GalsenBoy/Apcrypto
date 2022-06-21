@@ -10,7 +10,7 @@
 				<div class="persona">
 					<div class="avatar"></div>
 					<div class="identite">
-						<p class="pseudo"></p>
+						<p class="pseudo">{{app.user.pseudo}}</p>
 						<p id="date">Publié le
 							{{fondamentale.createat |date("d/m/Y à H:i")}}</p>
 					</div>
@@ -32,7 +32,7 @@
 				<h2>Liste des commentaire</h2>
 				{% for commentaireFondas in fondamentale.commentaireFondas %}
 					<p style="font-size:large;padding:8px 0 3px 0;">Publié par
-						{{commentaireFondas.nickname}}
+						{{{{app.user.pseudo}}}}
 						le
 						{{commentaireFondas.date|date("d/m/Y à H:i")}}
 					</p>

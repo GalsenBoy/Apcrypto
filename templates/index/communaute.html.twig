@@ -9,7 +9,7 @@
 	<main>
 		<div style="width:85%"   class="analyseTechnique">
 			<div class="partager">
-				{% if app.user %}
+				{% if app.user and app.user.estactif == true %}
 					<button>
 						<a style="color:#110D26" href="{{ path('analyse_create')}}">Partager une analyse technique</a>
 					</button>

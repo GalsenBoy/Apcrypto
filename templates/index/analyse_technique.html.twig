@@ -10,7 +10,7 @@
 				<div class="persona">
 					<div class="avatar"></div>
 					<div class="identite">
-						<p class="pseudo"></p>
+						<p class="pseudo">{{app.user.pseudo}}</p>
 						<p id="date">Publié le
 							{{analyse.date |date("d/m/Y à H:i")}}</p>
 					</div>
@@ -37,7 +37,7 @@
 				<h2>Liste des commentaire</h2>
 				{% for commentaires in analyse.commentaires %}
 					<p style="font-size:large;padding:8px 0 3px 0;">Publié par
-						{{commentaires.pseudo}}
+						{{app.user.pseudo}}
 						le
 						{{commentaires.date|date("d/m/Y à H:i")}}
 					</p>

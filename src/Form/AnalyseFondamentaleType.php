@@ -29,7 +29,7 @@ class AnalyseFondamentaleType extends AbstractType
             ])
             //->add('createat')
             ->add('envoyer', SubmitType::class, [
-                'label' => 'Valider',
+                'label' => 'Partager',
                 'attr' => [
                     'class' => 'button is-link is-info',
                     'style' => 'margin-top:1rem'

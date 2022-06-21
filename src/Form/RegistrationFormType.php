@@ -89,7 +89,7 @@ class RegistrationFormType extends AbstractType
                 'required' => true,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter nos conditions.',
                     ]),
                     new NotBlank([
                         'message' => 'Veuillez cocher la case',
@@ -108,7 +108,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez saisir votre mot de passe',
                     ]),
                     new Length([
                         'min' => 8,

@@ -31,6 +31,7 @@ class AnalyseTechniqueType extends AbstractType
                 'label' => "Plan de l'analyse",
                 'attr' => [
                     'class' => 'textarea',
+                    'style' => 'resize:none'
                 ]
             ])
             //->add('date')

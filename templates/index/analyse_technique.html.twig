@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<div style="border:2px solid black;border-radius: 17px;padding: 16px;background-color: #110D26;margin-top: 1rem;">
-				<h2>Liste des commentaire</h2>
+				<h2 class="is-size-5">Liste des commentaire :</h2>
 				{% for commentaires in analyse.commentaires %}
 					<p style="font-size:large;padding:8px 0 3px 0;">Publié par
 						{{commentaires.pseudo}}
@@ -46,9 +46,9 @@
 			</div>
 		</div>
 	</main>
-	<div style="color:white;font-size:large;display:flex">
+	<div class="container has-text-white is-size-5">
 		{% if app.user and app.user.estactif == true %}
-			<h2>Ajouter des commentaire</h2>
+			<h2 class="is-size-4 mb-3">Ajouter un commentaire</h2>
 			{{form(dataForm)}}
 				{% else %}
 					<p>Veuillez vous connecter pour effectuer un commentaire:</p>

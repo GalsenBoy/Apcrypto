@@ -3,11 +3,11 @@
 {% block title %}Reset your password{% endblock %}
 
 {% block body %}
-<div class="container" style="color:white">
+<div class="container has-text-white	" >
     {% for flash_error in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        <div class="notification is-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
-    <h1>Réinitialiser votre mot de passe</h1>
+    <h1 class="is-size-4	">Réinitialiser votre mot de passe</h1>
 
     {{ form_start(requestForm,{'attr':{'style':'margin-top:120px'}}) }}
         {{ form_row(requestForm.email) }}

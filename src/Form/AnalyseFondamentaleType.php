@@ -24,7 +24,8 @@ class AnalyseFondamentaleType extends AbstractType
             ->add('ExpliquationFond',TextareaType::class,[
                 'label' => 'Analyse fondamentale',
                 'attr' =>[
-                    'class' => 'input'
+                    'class' => 'input',
+                    'style' => 'resize:none'
                ]
             ])
             //->add('createat')

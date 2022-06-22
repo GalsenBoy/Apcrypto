@@ -32,7 +32,8 @@ class CommentaireType extends AbstractType
             ->add('contenu',TextareaType::class,[
                 'label' => 'Commentaire',
                 'attr' =>[
-                    'class' => 'input'
+                    'class' => 'input',
+                    'style' => 'resize:none'
                 ]
             ])
             //->add('active')

@@ -56,6 +56,19 @@ class AdminController extends AbstractController
             'user' => $user,
         ]);
     }
+    #[Route('/admin/user/delete{userId}',name:'app_user_delete')]
+    public function deleteUser(int $userId = 0,ManagerRegistry $managerRegistry):Response
+    {
+        $entityManager = $managerRegistry->getManager();
+        $userRepository = $entityManager->getRepository(User::class);
+        $user = $userRepository->find($userId);
+        if (!$user) {
+            return $this->redirectToRoute('app_admin_user');
+        }
+        $entityManager->remove($user);
+        $entityManager->flush();
+        return $this->redirectToRoute('app_admin_user');
+    }
 
     #[Route('/admin/analyse/delete{analyseId}', name: 'analyse_delete')]
     public function deleteAnalyse(int $analyseId = 0, ManagerRegistry $managerRegistry): Response
@@ -64,11 +77,11 @@ class AdminController extends AbstractController
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->find($analyseId);
         if (!$analyse) {
-            return $this->redirectToRoute('app_communaute');
+            return $this->redirectToRoute('analyse_delete');
         }
         $entityManager->remove($analyse);
         $entityManager->flush();
-        return $this->redirectToRoute('app_communaute');
+        return $this->redirectToRoute('analyse_communaute');
     }
 
     #[Route('/admin/analyseFonda/delete{fondamentaleId}', name: 'analyse_fondamentale_delete')]
@@ -78,11 +91,11 @@ class AdminController extends AbstractController
         $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
         $analyseFonda = $analyseFondaRepository->find($fondamentaleId);
         if (!$analyseFonda) {
-            return $this->redirectToRoute('app_communaute');
+            return $this->redirectToRoute('analyse_fondamentale_delete');
         }
         $entityManager->remove($analyseFonda);
         $entityManager->flush();
-        return $this->redirectToRoute('app_communaute');
+        return $this->redirectToRoute('app_fondamentale');
     }
 
     #[Route('/admin/commentaire',name:'app_commentaire')]
@@ -125,7 +138,7 @@ class AdminController extends AbstractController
         $commentaireRepository = $entityManager->getRepository(Commentaire::class);
         $commentaire = $commentaireRepository->find($commentairesId);
         if(!$commentaire){
-            return $this->redirectToRoute('app_commentaire');
+            return $this->redirectToRoute('commentaire_delete');
         }
         $entityManager->remove($commentaire);
         $entityManager->flush();

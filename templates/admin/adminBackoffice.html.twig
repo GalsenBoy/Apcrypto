@@ -13,6 +13,7 @@
 				<th>Pseudo</th>
 				<th>E-mail</th>
 				<th>Vérification du compte</th>
+				<th>Suppression de compte</th>
 			</tr>
 			{% for user in user %}
 				<tr>
@@ -22,6 +23,7 @@
 					<td>{{user.pseudo}}</td>
 					<td>{{user.email}}</td>
 					<td>{{user.estActif}}</td>
+					<td><a class="has-text-danger" href="{{ path('app_user_delete', {'userId' : user.id}) }}" type="button">Bannir</a></td>
 				</tr>
 			{% endfor %}
 		</table>

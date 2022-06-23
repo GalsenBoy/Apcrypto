@@ -3,7 +3,7 @@
 {% block title %}E-mail de réinitialisation du mot de passe{% endblock %}
 
 {% block body %}
-<div style="margin-top:150px">
+<div style="margin-top:150px" class="has-text-white	">
     <p>
         Si un compte correspondant à votre adresse e-mail existe, un e-mail vient d'être envoyé contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe. Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
     </p>

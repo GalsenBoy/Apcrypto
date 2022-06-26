@@ -114,7 +114,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/adminFonda/commentaire',name:'app_fonda_commentaire')]
+    #[Route('/admin/adminFonda/commentaire',name:'app_fonda_commentaire')]
     public function adminFondaCommentaire(ManagerRegistry $managerRegistry):Response
     {
         $entityManager = $managerRegistry->getManager();

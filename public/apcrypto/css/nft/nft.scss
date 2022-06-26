@@ -12,17 +12,22 @@
 
 main {
     .nft_container {
-        font-family: 'Montserrat', Arial;
+        border: 1px solid white;
+        //font-family: 'Montserrat', Arial;
         margin-top: 4rem;
+        height: 100%;
+        width: 100%;
         margin-bottom: 4rem;
         .bloc_nft {
             width: 100%;
             .partie_nft {
+                width: 100%;
                 margin-bottom: 5rem;
                 @include flex();
                 .image_nft {
                     width: 40%;
                     img {
+                        object-fit: cover;
                         box-shadow: 0px 3px 10px #FFFB88;
                         width: 100%;
                         border-radius: 10px;
@@ -78,7 +83,6 @@ main {
                 width: 60%;
                 margin-bottom: 5rem;
                 img {
-                    max-width: 100%;
                     height: 100%;
                     object-fit: cover;
                 }
@@ -160,13 +164,9 @@ main {
 @media screen and (max-width:666px) {
     main {
         .nft_container {
-            width: 100%;
             .bloc_nft {
-                width: 100%;
                 .partie_nft {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    @include flexColumn();
                     .image_nft {
                         padding: 0 0.5rem;
                     }
@@ -184,7 +184,6 @@ main {
             }
             .top {
                 @include flexColumn();
-                width: 100%;
                 .nft_marquant,
                 .gallerie {
                     @include widthColumn();

@@ -24,7 +24,7 @@
 					<div class="personne">
 						<div class="avata"></div>
 						<div class="identite">
-							<p class="pseudo"></p>
+							<p class="pseudo">GalsenBoy</p>
 							<p id="date">Publié le
 								{{analyse.date |date("d/m/Y à H:i")}}
 							</p>
@@ -43,7 +43,7 @@
 						<p class="texte_analyse formfield">
 						<label>Plan de l'analyse :</label>
 						<textarea rows="7" cols="45">
-							{{analyse.explication}}
+							{{ analyse.explication|trim(side='both') }}
 						</textarea>
 						</p>
 					</div>

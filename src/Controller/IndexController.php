@@ -6,6 +6,7 @@ use App\Entity\AnalyseFondamentale;
 use App\Entity\AnalyseTechnique;
 use App\Entity\Commentaire;
 use App\Entity\CommentaireFonda;
+use App\Entity\User;
 use App\Form\AnalyseFondamentaleType;
 use App\Form\AnalyseTechniqueType;
 use App\Form\CommentaireFondaType;
@@ -27,6 +28,8 @@ class IndexController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->findAll();
+        $breh = new User;
+        $user = $breh->getPseudo();
         
         $analyse = $paginatorInterface->paginate(
             $analyse,
@@ -37,6 +40,7 @@ class IndexController extends AbstractController
 
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,
+            'user' => $user
             
         ]);
     }
@@ -89,6 +93,7 @@ class IndexController extends AbstractController
             'commentaire' => $commentaire,
             'formName' => "Commentaire",
             'dataForm' => $commentaireForm->createView(),
+            
         ]);
     }
     #[Route('analyse/creer', name: 'analyse_create')]

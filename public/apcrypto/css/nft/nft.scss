@@ -187,8 +187,16 @@ main {
                     @include widthColumn();
                 }
                 .gallerie {
-                    padding: 0px;
+                    display: grid;
+                    grid-template-columns: repeat(10, 1fr);
+                    grid-template-rows: repeat(auto, 1fr);
                     grid-gap: 3px;
+                    padding: 3px;
+                    margin-bottom: 5rem;
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
                 .nft_marquant {
                     ol {

@@ -264,8 +264,20 @@ main .nft_container .table_top table td a:hover {
     width: 94%;
   }
   main .nft_container .top .gallerie {
-    padding: 0px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[10];
+        grid-template-columns: repeat(10, 1fr);
+    -ms-grid-rows: (1fr)[auto];
+        grid-template-rows: repeat(auto, 1fr);
     grid-gap: 3px;
+    padding: 3px;
+    margin-bottom: 5rem;
+  }
+  main .nft_container .top .gallerie img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   main .nft_container .top .nft_marquant ol {
     padding-left: 15px;

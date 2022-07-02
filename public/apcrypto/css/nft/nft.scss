@@ -75,7 +75,7 @@ main {
             }
             .gallerie {
                 display: grid;
-                justify-content: center;
+                justify-content: space-between;
                 grid-template-columns: repeat(10, 1fr);
                 grid-template-rows: repeat(auto, 1fr);
                 grid-gap: 5px;

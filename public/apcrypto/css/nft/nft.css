@@ -105,9 +105,9 @@ main .nft_container .top .nft_marquant ol li {
 main .nft_container .top .gallerie {
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr);
   -ms-grid-rows: (1fr)[auto];

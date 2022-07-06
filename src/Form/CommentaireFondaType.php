@@ -25,7 +25,7 @@ class CommentaireFondaType extends AbstractType
             ->add('ContenuFonda',TextareaType::class,[
                 'label' => 'Commentaire',
                 'attr' =>[
-                    'class' => 'input',
+                    'class' => 'textarea',
                     'style' => 'resize:none'
                ]
             ])

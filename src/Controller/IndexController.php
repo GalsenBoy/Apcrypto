@@ -56,7 +56,7 @@ class IndexController extends AbstractController
             $request->query->getInt(key: 'page', default: 1),
             limit: 3,
         );
-        //$fondamentale =$fondamentaleRepository->findBy(['date'],['date' => 'DESC']);
+        
 
         return $this->render('index/fondamentale.html.twig', [
             'fondamentale' => $fondamentale,
@@ -66,7 +66,7 @@ class IndexController extends AbstractController
     #[Route('analyse/technique/{analyseId}', name: 'analyse_display')]
     public function displayAnalyse(int $analyseId, ManagerRegistry $managerRegistry, Request $request): Response
     {
-        $entityManager = $managerRegistry->getManager();
+        $entityManager = $managerRegistry->getManager();   
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->find($analyseId);
         if (!$analyse) {
@@ -101,14 +101,14 @@ class IndexController extends AbstractController
     {
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
-        //Une fois que nous avons notre Entity Manager, nous créons une instance de Tag et nous la lions à un formulaire externalisé de type TagType
+      
         $analyse = new AnalyseTechnique;
         $analyseForm = $this->createForm(AnalyseTechniqueType::class, $analyse);
-        //Nous appliquons la Request sur notre formulaire TagType, et si ce dernier est validé, nous le persistons au sein de notre base de données
+        //Nous appliquons la Request sur notre formulaire AnalyseTechniqueType, et si ce dernier est validé, nous le persistons au sein de notre base de données
         $analyseForm->handleRequest($request);
         if ($analyseForm->isSubmitted() && $analyseForm->isValid()) {
             $analyse->setDate(new \DateTime("now"));
-            //Condition supplémentaire: on ne persiste que si l'affirmation que $title ET $text sont tous les deux null est INVALIDE
+            //Condition supplémentaire: on ne persiste
             $entityManager->persist($analyse);
             $entityManager->flush();
             return $this->redirectToRoute('app_communaute');
@@ -148,14 +148,13 @@ class IndexController extends AbstractController
     {
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
-        //Une fois que nous avons notre Entity Manager, nous créons une instance de Tag et nous la lions à un formulaire externalisé de type TagType
+       
         $fondamentale = new AnalyseFondamentale;
         $fondamentaleForm = $this->createForm(AnalyseFondamentaleType::class, $fondamentale);
-        //Nous appliquons la Request sur notre formulaire TagType, et si ce dernier est validé, nous le persistons au sein de notre base de données
+       
         $fondamentaleForm->handleRequest($request);
         if ($fondamentaleForm->isSubmitted() && $fondamentaleForm->isValid()) {
             $fondamentale->setCreateat(new \DateTime("now"));
-            //Condition supplémentaire: on ne persiste que si l'affirmation que $title ET $text sont tous les deux null est INVALIDE
             $entityManager->persist($fondamentale);
             $entityManager->flush();
             return $this->redirectToRoute('app_fondamentale');

@@ -22,7 +22,6 @@ class Analyse extends Fixture
             $analyse->setDate(new \DateTime());
             $manager->persist($analyse);
         }
-
         $manager->flush();
     }
 }

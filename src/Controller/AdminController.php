@@ -24,7 +24,7 @@ class AdminController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse =$analyseRepository->findAll();
-        //$analyse =$analyseRepository->findBy(['id' => 'DESC']);
+        
 
         return $this->render('admin/index.html.twig', [
             'analyse' => $analyse,
@@ -37,7 +37,7 @@ class AdminController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
         $analyseFonda =$analyseFondaRepository->findAll();
-        //$analyse =$analyseRepository->findBy(['id' => 'DESC']);
+        
 
         return $this->render('admin/adminFonda.html.twig', [
             'fondamentale' => $analyseFonda,
@@ -50,7 +50,7 @@ class AdminController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $userRepository = $entityManager->getRepository(User::class);
         $user =$userRepository->findAll();
-        //$analyse =$analyseRepository->findBy(['id' => 'DESC']);
+
 
         return $this->render('admin/adminBackoffice.html.twig', [
             'user' => $user,

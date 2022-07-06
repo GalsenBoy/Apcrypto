@@ -27,21 +27,15 @@ class IndexController extends AbstractController
     {
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
-        $analyse = $analyseRepository->findAll();
-        $breh = new User;
-        $user = $breh->getPseudo();
+        $analyse = $analyseRepository->findBy(array(),array('date' => 'DESC'));
         
         $analyse = $paginatorInterface->paginate(
             $analyse,
             $request->query->getInt(key: 'page', default: 1),
             limit: 3,
         );
-        //$analyse =$analyseRepository->findBy(['date'],['date' => 'DESC']);
-
         return $this->render('index/communaute.html.twig', [
             'analyse' => $analyse,
-            'user' => $user
-            
         ]);
     }
     #[Route('/analyse/fondamentale', name: 'app_fondamentale')]
@@ -49,7 +43,7 @@ class IndexController extends AbstractController
     {
         $entityManager = $managerRegistry->getManager();
         $fondamentaleRepository = $entityManager->getRepository(AnalyseFondamentale::class);
-        $fondamentale = $fondamentaleRepository->findAll();
+        $fondamentale = $fondamentaleRepository->findBy(array(),array('createat' => 'DESC'));
 
         $fondamentale = $paginatorInterface->paginate(
             $fondamentale,

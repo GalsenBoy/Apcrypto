@@ -12,7 +12,7 @@
 					<div class="identite">
 						<p class="pseudo"></p>
 						<p id="date">Publié le
-							{{fondamentale.createat |date("d/m/Y à H:i")}}</p>
+							{{fondamentale.createat|date("d/m/Y à H:i", "Europe/Paris")}}</p>
 					</div>
 				</div>
 				<div class="analyse">
@@ -34,7 +34,7 @@
 					<p style="font-size:large;padding:8px 0 3px 0;">Publié par
 						{{commentaireFondas.nickname}}
 						le
-						{{commentaireFondas.date|date("d/m/Y à H:i")}}
+						{{commentaireFondas.date|date("d/m/Y à H:i", "Europe/Paris")}}
 					</p>
 					<div style="font-size:large; border-radius:12px; padding:16px; background-color:#0C091C; margin: 0.5rem 0; width:fit-content">{{commentaireFondas.ContenuFonda}}</div>
 				{% endfor %}

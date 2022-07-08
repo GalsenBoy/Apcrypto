@@ -13,7 +13,7 @@
 						<div class="identite">
 							<p class="">Pseudo</p>
 							<p id="">Publié le
-								{{analyse.date |date("d/m/Y à H:i")}}
+								{{analyse.date |date("d/m/Y à H:i","Europe/Paris")}}
 							</p>
 						</div>
 					</div>
@@ -27,10 +27,12 @@
 							<a style="color:beige" href="{{analyse.analyse}}">Voir l'analyse technique
 							</a>
 						</p>
-						<textarea style="border:none" class="texte_analyse" rows="6" cols="120">
-							Plan de l'analyse :
-							{{analyse.explication}}
+						<p class="texte_analyse formfield">
+						<label>Plan de l'analyse :</label>
+						<textarea style="width:90%" rows="7" cols="45">
+							{{analyse.explication|trim}}
 						</textarea>
+						</p>
 					</div>
 					<div class="commenter">
 						<button>

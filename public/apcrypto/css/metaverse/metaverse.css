@@ -1,100 +1,71 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 main .metaver_container {
-  font-family: 'Montserrat', Arial;
+  font-family: "Montserrat", Arial;
   height: 100%;
   background-color: #0C091C;
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
   width: 100%;
 }
-
 main .metaver_container .bloc_metavers .patie_metavers {
   margin-bottom: 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
-
 main .metaver_container .bloc_metavers .patie_metavers .image_metavers {
   width: 35%;
 }
-
 main .metaver_container .bloc_metavers .patie_metavers .image_metavers img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-box-shadow: 0px 3px 10px #E0E022;
-          box-shadow: 0px 3px 10px #E0E022;
+  box-shadow: 0px 3px 10px #E0E022;
   border-radius: 10px;
 }
-
 main .metaver_container .bloc_metavers .patie_metavers .image_metavers:hover,
 main .metaver_container .bloc_metavers .patie_metavers .definition_metavers:hover {
-  -webkit-box-shadow: 0 5px 13px 0 #E0E022;
-          box-shadow: 0 5px 13px 0 #E0E022;
+  box-shadow: 0 5px 13px 0 #E0E022;
 }
-
 main .metaver_container .bloc_metavers .patie_metavers .definition_metavers {
   width: 45%;
 }
-
 main .metaver_container .bloc_metavers .patie_metavers .definition_metavers p {
   font-size: x-large;
   padding-left: 0.5rem;
 }
-
 main .metaver_container .bloc_metavers .texte_metavers {
   margin-bottom: 5rem;
   padding: 0 15%;
 }
-
 main .metaver_container .bloc_metavers .texte_metavers p {
   padding: 1rem;
   font-size: larger;
 }
-
 main .metaver_container .meta {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
-
 main .metaver_container .meta .image_meta {
   width: 45%;
 }
-
 main .metaver_container .meta .image_meta img {
   width: 100%;
   float: left;
-  -webkit-box-shadow: 0px 3px 10px #330061;
-          box-shadow: 0px 3px 10px #330061;
+  box-shadow: 0px 3px 10px #330061;
 }
-
 main .metaver_container .meta .image_meta:hover,
 main .metaver_container .meta .texte_meta:hover {
-  -webkit-box-shadow: 0 8px 23px 0 #330061;
-          box-shadow: 0 8px 23px 0 #330061;
+  box-shadow: 0 8px 23px 0 #330061;
 }
-
 main .metaver_container .meta .texte_meta {
   width: 45%;
 }
-
 main .metaver_container .meta .texte_meta p {
   font-size: larger;
   padding: 1rem;
@@ -102,19 +73,12 @@ main .metaver_container .meta .texte_meta p {
 
 @media screen and (max-width: 666px) {
   main .metaver_container .bloc_metavers .patie_metavers {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   main .metaver_container .bloc_metavers .patie_metavers .image_metavers,
-  main .metaver_container .bloc_metavers .patie_metavers .definition_metavers {
+main .metaver_container .bloc_metavers .patie_metavers .definition_metavers {
     width: 100%;
     padding: 0 1rem;
   }
@@ -122,21 +86,13 @@ main .metaver_container .meta .texte_meta p {
     padding: 0 1rem;
   }
   main .metaver_container .meta {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   main .metaver_container .meta .image_meta,
-  main .metaver_container .meta .texte_meta {
+main .metaver_container .meta .texte_meta {
     width: 100%;
     padding: 0 1rem;
   }
-}
-/*# sourceMappingURL=metaverse.css.map */
+}/*# sourceMappingURL=metaverse.css.map */

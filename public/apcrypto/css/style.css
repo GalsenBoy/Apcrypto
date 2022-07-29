@@ -1,19 +1,16 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #110D26;
 }
-
 body .app-container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 1fr auto;
-      grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 header {
@@ -22,25 +19,16 @@ header {
   z-index: 2;
   width: 100%;
 }
-
 header .header_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-
 header .header_container .hamburger {
   border: 1px solid white;
   background-color: transparent;
-  margin-top: 00.5rem;
+  margin-top: 0.5rem;
   width: 75px;
   height: 50px;
   border: none;
@@ -49,84 +37,57 @@ header .header_container .hamburger {
   position: relative;
   display: none;
 }
-
 header .header_container .hamburger .container-lignes {
   width: 40px;
   height: 25px;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
-
 header .header_container .hamburger .container-lignes .ligne {
   position: absolute;
   border-radius: 10px;
   width: 100%;
   height: 2px;
-  background: #fdf4f4;
+  background: rgb(253, 244, 244);
 }
-
 header .header_container .hamburger .container-lignes .ligne:nth-child(1) {
   top: 0px;
 }
-
 header .header_container .hamburger .container-lignes .ligne:nth-child(2) {
   top: 12px;
 }
-
 header .header_container .hamburger .container-lignes .ligne:nth-child(3) {
   top: 24px;
 }
-
 header .header_container .hamburger .container-lignes .ligne:nth-child(1),
 header .header_container .hamburger .container-lignes .ligne:nth-child(3) {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transition: top 0.4s 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-  transition: top 0.4s 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transform: rotate(0deg);
   transition: transform 0.4s ease-in-out, top 0.4s 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, top 0.4s 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
-
 header .header_container .hamburger .container-lignes .ligne:nth-child(2) {
-  -webkit-transition: opacity 0.4s 0.4s ease-in-out;
   transition: opacity 0.4s 0.4s ease-in-out;
 }
-
 header .header_container .hamburger.active .ligne:nth-child(1) {
   top: 18px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: top 0.4s ease-in-out, -webkit-transform 0.4s 0.4s ease-in-out;
-  transition: top 0.4s ease-in-out, -webkit-transform 0.4s 0.4s ease-in-out;
+  transform: rotate(45deg);
   transition: top 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out;
-  transition: top 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out, -webkit-transform 0.4s 0.4s ease-in-out;
 }
-
 header .header_container .hamburger.active .ligne:nth-child(2) {
   opacity: 0;
-  -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 }
-
 header .header_container .hamburger.active .ligne:nth-child(3) {
   top: 18px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transition: top 0.4s ease-in-out, -webkit-transform 0.4s 0.4s ease-in-out;
-  transition: top 0.4s ease-in-out, -webkit-transform 0.4s 0.4s ease-in-out;
+  transform: rotate(-45deg);
   transition: top 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out;
-  transition: top 0.4s ease-in-out, transform 0.4s 0.4s ease-in-out, -webkit-transform 0.4s 0.4s ease-in-out;
 }
-
 header .header_container .logo {
   width: 40px;
   height: 40px;
 }
-
 header .header_container .logo img {
   width: 100%;
   height: 100%;
@@ -138,7 +99,6 @@ header .header_container .logo img {
           animation-duration: 3s;
   cursor: pointer;
 }
-
 header .header_container ul {
   list-style: none;
   position: relative;
@@ -146,65 +106,47 @@ header .header_container ul {
           animation-name: opacity;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 header .header_container ul li a {
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
   text-decoration: none;
   padding: 0px 17px;
   font-size: larger;
   opacity: 0.7;
 }
-
 header .header_container ul li i {
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
   opacity: 0.7;
   cursor: pointer;
   font-size: small;
 }
-
 header .header_container ul li a:hover,
 header .header_container ul li i:hover {
   opacity: 1;
 }
-
 header .header_container ul li:hover .sous-menu {
   display: block;
 }
-
 header .header_container ul ul {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-content: space-around;
+  flex-direction: column;
   position: absolute;
   display: none;
   top: 30px;
   height: auto;
   width: 250px;
-  background-color: #e2e0e0;
-  color: #fdf4f4;
+  background-color: rgb(226, 224, 224);
+  color: rgb(253, 244, 244);
   -webkit-animation-name: opacity;
           animation-name: opacity;
   -webkit-animation-duration: 1.2s;
           animation-duration: 1.2s;
 }
-
 header .header_container ul ul li a {
   color: black;
   display: block;
@@ -214,58 +156,50 @@ header .header_container ul ul li a {
   font-size: 1rem;
   font-family: serif;
 }
-
 header .header_container ul ul li a:hover {
   background-color: #110D26;
-  color: #fff9f9;
+  color: rgb(255, 249, 249);
 }
-
 header .header_container ul ul li {
   border: 1px solid #110D26;
 }
-
 header .header_container .acces {
   padding-left: 5rem;
 }
-
 header .header_container .acces .btn_connexion,
 header .header_container .acces .btn_inscription {
   border-radius: 20px;
   padding: 1px 10px 3px 10px;
-  border: 2px solid #fdf4f4;
+  border: 2px solid rgb(253, 244, 244);
   cursor: pointer;
   -webkit-animation-name: opacity;
           animation-name: opacity;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
 }
-
 header .header_container .acces .btn_connexion {
   background-color: transparent;
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
   font-size: large;
   margin-right: 10px;
   text-align: center;
 }
-
 header .header_container .acces .btn_connexion:hover {
-  background-color: #e4dcdc;
+  background-color: rgb(228, 220, 220);
   color: #110D26;
   -webkit-animation-name: btn;
           animation-name: btn;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
 }
-
 header .header_container .acces .btn_inscription {
-  background-color: #fdf4f4;
+  background-color: rgb(253, 244, 244);
   color: #110D26;
   font-size: large;
 }
-
 header .header_container .acces .btn_inscription:hover {
   background-color: #110D26;
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
   -webkit-animation-name: btn;
           animation-name: btn;
   -webkit-animation-duration: 2s;
@@ -273,42 +207,29 @@ header .header_container .acces .btn_inscription:hover {
 }
 
 main {
-  font-family: 'Yantramanav', sans-serif;
+  font-family: "Yantramanav", sans-serif;
   margin-top: 10rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   background-color: #0c091c;
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
   padding: 0px 5rem;
 }
-
 main .main_container {
   height: 100%;
 }
-
 main .main_container .principale {
   padding: 5rem 0;
   margin-bottom: 5rem;
-  color: #fdf4f4;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  color: rgb(253, 244, 244);
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  align-items: center;
+  justify-content: space-around;
 }
-
 main .main_container .principale .image_blockchain {
   width: 45%;
   height: 100%;
 }
-
 main .main_container .principale .image_blockchain img {
   width: 100%;
   height: 100%;
@@ -316,178 +237,127 @@ main .main_container .principale .image_blockchain img {
      object-fit: cover;
   border: 6px solid #1d1542;
   border-radius: 20px;
-  -webkit-box-shadow: 0px 0px 10px 3px #E0F7FA;
-          box-shadow: 0px 0px 10px 3px #E0F7FA;
+  box-shadow: 0px 0px 10px 3px #E0F7FA;
 }
-
 main .main_container .principale .titre {
   padding-left: 1.7rem;
   width: 50%;
 }
-
 main .main_container .principale .titre h1 {
   font-size: 40px;
 }
-
 main .main_container .principale .titre ul {
   padding-top: 1rem;
   height: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   padding-left: 2rem;
   list-style-type: disc;
 }
-
 main .main_container .principale .titre ul li a {
   text-decoration: none;
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
   font-size: 1.3rem;
   pointer-events: none;
 }
-
 main .main_container .cryptommonnaie {
   padding: 5rem 0;
   margin: 5rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: 3rem;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
-
 main .main_container .cryptommonnaie .image_bitcoin {
   width: 43%;
 }
-
 main .main_container .cryptommonnaie .image_bitcoin img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border: 6px solid #1d1542;
   border-radius: 20px;
-  -webkit-box-shadow: 0px 0px 10px 3px #E0F7FA;
-          box-shadow: 0px 0px 10px 3px #E0F7FA;
+  box-shadow: 0px 0px 10px 3px #E0F7FA;
 }
-
 main .main_container .cryptommonnaie .citation {
   padding-left: 2rem;
   width: 47%;
 }
-
 main .main_container .cryptommonnaie .citation blockquote {
   width: 100%;
   padding: 25px;
   border: 1px solid #1d1542;
-  color: #fdf4f4;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  color: rgb(253, 244, 244);
+  box-sizing: border-box;
   border-left-width: 10px;
 }
-
 main .main_container .cryptommonnaie .citation blockquote .blockquote__text {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 1.7rem;
   line-height: 1.5;
 }
-
 main .main_container .cryptommonnaie .citation .blockquote__text:not(:last-child) {
   margin-bottom: 1em;
 }
-
 main .main_container .cryptommonnaie .citation .blockquote__text--credit {
   font-weight: bold;
   font-size: medium;
   text-align: right;
 }
-
 main .main_container .cryptommonnaie .citation .blockquote--quote::before {
-  content: "\201c";
+  content: "“";
   font-size: 100px;
   color: #1d1542;
   display: block;
   margin-bottom: -40px;
   margin-top: -20px;
 }
-
 main .main_container .meme_coin {
   margin: 5rem 0;
   padding: 5rem 0;
-  color: #fdf4f4;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  color: rgb(253, 244, 244);
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
-
 main .main_container .meme_coin .card {
-  -webkit-box-shadow: 0 15px 50px black;
-          box-shadow: 0 15px 50px black;
-  -webkit-transition: 0.3s;
+  box-shadow: 0 15px 50px black;
   transition: 0.3s;
   border-radius: 17px;
   width: 45%;
   height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background: #0a061e;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 main .main_container .meme_coin .card .image_shiba {
   padding-top: 1rem;
   width: 27%;
 }
-
 main .main_container .meme_coin .card .image_shiba img {
   width: 100%;
 }
-
 main .main_container .meme_coin .card .texte_shiba {
   width: 85%;
   padding: 5px 16px;
   text-align: center;
   font-size: large;
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
 }
-
 main .main_container .meme_coin .card:hover {
-  -webkit-box-shadow: 0 8px 16px 0 #140f2d;
-          box-shadow: 0 8px 16px 0 #140f2d;
+  box-shadow: 0 8px 16px 0 #140f2d;
 }
-
 main .main_container .meme_coin .radius {
   width: 45%;
   height: 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background: #0c0821;
   border-radius: 17px;
-  -webkit-box-shadow: 0 15px 50px black;
-          box-shadow: 0 15px 50px black;
+  box-shadow: 0 15px 50px black;
   opacity: 0;
 }
-
 main .main_container .meme_coin .radius .image_doge {
   width: 30%;
   border-radius: 50%;
@@ -495,44 +365,29 @@ main .main_container .meme_coin .radius .image_doge {
   shape-outside: circle();
   padding: 1rem;
 }
-
 main .main_container .meme_coin .radius .image_doge img {
   width: 100%;
 }
-
 main .main_container .meme_coin .radius .texte_doge {
   padding: 2rem 1rem 1rem 1rem;
   font-size: larger;
 }
-
 main .main_container .meme_coin .radius:hover {
-  -webkit-box-shadow: 0 8px 16px 0 #140f2d;
-          box-shadow: 0 8px 16px 0 #140f2d;
+  box-shadow: 0 8px 16px 0 #140f2d;
 }
-
 main .main_container .meta {
   margin-top: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
-
 main .main_container .meta .image_meta {
   width: 50%;
 }
-
 main .main_container .meta .texte_meta {
   width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 main .main_container .meta .texte_meta p {
   font-size: 2rem;
   font-family: Helvetica, Arial, sans-serif;
@@ -540,38 +395,26 @@ main .main_container .meta .texte_meta p {
 
 footer {
   background-color: #110D26;
-  color: #fdf4f4;
+  color: rgb(253, 244, 244);
 }
-
 footer h2 {
   text-align: center;
   font-size: 1.5rem;
   padding-top: 2rem;
 }
-
 footer .footer_container {
   padding: 2rem 5rem;
 }
-
 footer .footer_container .rr_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 footer .footer_container .rr_container .reseau {
   margin: 1rem 0;
   font-size: larger;
   cursor: pointer;
 }
-
 footer .footer_container .copyright {
   text-align: center;
   padding: 1rem 0;
@@ -580,7 +423,6 @@ footer .footer_container .copyright {
 
 .radius.show {
   opacity: 1;
-  -webkit-transition: opacity 2s;
   transition: opacity 2s;
 }
 
@@ -601,7 +443,6 @@ footer .footer_container .copyright {
     opacity: 1;
   }
 }
-
 @-webkit-keyframes btn {
   0% {
     opacity: 0.5;
@@ -610,7 +451,6 @@ footer .footer_container .copyright {
     opacity: 1;
   }
 }
-
 @keyframes btn {
   0% {
     opacity: 0.5;
@@ -619,20 +459,14 @@ footer .footer_container .copyright {
     opacity: 1;
   }
 }
-
 @media screen and (max-width: 922px) {
   header {
     color: black;
   }
   header .header_container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: space-around;
+    align-items: center;
     position: relative;
   }
   header .header_container ul {
@@ -641,27 +475,18 @@ footer .footer_container .copyright {
     height: 35rem;
     margin-top: 2rem;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(-100%);
     background-color: #110D26;
   }
   header .header_container ul .fa-angle-down {
     display: none;
   }
   header .header_container ul .fa-angle-down ul,
-  header .header_container ul li ul {
+header .header_container ul li ul {
     visibility: hidden;
   }
   header .header_container ul .acces {
@@ -695,29 +520,19 @@ footer .footer_container .copyright {
     margin-top: 0.7rem;
   }
   .open .menu {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    -webkit-transition: 1.2s;
+    transform: translateX(0);
     transition: 1.2s;
   }
 }
-
 @media screen and (max-width: 666px) {
   main {
     padding: 0;
     width: 100%;
   }
   main .main_container .principale {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   main .main_container .principale .titre {
     width: 95%;
@@ -727,50 +542,29 @@ footer .footer_container .copyright {
     margin: 2rem 0;
   }
   main .main_container .cryptommonnaie {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   main .main_container .cryptommonnaie .image_bitcoin,
-  main .main_container .cryptommonnaie .citation {
+main .main_container .cryptommonnaie .citation {
     width: 95%;
     margin: 2rem 0;
   }
   main .main_container .meme_coin {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   main .main_container .meme_coin .card,
-  main .main_container .meme_coin .radius {
+main .main_container .meme_coin .radius {
     width: 95%;
     margin: 2rem 0;
   }
   main .main_container .meta {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
   main .main_container .meta .image_meta {
     width: 90%;
@@ -785,5 +579,4 @@ footer .footer_container .copyright {
   footer .footer_container .rr_container {
     padding: 1rem;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

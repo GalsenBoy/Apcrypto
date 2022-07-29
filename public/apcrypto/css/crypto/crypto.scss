@@ -22,15 +22,19 @@ main {
         background-color: #0C091C;
         color: rgb(253, 244, 244);
         width: 100%;
+
         .blockchain {
+
             //border: 1px solid white;
             .partie_crypto {
                 margin-bottom: 5rem;
                 @include flex();
+
                 //border: 1px solid salmon;
                 .image_btc {
                     //border: 1px solid aqua;
                     width: 40%;
+
                     img {
                         width: 100%;
                         object-fit: cover;
@@ -38,127 +42,158 @@ main {
                         border-radius: 10px;
                     }
                 }
+
                 .image_btc:hover,
                 .definition_blockchain:hover {
                     box-shadow: 0px 5px 10px #C29224;
                 }
+
                 .definition_blockchain {
                     width: 40%;
+
                     p,
                     ul {
                         font-size: large;
                         padding: 0.7rem;
                         list-style-type: disc;
                     }
+
                     ul {
                         padding-left: 2.5rem;
                     }
+
                     h3 {
                         font-size: x-large;
                         padding: 1rem;
                     }
                 }
             }
+
             .text_btc {
                 padding: 0 15%;
                 margin-bottom: 5rem;
+
                 p,
                 h3,
                 ul {
                     padding: 1rem;
                 }
+
                 p,
                 ul {
                     font-size: large;
                 }
+
                 h3 {
                     font-size: x-large;
                     text-align: center;
                 }
             }
         }
+
         .bloc_bnb {
             .partie_bnb {
                 @include flex();
                 margin-bottom: 5rem;
+
                 .image_bnb {
                     width: 45%;
+
                     img {
                         width: 100%;
                     }
                 }
+
                 .definition_Binance {
                     width: 45%;
+
                     p {
                         font-size: larger;
                     }
                 }
             }
+
             .text_bnb {
                 padding: 0 15%;
                 margin-bottom: 5rem;
+
                 p,
                 h3,
                 ul {
                     padding: 0.8rem;
                 }
+
                 p,
                 ul {
                     font-size: large;
                     list-style: disc;
                 }
+
                 h3 {
                     font-size: x-large;
                     text-align: center;
                 }
             }
         }
+
         .bloc_defi {
             .partie_defi {
                 @include flex();
                 margin-bottom: 5rem;
+
                 .image_defi {
                     width: 45%;
+
                     img {
                         width: 100%;
                         box-shadow: 0 3px 10px #18A284;
                         border-radius: 10px;
                     }
                 }
+
                 .image_defi:hover,
                 .definition_defi:hover {
                     box-shadow: 0px 5px 12px #18A284;
                 }
+
                 .definition_defi {
                     width: 45%;
+
                     p {
                         font-size: larger;
                     }
                 }
             }
+
             .texte_defi {
                 padding: 0 15%;
                 margin-bottom: 5rem;
+
                 p,
                 h3,
                 ul {
                     padding: 1rem;
                     list-style: disc;
                 }
+
                 p,
                 ul {
                     font-size: larger;
                 }
+
                 h3 {
                     font-size: x-large;
                     text-align: center;
                 }
+
                 ul {
                     padding-left: 2rem;
                 }
             }
         }
+
         .bloc_meme {
+
             //border: 1px solid white;
             .partie_meme {
                 .image_shiba {
@@ -168,6 +203,7 @@ main {
                     padding: 1rem;
                     border-radius: 50%;
                     shape-outside: circle();
+
                     img {
                         width: 100%;
                         shape-outside: circle();
@@ -175,10 +211,12 @@ main {
                         object-fit: cover;
                     }
                 }
+
                 .texte_meme {
                     //border: 1px solid white;
                     padding: 1rem;
                     margin-bottom: 5rem;
+
                     p {
                         font-size: large;
                         padding: 0.5rem;
@@ -186,6 +224,7 @@ main {
                 }
             }
         }
+
         .bloc_minage {
             .partie_minage {
                 @include flex();
@@ -193,8 +232,10 @@ main {
                 margin-bottom: 5rem;
                 width: 100%;
                 justify-content: space-around;
+
                 .image_minage {
                     width: 45%;
+
                     img {
                         width: 100%;
                         border-radius: 10px;
@@ -202,28 +243,35 @@ main {
                         box-shadow: 0px 3px 10px #5F7BD2;
                     }
                 }
+
                 .image_minage:hover,
                 .definition_minage:hover {
                     box-shadow: 0px 3px 10px #5F7BD2;
                 }
+
                 .definition_minage {
                     width: 45%;
+
                     p {
                         font-size: x-large;
                     }
                 }
             }
+
             .texte_minage {
                 padding: 0 15%;
+
                 p,
                 h3,
                 h4 {
                     padding: 1rem;
                 }
+
                 p,
                 h4 {
                     font-size: larger;
                 }
+
                 h3 {
                     font-size: x-large;
                     text-align: center;
@@ -245,6 +293,7 @@ main {
 }
 
 @media screen and (max-width:666px) {
+
     /*
     .partie_bnb,
     .partie_crypto,
@@ -265,47 +314,58 @@ main {
             .blockchain {
                 .partie_crypto {
                     @include flexColumn();
+
                     .image_btc,
                     .definition_blockchain {
                         @include widthColumn();
                     }
                 }
+
                 .text_btc {
                     padding: 0 1rem;
                 }
             }
+
             .bloc_bnb {
                 .partie_bnb {
                     @include flexColumn();
+
                     .image_bnb,
                     .definition_Binance {
                         @include widthColumn();
                     }
                 }
+
                 .text_bnb {
                     padding: 0 1rem;
                 }
             }
+
             .bloc_defi {
                 .partie_defi {
                     @include flexColumn();
+
                     .image_defi,
                     .definition_defi {
                         @include widthColumn();
                     }
                 }
+
                 .texte_defi {
                     padding: 0 1rem;
                 }
             }
+
             .bloc_minage {
                 .partie_minage {
                     @include flexColumn();
+
                     .image_minage,
                     .definition_minage {
                         @include widthColumn();
                     }
                 }
+
                 .texte_minage {
                     padding: 0 1rem;
                 }

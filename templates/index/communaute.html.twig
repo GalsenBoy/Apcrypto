@@ -6,8 +6,8 @@
 
 
 {% block body %}
-	<main >
-		<div style="width:85%"   class="analyseTechnique">
+	<main>
+		<div style="width:85%" class="analyseTechnique">
 			<div class="partager">
 				{% if app.user and app.user.estactif == true %}
 					<button>
@@ -41,10 +41,10 @@
 							</a>
 						</p>
 						<p class="texte_analyse formfield">
-						<label>Plan de l'analyse :</label>
-						<textarea style="width:90%" rows="7" cols="45">
-							{{analyse.explication|trim}}
-						</textarea>
+							<label>Plan de l'analyse :</label>
+							<textarea readonly="readonly" style="width:90%" rows="7" cols="45">
+								{{analyse.explication|trim}}
+							</textarea>
 						</p>
 					</div>
 					<div class="commenter">
@@ -58,4 +58,3 @@
 	</main>
 	{{knp_pagination_render(analyse)}}
 {% endblock %}
-

@@ -20,7 +20,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom',TextType::class,[
+            ->add('nom', TextType::class, [
                 'label' => 'Nom',
                 'required' => true,
                 'constraints' => [
@@ -29,7 +29,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 2,
-                        'minMessage' => 'Votre mot de passe ne doit pas être inférieur {{ limit }} caractères',
+                        'minMessage' => 'Votre nom pas être inférieur {{ limit }} caractères',
                         'max' => 100,
                     ]),
                 ],
@@ -37,7 +37,7 @@ class RegistrationFormType extends AbstractType
                     'class' => 'input',
                 ]
             ])
-            ->add('prenom',TextType::class,[
+            ->add('prenom', TextType::class, [
                 'label' => 'Prenom',
                 'required' => true,
                 'constraints' => [
@@ -54,7 +54,7 @@ class RegistrationFormType extends AbstractType
                     'class' => 'input'
                 ]
             ])
-            ->add('email',EmailType::class,[
+            ->add('email', EmailType::class, [
                 'label' => 'Email',
                 'required' => true,
                 'constraints' => [
@@ -66,7 +66,7 @@ class RegistrationFormType extends AbstractType
                     'class' => 'input'
                 ]
             ])
-            ->add('pseudo',TextType::class,[
+            ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo',
                 'required' => true,
                 'constraints' => [
@@ -76,7 +76,7 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'min' => 5,
                         'minMessage' => 'Votre pseudo ne doit pas être moins de {{ limit }} caractères',
-                        
+
                         'max' => 4096,
                     ]),
                 ],
@@ -120,8 +120,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'input'
                 ]
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

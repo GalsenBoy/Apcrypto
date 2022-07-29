@@ -21,11 +21,11 @@
 						{{fondamentale.actifName}}
 					</p>
 					<p class="analyseT formfield">
-							<label >Plan de l'analyse :</label>
-							<textarea style="resize:none" rows="7" cols="45">
-								{{fondamentale.ExpliquationFond}}
-							</textarea>
-						</p>
+						<label>Plan de l'analyse :</label>
+						<textarea readonly="readonly" style="resize:none" rows="7" cols="45">
+							{{fondamentale.ExpliquationFond}}
+						</textarea>
+					</p>
 				</div>
 			</div>
 			<div style="border:2px solid black;border-radius: 17px;padding: 16px;background-color: #110D26;margin-top: 1rem;">
@@ -43,7 +43,8 @@
 	</main>
 	<div class="container" style="color:white;font-size:large;">
 		{% if app.user and app.user.estactif == true %}
-			<h2 class="is-size-4 mb-3">Ajouter des commentaire : </h2>
+			<h2 class="is-size-4 mb-3">Ajouter des commentaire :
+			</h2>
 			{{form(dataForm)}}
 				{% else %}
 					<p>Veuillez vous connecter pour effectuer un commentaire:</p>

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="La communauté crypto qui vous permet de partager des analyses techniques, des pépites crypto mais aussi des projets NFT" />
+		<meta name="description" content="La communauté crypto qui vous permet de partager des analyses techniques, des pépites crypto mais aussi des projets NFT"/>
 		<title>
 			{% block title %}
 				Apcrypto
@@ -11,7 +11,7 @@
 		</title>
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
-		 	<link rel="icon" href="{{ asset('apcrypto/img/onglet.png')}} ">
+			<link rel="icon" href="{{ asset('apcrypto/img/onglet.png')}} ">
 			<link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 			<link rel="stylesheet" href="{{ asset('apcrypto/css/style.css') }}">
@@ -24,12 +24,12 @@
 		{% endblock %}
 	</head>
 	<body>
-    {% include 'layout/header.html.twig' %}
+		{% include 'layout/header.html.twig' %}
 		{% block body %}{% endblock %}
-	{% include 'layout/footer.html.twig' %}
+		{% include 'layout/footer.html.twig' %}
 		{% block javascripts %}
-			<script src=" {{ asset('apcrypto/js/script.js') }} "/>
-			<script src=" {{ asset('apcrypto/js/nft.js') }}" />
+			<script src=" {{ asset('apcrypto/js/script.js') }} "></script>
+			<script src=" {{ asset('apcrypto/js/nft.js') }}"></script>
 		{% endblock %}
 	</body>
 </html>

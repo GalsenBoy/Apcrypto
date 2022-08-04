@@ -1,1 +1,4 @@
 User-agent: *
+disallow: /admin
+disallow: /connexion
+disallow: /inscription

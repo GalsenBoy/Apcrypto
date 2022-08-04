@@ -17,12 +17,16 @@ main {
         background-color: #0C091C;
         color: rgb(253, 244, 244);
         width: 100%;
+        margin: 4rem 0 10rem 0;
+
         .bloc_metavers {
             .patie_metavers {
                 margin-bottom: 5rem;
                 @include flex();
+
                 .image_metavers {
                     width: 35%;
+
                     img {
                         width: 100%;
                         object-fit: cover;
@@ -30,43 +34,54 @@ main {
                         border-radius: 10px;
                     }
                 }
+
                 .image_metavers:hover,
                 .definition_metavers:hover {
                     box-shadow: 0 5px 13px 0 #E0E022;
                 }
+
                 .definition_metavers {
                     width: 45%;
+
                     p {
                         font-size: x-large;
                         padding-left: 0.5rem;
                     }
                 }
             }
+
             .texte_metavers {
                 margin-bottom: 5rem;
                 padding: 0 15%;
+
                 p {
                     padding: 1rem;
                     font-size: larger;
                 }
             }
         }
+
         .meta {
             @include flex();
+
             .image_meta {
                 width: 45%;
+
                 img {
                     width: 100%;
                     float: left;
                     box-shadow: 0px 3px 10px #330061;
                 }
             }
+
             .image_meta:hover,
             .texte_meta:hover {
                 box-shadow: 0 8px 23px 0 #330061;
             }
+
             .texte_meta {
                 width: 45%;
+
                 p {
                     font-size: larger;
                     padding: 1rem;
@@ -93,17 +108,21 @@ main {
             .bloc_metavers {
                 .patie_metavers {
                     @include flexColumn();
+
                     .image_metavers,
                     .definition_metavers {
                         @include WitdhColumn();
                     }
                 }
+
                 .texte_metavers {
                     padding: 0 1rem;
                 }
             }
+
             .meta {
                 @include flexColumn();
+
                 .image_meta,
                 .texte_meta {
                     @include WitdhColumn();

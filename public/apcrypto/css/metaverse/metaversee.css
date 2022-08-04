@@ -10,6 +10,7 @@ main .metaver_container {
   background-color: #0C091C;
   color: rgb(253, 244, 244);
   width: 100%;
+  margin: 4rem 0 10rem 0;
 }
 main .metaver_container .bloc_metavers .patie_metavers {
   margin-bottom: 5rem;
@@ -95,4 +96,4 @@ main .metaver_container .meta .texte_meta {
     width: 100%;
     padding: 0 1rem;
   }
-}/*# sourceMappingURL=metaverse.css.map */
+}/*# sourceMappingURL=metaversee.css.map */

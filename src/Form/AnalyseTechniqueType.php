@@ -27,7 +27,7 @@ class AnalyseTechniqueType extends AbstractType
                         'message' => 'Le nom de l\'actif ne doit pas être vide',
                     ]),
                     new Length([
-                        'min' => 2,
+                        'min' => 3,
                         'minMessage' => 'Le nom de l\'actif ne peut pas être inférieur à {{ limit }} caractères',
                         'max' => 300,
                     ]),

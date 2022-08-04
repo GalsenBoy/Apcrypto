@@ -27,7 +27,7 @@ class AnalyseFondamentaleType extends AbstractType
                         'message' => ' Veuillez entrer le nom l\'actif ',
                     ]),
                     new Length([
-                        'min' => 2,
+                        'min' => 3,
                         'minMessage' => 'Le nom de l\'actif ne doit pas être inférieur à {{ limit }} caractères',
                         'max' => 100,
                     ]),

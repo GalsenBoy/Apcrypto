@@ -76,6 +76,7 @@ class IndexController extends AbstractController
 
         if ($commentaireForm->isSubmitted() && $commentaireForm->isValid()) {
             $commentaire->setDate(new \DateTime("now"));
+            $commentaire->setEmail('test@gmail.com');
             $commentaire->setAnalysetechnique($analyse);
             $entityManager->persist($commentaire);
             $entityManager->flush();

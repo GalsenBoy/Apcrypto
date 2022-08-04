@@ -19,12 +19,14 @@ class CommentaireType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            /*
             ->add('email', EmailType::class, [
                 'label' => 'Votre e-mail',
                 'attr' => [
                     'class' => 'input'
                 ]
             ])
+*/
             ->add('pseudo', TextType::class, [
                 'label' => 'Votre pseudo',
                 'attr' => [
@@ -33,6 +35,7 @@ class CommentaireType extends AbstractType
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Votre pseudo ne peut pas être vide',
+
                     ]),
                     new Length([
                         'min' => 3,
@@ -41,6 +44,7 @@ class CommentaireType extends AbstractType
                     ]),
                 ],
             ])
+
             ->add('contenu', TextareaType::class, [
                 'label' => 'Commentaire',
                 'attr' => [

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Commentaire -
+{% block title %}Commentaire analyse technique -
 	{{ parent() }}
 {% endblock %}
 {% block body %}
@@ -25,11 +25,9 @@
 						<a style="color:beige" href="{{analyse.analyse}}">Voir l'analyse technique
 						</a>
 					</p>
-					<p class="texte_analyse formfield">
+					<p class="texte_analyse formfield ">
 						<label>Plan de l'analyse :</label>
-						<textarea readonly="readonly" style="resize:none" rows="7" cols="45">
-							{{analyse.explication}}
-						</textarea>
+						<textarea readonly="readonly" style="resize:none;background-color:#0C091C;color:white;padding:3px" rows="7" cols="45">{{analyse.explication}}</textarea>
 					</p>
 				</div>
 			</div>

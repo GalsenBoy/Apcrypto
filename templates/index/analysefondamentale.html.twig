@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Commentaire -
+{% block title %}Commentaire analyse fondamentale -
 	{{ parent() }}
 {% endblock %}
 {% block body %}
@@ -22,9 +22,7 @@
 					</p>
 					<p class="analyseT formfield">
 						<label>Plan de l'analyse :</label>
-						<textarea readonly="readonly" style="resize:none" rows="7" cols="45">
-							{{fondamentale.ExpliquationFond}}
-						</textarea>
+						<textarea readonly="readonly" style="resize:none;background-color:#0C091C;color:white;padding:3px" rows="7" cols="45">{{fondamentale.ExpliquationFond}}</textarea>
 					</p>
 				</div>
 			</div>

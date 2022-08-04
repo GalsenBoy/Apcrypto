@@ -13,7 +13,7 @@ class Analyse extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
-       
+
         for ($i = 0; $i < 8; $i++) {
             $analyse = new AnalyseTechnique;
             $analyse->setActif('Bitcoin');

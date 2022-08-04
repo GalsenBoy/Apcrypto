@@ -13,11 +13,6 @@ nft.reveal('.definition_nft', {
     duration: 2000
 })
 
-nft.reveal('.txt', {
-    distance: '70px',
-    delay: 1000,
-    duration: 1500,
-})
 
 nft.reveal('.image-top', {
     duration: 1000,

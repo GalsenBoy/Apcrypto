@@ -27,8 +27,8 @@ class IndexController extends AbstractController
     {
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
-        $analyse = $analyseRepository->findBy(array(),array('date' => 'DESC'));
-        
+        $analyse = $analyseRepository->findBy(array(), array('date' => 'DESC'));
+
         $analyse = $paginatorInterface->paginate(
             $analyse,
             $request->query->getInt(key: 'page', default: 1),
@@ -43,14 +43,14 @@ class IndexController extends AbstractController
     {
         $entityManager = $managerRegistry->getManager();
         $fondamentaleRepository = $entityManager->getRepository(AnalyseFondamentale::class);
-        $fondamentale = $fondamentaleRepository->findBy(array(),array('createat' => 'DESC'));
+        $fondamentale = $fondamentaleRepository->findBy(array(), array('createat' => 'DESC'));
 
         $fondamentale = $paginatorInterface->paginate(
             $fondamentale,
             $request->query->getInt(key: 'page', default: 1),
             limit: 3,
         );
-        
+
 
         return $this->render('index/fondamentale.html.twig', [
             'fondamentale' => $fondamentale,
@@ -60,7 +60,7 @@ class IndexController extends AbstractController
     #[Route('analyse/technique/{analyseId}', name: 'analyse_display')]
     public function displayAnalyse(int $analyseId, ManagerRegistry $managerRegistry, Request $request): Response
     {
-        $entityManager = $managerRegistry->getManager();   
+        $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->find($analyseId);
         if (!$analyse) {
@@ -87,7 +87,7 @@ class IndexController extends AbstractController
             'commentaire' => $commentaire,
             'formName' => "Commentaire",
             'dataForm' => $commentaireForm->createView(),
-            
+
         ]);
     }
     #[Route('analyse/creer', name: 'analyse_create')]
@@ -95,7 +95,7 @@ class IndexController extends AbstractController
     {
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
-      
+
         $analyse = new AnalyseTechnique;
         $analyseForm = $this->createForm(AnalyseTechniqueType::class, $analyse);
         //Nous appliquons la Request sur notre formulaire AnalyseTechniqueType, et si ce dernier est validé, nous le persistons au sein de notre base de données
@@ -142,10 +142,10 @@ class IndexController extends AbstractController
     {
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
-       
+
         $fondamentale = new AnalyseFondamentale;
         $fondamentaleForm = $this->createForm(AnalyseFondamentaleType::class, $fondamentale);
-       
+
         $fondamentaleForm->handleRequest($request);
         if ($fondamentaleForm->isSubmitted() && $fondamentaleForm->isValid()) {
             $fondamentale->setCreateat(new \DateTime("now"));

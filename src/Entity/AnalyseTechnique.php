@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 use App\Repository\AnalyseTechniqueRepository;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Url;
 
 #[ORM\Entity(repositoryClass: AnalyseTechniqueRepository::class)]
 class AnalyseTechnique
@@ -18,6 +19,11 @@ class AnalyseTechnique
     #[ORM\Column(type: 'string', length: 255)]
     private $actif;
 
+    /**
+     * @Url(
+     *    message = " {{ value }} n'est pas une adresse url valide",
+     * )
+     */
     #[ORM\Column(type: 'string', length: 255)]
     private $analyse;
 

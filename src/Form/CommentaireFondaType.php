@@ -5,6 +5,8 @@ namespace App\Form;
 use App\Entity\CommentaireFonda;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,18 +18,38 @@ class CommentaireFondaType extends AbstractType
     {
         $builder
             //->add('actifFonda')
-            ->add('nickname',TextType::class,[
+            ->add('nickname', TextType::class, [
                 'label' => 'Pseudo',
-                'attr' =>[
+                'attr' => [
                     'class' => 'input'
-               ]
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Votre pseudo ne peut pas être vide',
+                    ]),
+                    new Length([
+                        'min' => 3,
+                        'minMessage' => ' Votre pseudo ne peut pas être inférieur à {{ limit }} caractères',
+                        'max' => 100,
+                    ]),
+                ],
             ])
-            ->add('ContenuFonda',TextareaType::class,[
+            ->add('ContenuFonda', TextareaType::class, [
                 'label' => 'Commentaire',
-                'attr' =>[
+                'attr' => [
                     'class' => 'textarea',
                     'style' => 'resize:none'
-               ]
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => ' Le commentaire ne peut pas être vide',
+                    ]),
+                    new Length([
+                        'min' => 25,
+                        'minMessage' => ' Le commentaire ne peut pas être inférieur à {{ limit }} caractères',
+                        'max' => 300,
+                    ]),
+                ],
             ])
             //->add('date')
             //->add('analyseFondamentale')
@@ -37,8 +59,7 @@ class CommentaireFondaType extends AbstractType
                     'class' => 'button is-link is-info',
                     'style' => 'margin-top:1rem'
                 ]
-            ])
-            ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

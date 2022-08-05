@@ -1,10 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formulaire {{ formName }} - {{ parent() }}{% endblock %}
+{% block title %}Formulaire
+	{{ formName }}
+	-
+	{{ parent() }}
+{% endblock %}
 
 {% block body %}
-    <div class="container has-text-white" style="margin-top:130px" >
-        <h1 class="is-size-4">{{ formName }} :</h1>
-        {{ form(dataForm) }}
-    </div>
-{% endblock %}
+	<div class="container has-text-white" style="margin-top:130px">
+		<h1 class="is-size-4">{{ formName }}
+			:</h1>
+		{{ form(dataForm) }}
+		</div>
+	{% endblock %}

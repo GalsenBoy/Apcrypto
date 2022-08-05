@@ -18,6 +18,7 @@ class CommentaireFondaType extends AbstractType
     {
         $builder
             //->add('actifFonda')
+            /*
             ->add('nickname', TextType::class, [
                 'label' => 'Pseudo',
                 'attr' => [
@@ -34,6 +35,7 @@ class CommentaireFondaType extends AbstractType
                     ]),
                 ],
             ])
+            */
             ->add('ContenuFonda', TextareaType::class, [
                 'label' => 'Commentaire',
                 'attr' => [

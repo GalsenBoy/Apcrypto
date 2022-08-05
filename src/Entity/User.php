@@ -20,7 +20,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private $id;
-   
+
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
 
@@ -30,7 +30,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string')]
     private $password;
 
-    
+
     #[ORM\Column(type: 'string', length: 100)]
     private $nom;
 
@@ -55,7 +55,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->commentaires = new ArrayCollection();
     }
 
-   
+
     public function getId(): ?int
     {
         return $this->id;
@@ -80,7 +80,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->email;
+        return (string) $this->pseudo;
     }
 
     /**
@@ -164,7 +164,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of estActif
-     */ 
+     */
     public function getEstActif(): ?bool
     {
         return $this->estActif;
@@ -174,8 +174,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of estActif
      *
      * @return  self
-     */ 
-    public function setEstActif($estActif):self
+     */
+    public function setEstActif($estActif): self
     {
         $this->estActif = $estActif;
 

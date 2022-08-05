@@ -29,6 +29,8 @@ class CommentaireFonda
     #[ORM\JoinColumn(nullable: false)]
     private $analyseFondamentale;
 
+
+
     public function getId(): ?int
     {
         return $this->id;

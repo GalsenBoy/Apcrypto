@@ -35,6 +35,10 @@ class AnalyseTechnique
 
     #[ORM\OneToMany(mappedBy: 'analysetechnique', targetEntity: Commentaire::class, orphanRemoval: true)]
     private $commentaires;
+    /*
+    #[ORM\Column(type: 'string', length: 255)]
+    private $utilisateur;
+    */
 
     public function __construct()
     {
@@ -125,4 +129,17 @@ class AnalyseTechnique
 
         return $this;
     }
+    /*
+    public function getUtilisateur(): ?string
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(string $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+    */
 }

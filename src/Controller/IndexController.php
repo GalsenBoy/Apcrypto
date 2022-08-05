@@ -70,6 +70,8 @@ class IndexController extends AbstractController
         //Partie commentaire
         //On crée le commentaire
         $commentaire = new Commentaire;
+        $user = $this->getUser()->getUserIdentifier();
+
         //On génère le formulaire
         $commentaireForm = $this->createForm(CommentaireType::class, $commentaire);
         $commentaireForm->handleRequest($request);
@@ -78,6 +80,7 @@ class IndexController extends AbstractController
             $commentaire->setDate(new \DateTime("now"));
             $commentaire->setEmail('test@gmail.com');
             $commentaire->setAnalysetechnique($analyse);
+            $commentaire->setPseudo($user);
             $entityManager->persist($commentaire);
             $entityManager->flush();
             return $this->redirectToRoute('app_communaute');
@@ -94,6 +97,8 @@ class IndexController extends AbstractController
     #[Route('analyse/creer', name: 'analyse_create')]
     public function createAnalyse(Request $request, ManagerRegistry $managerRegistry): Response
     {
+
+        //$user = $this->getUser()->getUserIdentifier();
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
 
@@ -103,6 +108,7 @@ class IndexController extends AbstractController
         $analyseForm->handleRequest($request);
         if ($analyseForm->isSubmitted() && $analyseForm->isValid()) {
             $analyse->setDate(new \DateTime("now"));
+            //$analyse->setUtilisateur($user);
             //Condition supplémentaire: on ne persiste
             $entityManager->persist($analyse);
             $entityManager->flush();
@@ -167,6 +173,7 @@ class IndexController extends AbstractController
     public function displayAnalyseFondamentale(int $fondamentaleId, ManagerRegistry $managerRegistry, Request $request): Response
     {
         $entityManager = $managerRegistry->getManager();
+        $user = $this->getUser()->getUserIdentifier();
         $fondamentaleRepository = $entityManager->getRepository(AnalyseFondamentale::class);
         $fondamentale = $fondamentaleRepository->find($fondamentaleId);
         if (!$fondamentale) {
@@ -176,6 +183,7 @@ class IndexController extends AbstractController
         //Partie commentaire
         //On crée le commentaire
         $commentaireFonda = new CommentaireFonda;
+
         //On génère le formulaire
         $commentaireFondaForm = $this->createForm(CommentaireFondaType::class, $commentaireFonda);
         $commentaireFondaForm->handleRequest($request);
@@ -183,9 +191,10 @@ class IndexController extends AbstractController
         if ($commentaireFondaForm->isSubmitted() && $commentaireFondaForm->isValid()) {
             $commentaireFonda->setDate(new \DateTime("now"));
             $commentaireFonda->setanalyseFondamentale($fondamentale);
+            $commentaireFonda->setNickname($user);
             $entityManager->persist($commentaireFonda);
             $entityManager->flush();
-            return $this->redirectToRoute('app_communaute');
+            return $this->redirectToRoute('app_fondamentale');
         }
 
         return $this->render('index/analysefondamentale.html.twig', [

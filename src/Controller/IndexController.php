@@ -98,7 +98,7 @@ class IndexController extends AbstractController
     public function createAnalyse(Request $request, ManagerRegistry $managerRegistry): Response
     {
 
-        //$user = $this->getUser()->getUserIdentifier();
+        $user = $this->getUser()->getUserIdentifier();
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
 
@@ -108,7 +108,7 @@ class IndexController extends AbstractController
         $analyseForm->handleRequest($request);
         if ($analyseForm->isSubmitted() && $analyseForm->isValid()) {
             $analyse->setDate(new \DateTime("now"));
-            //$analyse->setUtilisateur($user);
+            $analyse->setUtilisateur($user);
             //Condition supplémentaire: on ne persiste
             $entityManager->persist($analyse);
             $entityManager->flush();
@@ -147,15 +147,17 @@ class IndexController extends AbstractController
     #[Route('analyse/fondamental/creer', name: 'fondamentale_create')]
     public function createAnalyseFondamentale(Request $request, ManagerRegistry $managerRegistry): Response
     {
+
+        $user = $this->getUser()->getUserIdentifier();
         //Pour dialoguer avec notre base de données et envoyer des éléments, nous avons besoin de l'Entity Manager
         $entityManager = $managerRegistry->getManager();
-
         $fondamentale = new AnalyseFondamentale;
         $fondamentaleForm = $this->createForm(AnalyseFondamentaleType::class, $fondamentale);
 
         $fondamentaleForm->handleRequest($request);
         if ($fondamentaleForm->isSubmitted() && $fondamentaleForm->isValid()) {
             $fondamentale->setCreateat(new \DateTime("now"));
+            $fondamentale->setUtilisateur($user);
             $entityManager->persist($fondamentale);
             $entityManager->flush();
             return $this->redirectToRoute('app_fondamentale');

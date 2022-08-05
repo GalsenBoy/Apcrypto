@@ -24,7 +24,7 @@
 					<div class="personne">
 						<div class="avata"></div>
 						<div class="identite">
-							<p class=""></p>
+							<p class="pseudo">{{fondamentale.utilisateur}}</p>
 							<p id="">Publié le
 								{{fondamentale.createat|date("d/m/Y à H:i", "Europe/Paris")}}
 							</p>
@@ -45,10 +45,10 @@
 							<a style="color:#110D26" href="{{ path('analyse_fondamentale_display', {'fondamentaleId' : fondamentale.id}) }}" type="button">Commenter</a>
 						</button>
 						<!--
-																																																												<button>
-																																																													<a style="color:#110D26" href="{{ path('analyse_update', {'fondamentaleId' : fondamentale.id}) }}" type="button">Modifier</a>
-																																																												</button>
-																																																												-->
+																																																																		<button>
+																																																																			<a style="color:#110D26" href="{{ path('analyse_update', {'fondamentaleId' : fondamentale.id}) }}" type="button">Modifier</a>
+																																																																		</button>
+																																																																		-->
 					</div>
 				</div>
 			{% endfor %}

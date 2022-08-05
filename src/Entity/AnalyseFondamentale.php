@@ -27,6 +27,9 @@ class AnalyseFondamentale
     #[ORM\OneToMany(mappedBy: 'analyseFondamentale', targetEntity: CommentaireFonda::class, orphanRemoval: true)]
     private $commentaireFondas;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $utilisateur;
+
     public function __construct()
     {
         $this->commentaireFondas = new ArrayCollection();
@@ -99,6 +102,18 @@ class AnalyseFondamentale
                 $commentaireFonda->setAnalyseFondamentale(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?string
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(string $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

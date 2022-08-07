@@ -29,7 +29,8 @@ class AnalyseFondamentaleType extends AbstractType
                     new Length([
                         'min' => 3,
                         'minMessage' => 'Le nom de l\'actif ne doit pas être inférieur à {{ limit }} caractères',
-                        'max' => 100,
+                        'max' => 50,
+                        'maxMessage' => 'Le nom de l\'actif ne peut pas être supérieur à {{ limit }} caractères'
                     ]),
                 ],
             ])
@@ -44,9 +45,8 @@ class AnalyseFondamentaleType extends AbstractType
                         'message' => ' L\'explication de l\'analyse ne doit pas être vide',
                     ]),
                     new Length([
-                        'min' => 25,
+                        'min' => 10,
                         'minMessage' => ' L\'explication de l\'analyse ne peut pas être inférieur à {{ limit }} caractères',
-                        'max' => 300,
                     ]),
                 ],
             ])

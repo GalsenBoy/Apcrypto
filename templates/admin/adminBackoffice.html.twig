@@ -1,31 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin Backoffice -
+{% block title %}Admin User -
 	{{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<div style="margin-top:100px">
 		<table class="table is-striped">
-				<th>Id</th>
-				<th>Nom</th>
-				<th>Prenom</th>
-				<th>Pseudo</th>
-				<th>E-mail</th>
-				<th>Vérification du compte</th>
-				<th>Suppression de compte</th>
+			<th>Id</th>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Pseudo</th>
+			<th>E-mail</th>
+			<th>Vérification du compte</th>
+			<th>Suppression de compte</th>
+		</tr>
+		{% for user in user %}
+			<tr>
+				<td>{{user.id}}</td>
+				<td>{{user.nom}}</td>
+				<td>{{user.prenom}}</td>
+				<td>{{user.pseudo}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.estActif}}</td>
+				<td>
+					<a class="has-text-danger" href="{{ path('app_user_delete', {'userId' : user.id}) }}" type="button">Bannir</a>
+				</td>
 			</tr>
-			{% for user in user %}
-				<tr>
-					<td>{{user.id}}</td>
-					<td>{{user.nom}}</td>
-					<td>{{user.prenom}}</td>
-					<td>{{user.pseudo}}</td>
-					<td>{{user.email}}</td>
-					<td>{{user.estActif}}</td>
-					<td><a class="has-text-danger" href="{{ path('app_user_delete', {'userId' : user.id}) }}" type="button">Bannir</a></td>
-				</tr>
-			{% endfor %}
-		</table>
-	</div>
-{% endblock %}
+		{% endfor %}
+	</table>
+</div>{% endblock %}

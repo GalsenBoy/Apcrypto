@@ -29,7 +29,8 @@ class AnalyseTechniqueType extends AbstractType
                     new Length([
                         'min' => 3,
                         'minMessage' => 'Le nom de l\'actif ne peut pas être inférieur à {{ limit }} caractères',
-                        'max' => 300,
+                        'max' => 25,
+                        'maxMessage' => 'Le nom de l\'actif ne peut pas être supérieur à {{ limit }} caractères'
                     ]),
                 ],
             ])
@@ -57,7 +58,7 @@ class AnalyseTechniqueType extends AbstractType
                     new Length([
                         'min' => 25,
                         'minMessage' => 'Le plan de l\'analyse ne peut pas être inférieur à {{ limit }} caractères',
-                        'max' => 300,
+
                     ]),
                 ],
             ])

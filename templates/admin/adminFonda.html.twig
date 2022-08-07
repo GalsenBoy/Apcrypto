@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Analyse fondamentale -
+{% block title %}Admin analyse fondamentale -
 	{{ parent() }}
 {% endblock %}
 
@@ -25,10 +25,8 @@
 							{{fondamentale.actifName}}
 						</p>
 						<p class="analyseT formfield">
-							<label >Plan de l'analyse :</label>
-							<textarea style="width:90%" rows="7" cols="45">
-								{{fondamentale.ExpliquationFond}}
-							</textarea>
+							<label>Plan de l'analyse :</label>
+							<textarea readonly="readonly" style="width:90%;padding:5px;border:3px solid #0d1230;border-radius:8px" rows="7" cols="45">{{fondamentale.ExpliquationFond}}</textarea>
 						</p>
 					</div>
 					<div class="commenter">
@@ -40,5 +38,5 @@
 			{% endfor %}
 		</div>
 	</main>
-	
+
 {% endblock %}

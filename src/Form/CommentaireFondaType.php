@@ -47,9 +47,9 @@ class CommentaireFondaType extends AbstractType
                         'message' => ' Le commentaire ne peut pas être vide',
                     ]),
                     new Length([
-                        'min' => 25,
+                        'min' => 2,
                         'minMessage' => ' Le commentaire ne peut pas être inférieur à {{ limit }} caractères',
-                        'max' => 300,
+
                     ]),
                 ],
             ])

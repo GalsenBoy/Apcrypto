@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin Controller
+{% block title %}Admin analyse technique -
+	{{ parent() }}
 {% endblock %}
 
 {% block body %}
-	<main >
+	<main>
 		<div style="width:80%" class="analyseTechnique">
 			{% for analyse in analyse %}
 				<div style="margin-bottom:3rem;width:100%" class="analyseContainer">
@@ -28,16 +29,14 @@
 							</a>
 						</p>
 						<p class="texte_analyse formfield">
-						<label>Plan de l'analyse :</label>
-						<textarea style="width:90%" rows="7" cols="45">
-							{{analyse.explication|trim}}
-						</textarea>
+							<label>Plan de l'analyse :</label>
+							<textarea readonly="readonly" style="width:90%;padding:5px;border:3px solid #0d1230;border-radius:8px" rows="7" cols="45">{{analyse.explication}}</textarea>
 						</p>
 					</div>
 					<div class="commenter">
 						<button>
 							<a style="color:#110D26" href="{{ path('analyse_delete', {'analyseId' : analyse.id}) }}" type="button">
-							Supprimer</a>
+								Supprimer</a>
 						</button>
 					</div>
 				</div>

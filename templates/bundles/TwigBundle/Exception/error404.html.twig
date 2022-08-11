@@ -19,12 +19,15 @@
 			<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 		{% endblock %}
 	</head>
-	<body>
+	<body style="height:100%;background-image:url('https://www.creermalin.fr/wp-content/uploads/erreur-404-page-introuvable.jpg'); background-repeat: repeat-y; object-fit: cover;  background-position-y: bottom;">
 		{% include 'layout/header.html.twig' %}
-		{% block body %}{% endblock %}
-		{% include 'layout/footer.html.twig' %}
-		{% block javascripts %}
-			<script src=" {{ asset('apcrypto/js/script.js') }} "></script>
+		{% block body %}
+			<div>
+				<h1 class="has-text-centered has-text-white is-size-1" style="margin:170px 0px 150px 0px;">
+					Oups!	La page n'a pas été trouvé
+				</h1>
+			</div>
 		{% endblock %}
+		{% include 'layout/footer.html.twig' %}
 	</body>
 </html>

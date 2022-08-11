@@ -61,10 +61,12 @@ crypto.reveal('h3', {
     distance: '85px',
     delay: 500
 });
+/*
 crypto.reveal('li', {
     duration: 1500,
     distance: '85px'
 });
+*/
 crypto.reveal('.txt-crypto', {
     duration: 1500,
     distance: '85px'

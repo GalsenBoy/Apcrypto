@@ -123,7 +123,7 @@ class IndexController extends AbstractController
     }
 
     #[Route('analyse/update{fondamentaleId}', name: 'analyse_update')]
-    public function updateAnalyse(int $fondamentaleId = 0, ManagerRegistry $managerRegistry, Request $request): Response
+    public function updateAnalyse(Request $request, int $fondamentaleId = 0, ManagerRegistry $managerRegistry): Response
     {
         $entityManager = $managerRegistry->getManager();
         $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
@@ -172,7 +172,7 @@ class IndexController extends AbstractController
 
 
     #[Route('analyse/fondamentale/{fondamentaleId}', name: 'analyse_fondamentale_display')]
-    public function displayAnalyseFondamentale(int $fondamentaleId, ManagerRegistry $managerRegistry, Request $request): Response
+    public function displayAnalyseFondamentale(Request $request, int $fondamentaleId, ManagerRegistry $managerRegistry): Response
     {
         $entityManager = $managerRegistry->getManager();
         $user = $this->getUser()->getUserIdentifier();

@@ -1,298 +1,322 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="C'est quoi une crypto-commaie? définition d'une crypto-monnaie. Binance et BNB Chain. Acheter du shiba inu et du dogecoin, comment miner de la crypto"/>
+		<title>
+			{% block title %}
+				Cryptomonnaie -	Apcrypto
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			<link rel="icon" href="{{ asset('apcrypto/img/onglet.png')}} ">
+			<link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+			<link rel="stylesheet" href="{{ asset('apcrypto/css/style.css') }}">
+			<link rel="stylesheet" href="{{ asset('apcrypto/css/crypto/cryptoo.css') }}">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+		{% endblock %}
+	</head>
+	<body>
+		{% include 'layout/header.html.twig' %}
+		{% block body %}
+			<main>
+				<div class="crypto_container">
+					<h1 class="has-text-centered is-size-3 mb-4 is-underlined">Cryptomonnaie :</h1>
+					<div class="blockchain">
+						<div class="partie_crypto">
+							<div class="image_btc">
+								<img src="{{ asset('apcrypto/img/crypto/bit.jpg') }}" alt="bitcoin"/>
+							</div>
+							<div class="definition_blockchain">
+								<p>
+									A l’origine,
+									<span>
+										<strong>Blockchain</strong>
+									</span>
+									est un terme informatique qui désigne ce qui permet de structurer et de partager des
+									<span>données</span>
+									, aujourd’hui, les blockchains sont qualifiées de « cinquième
+																																																																																																																																																																																																	                            évolution» majeur de l’informatique. Pour bien définir ce qu’est la «
+									<strong>blockchain</strong>
+									» de manière générale, nous dirons qu’il s’agit d’une
+									<strong>technologie</strong>
+									permettant
+									<strong>le stockage et la transmission d’informations</strong>
+									dans un contexte totalement
+									<strong>transparent, décentralisé et sécurisé.</strong>
+								</p>
+								<h3>
+									<u>
+										Il existe différentes sortes de blockchains:</u>
+								</h3>
+								<ul>
+									<li>
+										Les Blockchain publiques
+									</li>
+									<li>
+										Les Blockchain privées
+									</li>
+									<li>
+										Les Blockchain autorisées ou de consortium
+									</li>
+								</ul>
+							</div>
+						</div>
 
-{% block title %}Cryptomonnaie -
-	{{ parent() }}
-{% endblock %}
+						<div class="text_btc">
+							<h3>
+								<u>Les blockchain publiques :</u>
+							</h3>
+							<p>
+								Les blockchain publiques ne requirent aucune permission spécifique à l’entrée, ni au moment de réaliser une
+								<strong>transaction.</strong>
+								Les différents acteurs de la chaîne sont tous au même niveau, et tous les
+								<strong>nœuds</strong>
+								du réseau d’échange sont contrôlés par le réseau
+								<strong>peer-to-peer</strong>
+								(Le peer-to-peer ou système pair à pair est un modèle d'échange en réseau où chaque entité est à la fois client et serveur, contrairement au modèle
+																																																																																																																																																																								client-serveur. Les termes « pair », « nœud » et « utilisateur » sont généralement utilisés pour désigner les entités composant un tel système).
+							</p>
 
+							<h3>
+								<u>Les blockchain publiques :</u>
+							</h3>
+							<p>
+								Pour se représenter ce qu’est un système de blockchain privée, on pourrait utiliser l’image d’un intranet privé, mettant à la disposition d’un nombre limité de participants un accès restreint à des contenus. C’est donc tout le contraire d’un Internet
+																																																																																																																																																																								public, où le plus grand nombre est amené à participer. Ces types de blockchains sont favorisés par les consortium qui ont des membres affiliés qui échangent des informations confidentielles.
+							</p>
 
-{% block body %}
-	<main>
-		<div class="crypto_container">
-			<h1 class="has-text-centered is-size-3 mb-4 is-underlined">Cryptomonnaie :</h1>
-			<div class="blockchain">
-				<div class="partie_crypto">
-					<div class="image_btc">
-						<img src="{{ asset('apcrypto/img/crypto/bit.jpg') }}" alt="bitcoin"/>
+							<h3>
+								<u>Les blockchain de consortium :</u>
+							</h3>
+							<p>
+								La blockchain de consortium fait l’objet d’un partage entre ses différents acteurs, chacun d’entre eux disposant d’un nœud du réseau dans son infrastructure. Ce qui fait que chaque partie équitablement puissante dans la chaîne a un intérêt à travailler
+																																																																																																																																																																								                        avec le groupe. Pour qu’un bloc supplémentaire soit ajouté à la chaîne, un nombre suffisant de membres doivent valider les
+								<strong>transactions.</strong>
+								Il n’est donc plus question ici de paiements selon
+																																																																																																																																																																								                        des critères informatiques, mais de majorité acquise au sein des membres, de la communauté qui déterminent ainsi la validité des transactions.
+							</p>
+							<p>La blockchain
+								<strong>Bitcoin</strong>
+								est l’une des plus importantes et puissantes
+								<span>blockchains</span>
+								au monde.Elle a été créée principalement pour envoyer du
+								<strong>Bitcoin,</strong>
+								la crypto-monnaie. Donc naturellement pour
+																																																																																																																																																																								                        créer un message dans la blockchain bitcoin, vous devez envoyer des bitcoins d’un compte à un autre. Lorsque vous envoyez des bitcoins d’un compte à un autre, un historique de transaction est inscrit dans la blockchain Bitcoin.
+																																																																																																																																																																								                        Une fois qu’une transaction a été inscrite, elle ne peut être effacée, votre message sera présent aussi longtemps que le bitcoin existera. Ce concept de permanence est puissant et c’est la caractéristique la plus importante de
+																																																																																																																																																																								                        toute blockchain.</p>
+						</div>
 					</div>
-					<div class="definition_blockchain">
-						<p>
-							A l’origine,
-							<span>
-								<strong>Blockchain</strong>
-							</span>
-							est un terme informatique qui désigne ce qui permet de structurer et de partager des
-							<span>données</span>
-							, aujourd’hui, les blockchains sont qualifiées de « cinquième
-																																																																						                            évolution» majeur de l’informatique. Pour bien définir ce qu’est la «
-							<strong>blockchain</strong>
-							» de manière générale, nous dirons qu’il s’agit d’une
-							<strong>technologie</strong>
-							permettant
-							<strong>le stockage et la transmission d’informations</strong>
-							dans un contexte totalement
-							<strong>transparent, décentralisé et sécurisé.</strong>
-						</p>
-						<h3>
-							<u>
-								Il existe différentes sortes de blockchains:</u>
-						</h3>
-						<ul>
-							<li>
-								Les Blockchain publiques
-							</li>
-							<li>
-								Les Blockchain privées
-							</li>
-							<li>
-								Les Blockchain autorisées ou de consortium
-							</li>
-						</ul>
+					<div class="bloc_bnb">
+						<div class="partie_bnb" id="partie_bnb">
+							<div class="image_bnb">
+								<img src="{{ asset('apcrypto/img/crypto/bnb.jpg') }}" alt="binance"/>
+							</div>
+							<div class="definition_Binance">
+								<p>
+									Le nom
+									<strong>Binance</strong>
+									vient de "Binary + Finance"1. La plateforme permet de
+									<strong>
+										stocker, acheter, revendre,</strong>
+									et é
+									<u>changer des cryptomonnaies</u>
+									contre d'autres cryptomonnaies mais également contre
+																																																																																																																																																																																																	                            des monnaies fiduciaires telles que l'Euro ou le Dollar. Binance se rémunère en prélevant une commission à chaque transaction. Les frais sont parmi les plus bas du marché, la plateforme est un succès. La taxe équivaut à environ
+																																																																																																																																																																																																	                            0,1 % du montant retiré ou échangé. Les dépôts sont gratuits, en revanche les transactions et les retraits sont payants. Depuis le 22 janvier 2021, Binance a supprimé la possibilité d'exécuter des retraits en Euro directement
+																																																																																																																																																																																																	                            vers son compte bancaire. En outre, les retraits en Euro sont possibles uniquement par carte Visa avec frais de 1 % sur le montant transféré.
+								</p>
+							</div>
+						</div>
+
+						<div class="text_bnb">
+							<p>
+								La Binance Smart Chain (BSC) et la Binance Chain, les blockchains reliées à l'écosystème de la plateforme Binance, deviennent la « BNB Chain », une nouvelle entité portée sur des notions de multi-chaîne. En parallèle, dans une optique de décentralisation,
+																																																																																																																																																																								                        la BNB Chain accueillera prochainement de nouveaux nœuds validateurs.
+							</p>
+							<h3>
+								<u>Le BNB Chain, une blockchain décentralisé</u>
+							</h3>
+							<p>
+								La plateforme d'échange de cryptomonnaies
+								<strong>Binance</strong>
+								a levé le voile sur sa nouvelle entité blockchain, la
+								<strong>« BNB Chain ».</strong>
+							</p>
+							<p>
+								Ce changement de nom vise à mettre en évidence le lien de cette blockchain avec le token BNB ainsi qu'à illustrer l'évolution décentralisée de l'écosystème BNB. Binance Chain est un système logiciel de blockchain développé par Binance et sa communauté.
+																																																																																																																																																																								                        Binance DEX fait référence aux fonctionnalités d'échange décentralisées développées au-dessus de Binance Chain. Veuillez lire la
+								<a href="https://docs.binance.org/faq/faq.html">FAQ</a>
+								pour commencer
+							</p>
+							<h3>
+								<u>
+									La BNB Chain est ainsi constituée de :</u>
+							</h3>
+							<ul>
+								<li>
+									La
+									<strong>BNB Beacon Chain</strong>, anciennement Binance Chain. Jouera un rôle dans la gouvernance de la BNB Chain (staking de token BNB => (Le staking est le fait d’immobiliser ses crypto-monnaies dans un smart contract
+																																																																																																																																																																																																																										                            (contrat intelligent) de façon à participer aux opérations qui se déroulent sur une blockchain. Le staking est similaire au minage dans le sens où ils récompensent les utilisateurs qui participent à la sécurisation d’un réseau
+																																																																																																																																																																																																																										                            décentralisé. Vous allez ainsi stocker vos crypto tout en bénéficiant d’avantages.))
+								</li>
+								<li>
+									La
+									<strong>BNB Smart Chain (BSC)</strong>, anciennement Binance Smart Chain. Blockchain compatible avec l'Ethereum Virtual Machine(L’Ethereum Virtual Machine, que l’on appelle également EVM ou machine virtuelle d’
+									<strong>Ethereum,</strong>
+									est la première sous-couche du réseau. C’est elle qui permet aux smart contracts de fonctionner sur la blockchain Ethereum grâce à son système « Turing Complet ».)
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="bloc_defi">
+						<div class="partie_defi" id="partie_defi">
+							<div class="image_defi">
+								<img src="{{ asset('apcrypto/img/crypto/defi.jpg') }}" alt="DeFi"/>
+							</div>
+							<div class="definition_defi">
+								<p>
+									DeFi, (ou « decentralized finance » (finance décentralisée), est un terme générique désignant les services financiers sur les blockchains publiques, principalement l'Ethereum. La DeFi vous offre des services bancaires classiques (percevoir des intérêts,
+																																																																																																																																																																																																	                            emprunter, prêter, acheter des assurances, négocier des produits dérivés et des actifs, et bien plus encore) mais avec plus de rapidité, sans paperasse et sans intermédiaire. À l'image de la plupart des cryptomonnaies, la DeFi
+																																																																																																																																																																																																	                            est internationale, de pair à pair (P2P) (elle intervient directement entre deux personnes sans être acheminée via un système centralisé), anonyme et ouverte à tous.
+								</p>
+							</div>
+						</div>
+
+						<div class="texte_defi">
+							<p>
+								L'univers de la DeFI a pris naissance le 18 décembre 2017 avec une application baptisée MakerDAO. Celle-ci a proposé un stablecoin, le DAI, soit une cryptomonnaie dont la valeur est toujours égale au dollar (1 DAI = 1 $, quelles que soient les circonstances).
+							</p>
+							<h3>
+								<u>
+									Pourquoi la Defi est-elle important ?
+								</u>
+
+							</h3>
+							<p>
+								La DeFi reprend le principe de base du Bitcoin (devise numérique) pour créer une véritable alternative numérique à Wall Street, sans les coûts connexes (tours de bureaux, salles de marché, salaires des banquiers, etc.). Elle pourrait faire naître des
+																																																																																																																																																																								                        marchés financiers plus ouverts, plus libres et plus équitables, accessibles à l'aide d'une simple connexion Internet.
+							</p>
+							<h3>
+								<u>
+									Comment fonctionne la DeFi ?
+								</u>
+							</h3>
+							<p>
+								En général, les utilisateurs utilisent DeFi via des logiciels appelés Dapps (« applications décentralisées »), dont la plupart fonctionnent actuellement sur la blockchain Ethereum. Contrairement à une banque classique, il n'y a ni demande à remplir ni
+																																																																																																																																																																								                        compte à ouvrir.
+							</p>
+							<h3>
+								<u>
+									Voici quelques-unes des manières dont les gens utilisent DeFi aujourd'hui :
+								</u>
+							</h3>
+							<ul>
+								<li>
+									Prêt : prêtez votre cryptomonnaies et percevez des intérêts et des récompenses chaque minute, et non une fois par mois.
+								</li>
+								<li>
+									Obtention de prêt : obtenez un prêt instantanément sans remplir de papiers, y compris des « prêts flash » à très court terme que les établissements financiers traditionnels ne proposent pas.
+								</li>
+								<li>
+									Négociation : négociez de pair à pair (P2P) certains actifs cryptographiques, comme si vous pouviez acheter et vendre des actions sans intermédiaire.
+								</li>
+								<li>
+									Épargne pour l'avenir : placez une partie de vos cryptomonnaies sur d'autres comptes d'épargne et bénéficiez de taux d'intérêt plus avantageux que ceux proposés par les banques.
+								</li>
+								<li>
+									Achat de produits dérivés : prenez des positions plus ou moins longues. Considérez-les en tant que version cryptée des options sur actions ou des contrats à terme.
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="bloc_meme">
+						<div class="partie_meme" id="partie_meme">
+							<div class="image_shiba">
+								<img src="{{ asset('apcrypto/img/crypto/shiba.png') }}" alt="shiba inu"/>
+							</div>
+							<div class="texte_meme">
+								<p>
+									Il existe littéralement des milliers de monnaies sur le marché. Certaines ont une utilité : le Binance Coin, quatrième cryptomonnaie la plus populaire au moment de la rédaction de cet article, est utilisé pour acheter d'autres cryptomonnaies sur la plateforme
+																																																																																																																																																																																																	de trading Binance, tandis que le Tether, une autre monnaie populaire, réplique la valeur du dollar américain.
+								</p>
+								<p>
+									Et puis il y a les « shitcoins ». Ils se caractérisent par des hausses de prix à court terme et des chutes brutales. Ces monnaies n'ont généralement aucune utilité réelle, si ce n'est de rendre certaines personnes extrêmement riches. Elles tirent souvent
+																																																																																																																																																																																																	leur nom d'objets, d'aliments ou d'animaux à consonance mièvre afin d'attirer les investisseurs peu méfiants, et on les trouve un peu partout sur les groupes Telegram « pump and dump » qui promettent de « vous emmener sur la
+																																																																																																																																																																																																	lune ».
+								</p>
+								<p>
+									Dogecoin est une Crypto-monnaie (cryptocurrency) avec un Shiba Inu (une race de chien originaire du Japon) comme logo sur Internet. Contrairement aux autres cryptomonnaies, le dogecoin a commencé explicitement comme une blague. L'entrepreneur australien
+																																																																																																																																																																																																	Jackson Palmer a lancé la monnaie en 2013, comme parodie du bitcoin. Comparé à d'autres Crypto-monnaie, Dogecoin a un programme de production des pièces initiale plus rapide: il y aura environ 100 milliards de pièces en circulation
+																																																																																																																																																																																																	à la fin de 2014 avec un supplément par la suite de 5,2 milliards de pièces chaque année. En date du 10 Octobre 2014, plus de 94 milliards de Dogecoins ont été exploités.
+								</p>
+								<p>
+									Dogecoin a été créé par le programmeur Billy Markus de Portland, Oregon, qui espérait créer une Crypto-monnaie amusante qui pourrait atteindre un groupe démographique plus large que Bitcoin.
+								</p>
+								<p>
+									Dogecoin est une forme amusante, nouvelle et en pleine croissance de la cryptocurrency «monnaie numérique». Cryptocurrency est totalement anonyme et décentralisé extrêmement sûr. Dogecoin est utilisé avec un portefeuille sur votre ordinateur, votre smartphone
+																																																																																																																																																																																																	ou un site Web. Vous pouvez l'utiliser pour acheter des biens et services, ou échangerais contre les autres monnaies (les autres cryptocurrencies ou monnaie traditionnelle comme US dollars). Il a été utilisé comme service de
+																																																																																																																																																																																																	pourboire (depuis supprimé) sur Reddit, mais il est surtout connu sous le nom de « mèmecoin » car il a moins de valeur intrinsèque que l'ether ou le bitcoin. Malgré cela, ou peut-être à cause de cela, Elon Musk adore stimuler
+																																																																																																																																																																																																	la popularité de la monnaie ; son prix a bondi de plus de 47 % après qu'il en a fait la promotion sur sa page Twitter en février 2021. La monnaie est également populaire auprès des utilisateurs de TikTok : les volumes d'échange
+																																																																																																																																																																																																	ont augmenté de 683 % en juillet 2020 après que les utilisateurs de l'application se sont mobilisés pour faire grimper le cours de la monnaie. Il s'avère que Snoop Dogg est également un fan.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="bloc_minage">
+						<div class="partie_minage" id="partie_minage">
+							<div class="image_minage">
+								<img src="{{ asset('apcrypto/img/crypto/minage.jpg') }}" alt="minage"/>
+							</div>
+							<div class="definition_minage">
+								<p>
+									Un noeud est un ordinateur relié au réseau blockchain et utilisant un programme relayant les transactions. Les noeuds conservent une copie du registre blockchain et sont répartis partout dans le monde.
+								</p>
+							</div>
+						</div>
+						<div class="texte_minage">
+							<p>
+								Le minage d’une cryptomonnaie requiert une puissance de calcul, du temps à consacrer à cette activité, et des connaissances mathématiques de base. Il est également extrêmement difficile de trouver la clé de sécurité d’un bloc, et donc de toucher une récompense
+																																																																																																																																																																								: si le rendement est votre objectif, optez pour l’achat direct de BTC en ligne. Autrement, le minage de Bitcoin se fait généralement de la même manière pour la plupart des mineurs : via un logiciel sur un PC classique ou une machine
+																																																																																																																																																																								spécialisée dans le minage de Bitcoin.
+							</p>
+							<h3>
+								<u>
+									Quelques inconvénients du minage:
+								</u>
+							</h3>
+							<h4>
+								<u>Le Bitcoin consomme plus d'énergie que les Philippines</u>
+							</h4>
+							<p>
+								Selon le Cambridge Bitcoin Electricity Consumption Index (CBECI), si le Bitcoin était un pays, il serait le 34ème à consommer le plus d’énergie avec 100,5 TWh en un an, juste derrière les Pays-Bas, et devant les Philippines, la Finlande, le Chili et la
+																																																																																																																																																																								Belgique.
+							</p>
+							<h4>
+								<u>
+									En 2020, le minage de Bitcoin chinois était alimenté par du charbon à 40 %</u>
+							</h4>
+							<p>
+								C’est l’estimation de chercheurs chinois dont l’étude a été publiée dans Nature Communication en avril 2021. Selon ces chercheurs, les émissions de carbone liées au processus de « minage » de la cryptomonnaie pourraient atteindre 130 millions de tonnes
+																																																																																																																																																																								en 2024 en Chine. Soit l’équivalent des émissions de CO2 annuelles de la République Tchèque. De quoi sérieusement enrayer l'objectif de neutralité carbone du pays... A ce titre, l’impact environnemental est l’une des raisons invoquées
+																																																																																																																																																																								par Pékin pour justifier le durcissement de sa politique envers les cryptomonnaies et l'interdiction du minage dans certaines régions.
+							</p>
+						</div>
 					</div>
 				</div>
-
-				<div class="text_btc">
-					<h3>
-						<u>Les blockchain publiques :</u>
-					</h3>
-					<p>
-						Les blockchain publiques ne requirent aucune permission spécifique à l’entrée, ni au moment de réaliser une
-						<strong>transaction.</strong>
-						Les différents acteurs de la chaîne sont tous au même niveau, et tous les
-						<strong>nœuds</strong>
-						du réseau d’échange sont contrôlés par le réseau
-						<strong>peer-to-peer</strong>
-						(Le peer-to-peer ou système pair à pair est un modèle d'échange en réseau où chaque entité est à la fois client et serveur, contrairement au modèle
-																																																												client-serveur. Les termes « pair », « nœud » et « utilisateur » sont généralement utilisés pour désigner les entités composant un tel système).
-					</p>
-
-					<h3>
-						<u>Les blockchain publiques :</u>
-					</h3>
-					<p>
-						Pour se représenter ce qu’est un système de blockchain privée, on pourrait utiliser l’image d’un intranet privé, mettant à la disposition d’un nombre limité de participants un accès restreint à des contenus. C’est donc tout le contraire d’un Internet
-																																																												public, où le plus grand nombre est amené à participer. Ces types de blockchains sont favorisés par les consortium qui ont des membres affiliés qui échangent des informations confidentielles.
-					</p>
-
-					<h3>
-						<u>Les blockchain de consortium :</u>
-					</h3>
-					<p>
-						La blockchain de consortium fait l’objet d’un partage entre ses différents acteurs, chacun d’entre eux disposant d’un nœud du réseau dans son infrastructure. Ce qui fait que chaque partie équitablement puissante dans la chaîne a un intérêt à travailler
-																																																												                        avec le groupe. Pour qu’un bloc supplémentaire soit ajouté à la chaîne, un nombre suffisant de membres doivent valider les
-						<strong>transactions.</strong>
-						Il n’est donc plus question ici de paiements selon
-																																																												                        des critères informatiques, mais de majorité acquise au sein des membres, de la communauté qui déterminent ainsi la validité des transactions.
-					</p>
-					<p>La blockchain
-						<strong>Bitcoin</strong>
-						est l’une des plus importantes et puissantes
-						<span>blockchains</span>
-						au monde.Elle a été créée principalement pour envoyer du
-						<strong>Bitcoin,</strong>
-						la crypto-monnaie. Donc naturellement pour
-																																																												                        créer un message dans la blockchain bitcoin, vous devez envoyer des bitcoins d’un compte à un autre. Lorsque vous envoyez des bitcoins d’un compte à un autre, un historique de transaction est inscrit dans la blockchain Bitcoin.
-																																																												                        Une fois qu’une transaction a été inscrite, elle ne peut être effacée, votre message sera présent aussi longtemps que le bitcoin existera. Ce concept de permanence est puissant et c’est la caractéristique la plus importante de
-																																																												                        toute blockchain.</p>
-				</div>
-			</div>
-			<div class="bloc_bnb">
-				<div class="partie_bnb" id="partie_bnb">
-					<div class="image_bnb">
-						<img src="{{ asset('apcrypto/img/crypto/bnb.jpg') }}" alt="binance"/>
-					</div>
-					<div class="definition_Binance">
-						<p>
-							Le nom
-							<strong>Binance</strong>
-							vient de "Binary + Finance"1. La plateforme permet de
-							<strong>
-								stocker, acheter, revendre,</strong>
-							et é
-							<u>changer des cryptomonnaies</u>
-							contre d'autres cryptomonnaies mais également contre
-																																																																						                            des monnaies fiduciaires telles que l'Euro ou le Dollar. Binance se rémunère en prélevant une commission à chaque transaction. Les frais sont parmi les plus bas du marché, la plateforme est un succès. La taxe équivaut à environ
-																																																																						                            0,1 % du montant retiré ou échangé. Les dépôts sont gratuits, en revanche les transactions et les retraits sont payants. Depuis le 22 janvier 2021, Binance a supprimé la possibilité d'exécuter des retraits en Euro directement
-																																																																						                            vers son compte bancaire. En outre, les retraits en Euro sont possibles uniquement par carte Visa avec frais de 1 % sur le montant transféré.
-						</p>
-					</div>
-				</div>
-
-				<div class="text_bnb">
-					<p>
-						La Binance Smart Chain (BSC) et la Binance Chain, les blockchains reliées à l'écosystème de la plateforme Binance, deviennent la « BNB Chain », une nouvelle entité portée sur des notions de multi-chaîne. En parallèle, dans une optique de décentralisation,
-																																																												                        la BNB Chain accueillera prochainement de nouveaux nœuds validateurs.
-					</p>
-					<h3>
-						<u>Le BNB Chain, une blockchain décentralisé</u>
-					</h3>
-					<p>
-						La plateforme d'échange de cryptomonnaies
-						<strong>Binance</strong>
-						a levé le voile sur sa nouvelle entité blockchain, la
-						<strong>« BNB Chain ».</strong>
-					</p>
-					<p>
-						Ce changement de nom vise à mettre en évidence le lien de cette blockchain avec le token BNB ainsi qu'à illustrer l'évolution décentralisée de l'écosystème BNB. Binance Chain est un système logiciel de blockchain développé par Binance et sa communauté.
-																																																												                        Binance DEX fait référence aux fonctionnalités d'échange décentralisées développées au-dessus de Binance Chain. Veuillez lire la
-						<a href="https://docs.binance.org/faq/faq.html">FAQ</a>
-						pour commencer
-					</p>
-					<h3>
-						<u>
-							La BNB Chain est ainsi constituée de :</u>
-					</h3>
-					<ul>
-						<li>
-							La
-							<strong>BNB Beacon Chain</strong>, anciennement Binance Chain. Jouera un rôle dans la gouvernance de la BNB Chain (staking de token BNB => (Le staking est le fait d’immobiliser ses crypto-monnaies dans un smart contract
-																																																																																                            (contrat intelligent) de façon à participer aux opérations qui se déroulent sur une blockchain. Le staking est similaire au minage dans le sens où ils récompensent les utilisateurs qui participent à la sécurisation d’un réseau
-																																																																																                            décentralisé. Vous allez ainsi stocker vos crypto tout en bénéficiant d’avantages.))
-						</li>
-						<li>
-							La
-							<strong>BNB Smart Chain (BSC)</strong>, anciennement Binance Smart Chain. Blockchain compatible avec l'Ethereum Virtual Machine(L’Ethereum Virtual Machine, que l’on appelle également EVM ou machine virtuelle d’
-							<strong>Ethereum,</strong>
-							est la première sous-couche du réseau. C’est elle qui permet aux smart contracts de fonctionner sur la blockchain Ethereum grâce à son système « Turing Complet ».)
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="bloc_defi">
-				<div class="partie_defi" id="partie_defi">
-					<div class="image_defi">
-						<img src="{{ asset('apcrypto/img/crypto/defi.jpg') }}" alt="DeFi"/>
-					</div>
-					<div class="definition_defi">
-						<p>
-							DeFi, (ou « decentralized finance » (finance décentralisée), est un terme générique désignant les services financiers sur les blockchains publiques, principalement l'Ethereum. La DeFi vous offre des services bancaires classiques (percevoir des intérêts,
-																																																																						                            emprunter, prêter, acheter des assurances, négocier des produits dérivés et des actifs, et bien plus encore) mais avec plus de rapidité, sans paperasse et sans intermédiaire. À l'image de la plupart des cryptomonnaies, la DeFi
-																																																																						                            est internationale, de pair à pair (P2P) (elle intervient directement entre deux personnes sans être acheminée via un système centralisé), anonyme et ouverte à tous.
-						</p>
-					</div>
-				</div>
-
-				<div class="texte_defi">
-					<p>
-						L'univers de la DeFI a pris naissance le 18 décembre 2017 avec une application baptisée MakerDAO. Celle-ci a proposé un stablecoin, le DAI, soit une cryptomonnaie dont la valeur est toujours égale au dollar (1 DAI = 1 $, quelles que soient les circonstances).
-					</p>
-					<h3>
-						<u>
-							Pourquoi la Defi est-elle important ?
-						</u>
-
-					</h3>
-					<p>
-						La DeFi reprend le principe de base du Bitcoin (devise numérique) pour créer une véritable alternative numérique à Wall Street, sans les coûts connexes (tours de bureaux, salles de marché, salaires des banquiers, etc.). Elle pourrait faire naître des
-																																																												                        marchés financiers plus ouverts, plus libres et plus équitables, accessibles à l'aide d'une simple connexion Internet.
-					</p>
-					<h3>
-						<u>
-							Comment fonctionne la DeFi ?
-						</u>
-					</h3>
-					<p>
-						En général, les utilisateurs utilisent DeFi via des logiciels appelés Dapps (« applications décentralisées »), dont la plupart fonctionnent actuellement sur la blockchain Ethereum. Contrairement à une banque classique, il n'y a ni demande à remplir ni
-																																																												                        compte à ouvrir.
-					</p>
-					<h3>
-						<u>
-							Voici quelques-unes des manières dont les gens utilisent DeFi aujourd'hui :
-						</u>
-					</h3>
-					<ul>
-						<li>
-							Prêt : prêtez votre cryptomonnaies et percevez des intérêts et des récompenses chaque minute, et non une fois par mois.
-						</li>
-						<li>
-							Obtention de prêt : obtenez un prêt instantanément sans remplir de papiers, y compris des « prêts flash » à très court terme que les établissements financiers traditionnels ne proposent pas.
-						</li>
-						<li>
-							Négociation : négociez de pair à pair (P2P) certains actifs cryptographiques, comme si vous pouviez acheter et vendre des actions sans intermédiaire.
-						</li>
-						<li>
-							Épargne pour l'avenir : placez une partie de vos cryptomonnaies sur d'autres comptes d'épargne et bénéficiez de taux d'intérêt plus avantageux que ceux proposés par les banques.
-						</li>
-						<li>
-							Achat de produits dérivés : prenez des positions plus ou moins longues. Considérez-les en tant que version cryptée des options sur actions ou des contrats à terme.
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="bloc_meme">
-				<div class="partie_meme" id="partie_meme">
-					<div class="image_shiba">
-						<img src="{{ asset('apcrypto/img/crypto/shiba.png') }}" alt="shiba inu"/>
-					</div>
-					<div class="texte_meme">
-						<p>
-							Il existe littéralement des milliers de monnaies sur le marché. Certaines ont une utilité : le Binance Coin, quatrième cryptomonnaie la plus populaire au moment de la rédaction de cet article, est utilisé pour acheter d'autres cryptomonnaies sur la plateforme
-																																																																						de trading Binance, tandis que le Tether, une autre monnaie populaire, réplique la valeur du dollar américain.
-						</p>
-						<p>
-							Et puis il y a les « shitcoins ». Ils se caractérisent par des hausses de prix à court terme et des chutes brutales. Ces monnaies n'ont généralement aucune utilité réelle, si ce n'est de rendre certaines personnes extrêmement riches. Elles tirent souvent
-																																																																						leur nom d'objets, d'aliments ou d'animaux à consonance mièvre afin d'attirer les investisseurs peu méfiants, et on les trouve un peu partout sur les groupes Telegram « pump and dump » qui promettent de « vous emmener sur la
-																																																																						lune ».
-						</p>
-						<p>
-							Dogecoin est une Crypto-monnaie (cryptocurrency) avec un Shiba Inu (une race de chien originaire du Japon) comme logo sur Internet. Contrairement aux autres cryptomonnaies, le dogecoin a commencé explicitement comme une blague. L'entrepreneur australien
-																																																																						Jackson Palmer a lancé la monnaie en 2013, comme parodie du bitcoin. Comparé à d'autres Crypto-monnaie, Dogecoin a un programme de production des pièces initiale plus rapide: il y aura environ 100 milliards de pièces en circulation
-																																																																						à la fin de 2014 avec un supplément par la suite de 5,2 milliards de pièces chaque année. En date du 10 Octobre 2014, plus de 94 milliards de Dogecoins ont été exploités.
-						</p>
-						<p>
-							Dogecoin a été créé par le programmeur Billy Markus de Portland, Oregon, qui espérait créer une Crypto-monnaie amusante qui pourrait atteindre un groupe démographique plus large que Bitcoin.
-						</p>
-						<p>
-							Dogecoin est une forme amusante, nouvelle et en pleine croissance de la cryptocurrency «monnaie numérique». Cryptocurrency est totalement anonyme et décentralisé extrêmement sûr. Dogecoin est utilisé avec un portefeuille sur votre ordinateur, votre smartphone
-																																																																						ou un site Web. Vous pouvez l'utiliser pour acheter des biens et services, ou échangerais contre les autres monnaies (les autres cryptocurrencies ou monnaie traditionnelle comme US dollars). Il a été utilisé comme service de
-																																																																						pourboire (depuis supprimé) sur Reddit, mais il est surtout connu sous le nom de « mèmecoin » car il a moins de valeur intrinsèque que l'ether ou le bitcoin. Malgré cela, ou peut-être à cause de cela, Elon Musk adore stimuler
-																																																																						la popularité de la monnaie ; son prix a bondi de plus de 47 % après qu'il en a fait la promotion sur sa page Twitter en février 2021. La monnaie est également populaire auprès des utilisateurs de TikTok : les volumes d'échange
-																																																																						ont augmenté de 683 % en juillet 2020 après que les utilisateurs de l'application se sont mobilisés pour faire grimper le cours de la monnaie. Il s'avère que Snoop Dogg est également un fan.
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="bloc_minage">
-				<div class="partie_minage" id="partie_minage">
-					<div class="image_minage">
-						<img src="{{ asset('apcrypto/img/crypto/minage.jpg') }}" alt="minage"/>
-					</div>
-					<div class="definition_minage">
-						<p>
-							Un noeud est un ordinateur relié au réseau blockchain et utilisant un programme relayant les transactions. Les noeuds conservent une copie du registre blockchain et sont répartis partout dans le monde.
-						</p>
-					</div>
-				</div>
-				<div class="texte_minage">
-					<p>
-						Le minage d’une cryptomonnaie requiert une puissance de calcul, du temps à consacrer à cette activité, et des connaissances mathématiques de base. Il est également extrêmement difficile de trouver la clé de sécurité d’un bloc, et donc de toucher une récompense
-																																																												: si le rendement est votre objectif, optez pour l’achat direct de BTC en ligne. Autrement, le minage de Bitcoin se fait généralement de la même manière pour la plupart des mineurs : via un logiciel sur un PC classique ou une machine
-																																																												spécialisée dans le minage de Bitcoin.
-					</p>
-					<h3>
-						<u>
-							Quelques inconvénients du minage:
-						</u>
-					</h3>
-					<h4>
-						<u>Le Bitcoin consomme plus d'énergie que les Philippines</u>
-					</h4>
-					<p>
-						Selon le Cambridge Bitcoin Electricity Consumption Index (CBECI), si le Bitcoin était un pays, il serait le 34ème à consommer le plus d’énergie avec 100,5 TWh en un an, juste derrière les Pays-Bas, et devant les Philippines, la Finlande, le Chili et la
-																																																												Belgique.
-					</p>
-					<h4>
-						<u>
-							En 2020, le minage de Bitcoin chinois était alimenté par du charbon à 40 %</u>
-					</h4>
-					<p>
-						C’est l’estimation de chercheurs chinois dont l’étude a été publiée dans Nature Communication en avril 2021. Selon ces chercheurs, les émissions de carbone liées au processus de « minage » de la cryptomonnaie pourraient atteindre 130 millions de tonnes
-																																																												en 2024 en Chine. Soit l’équivalent des émissions de CO2 annuelles de la République Tchèque. De quoi sérieusement enrayer l'objectif de neutralité carbone du pays... A ce titre, l’impact environnemental est l’une des raisons invoquées
-																																																												par Pékin pour justifier le durcissement de sa politique envers les cryptomonnaies et l'interdiction du minage dans certaines régions.
-					</p>
-				</div>
-			</div>
-		</div>
-	</main>
-{% endblock %}
+			</main>
+		{% endblock %}
+		{% include 'layout/footer.html.twig' %}
+		{% block javascripts %}
+			<script src=" {{ asset('apcrypto/js/crypto.js') }}"></script>
+			<script src=" {{ asset('apcrypto/js/script.js') }} "></script>
+		{% endblock %}
+	</body>
+</html>

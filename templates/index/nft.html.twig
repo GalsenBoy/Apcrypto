@@ -1,299 +1,324 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="C'est quoi un NFT? Où acheter des NFT? Les NFT les plus chères de l'histoire. Le top collectioon NFT de tous les temps "/>
+		<title>
+			{% block title %}
+				NFT - Apcrypto
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			<link rel="icon" href="{{ asset('apcrypto/img/onglet.png')}} ">
+			<link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+			<link rel="stylesheet" href="{{ asset('apcrypto/css/style.css') }}">
+			<link rel="stylesheet" href="{{ asset('apcrypto/css/nft/nftt.css') }}">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+			<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+		{% endblock %}
+	</head>
+	<body>
+		{% include 'layout/header.html.twig' %}
+		{% block body %}
+			<main>
+				<div class="nft_container">
+					<h1 class="has-text-centered is-size-3 mb-4 is-underlined">NFT :</h1>
+					<div class="bloc_nft">
+						<div class="partie_nft">
+							<div class="image_nft">
+								<img src="{{ asset('apcrypto/img/crypto/nft-.jpg') }}" alt="NFT"/>
+							</div>
+							<div class="definition_nft">
+								<p>
+									Apparus en 2018, les NFT (Non Fungible Token ou token non fongible en français) désignent à la fois des certificats de propriété numérique et des objets. L'adjectif « fongible » est un terme économique et juridique qui désigne la capacité d'un actif à
+																																																																																								être échangé contre un autre actif de même valeur. Par exemple, une pièce de deux euros est fongible, car elle peut être échangée contre une autre pièce de deux euros ou deux pièces d'un euro.
+								</p>
+							</div>
+						</div>
+						<div class="texte_nft">
+							<p>
+								Derrière ce terme un peu barbare se cache une fonctionnalité de la blockchain qui rapporte des milliers (voire des millions) de dollars à certains artistes depuis quelque temps. Suffisamment pour aiguiser la curiosité du public ces dernières semaines,
+																																																																												ce qui en retour conduit à une soudaine popularité de ces cryptoactifs un peu particuliers. Si ceux-ci ont d’évidentes applications dans le monde de l’art et de la culture, l’idée s’applique aujourd’hui dans des domaines variés,
+																																																																												allant des jeux vidéo au secteur sportif.
+							</p>
+							<p>
+								Le marché de l’art numérique voit dans l’utilisation de ces tokens non fongibles un moyen de résoudre l’épineuse question de l’art à l’heure du numérique, en remplaçant de manière automatisée le précieux certificat d’authenticité d’une œuvre d’art.
+							</p>
+							<p>
+								Le premier SMS de l'histoire, transmis par l'opérateur britannique Vodafone le 3 décembre 1992, a été mis aux enchères sous forme de NFT, un bien numérique unique. 107.000, c'est le prix auquel s'est vendu le premier SMS de l'histoire mis aux enchères
+																																																																												par la maison Aguttes sous forme de NFT. L’artiste Mike Winkelmann a ainsi vu l’une de ses œuvres numériques vendues pour 69,3 millions de dollars (en cryptomonnaie) lors d’une vente aux enchères chez Christie’s au début du mois
+																																																																												de mars. Mais à ce prix, les acheteurs ne repartent pas avec une simple clé USB contenant une copie de l’œuvre en question : il s’agit plutôt du token unique correspondant à cette œuvre, et qui certifie que son possesseur est bien
+																																																																												le propriétaire légitime de l’œuvre.
+							</p>
+							<p>
+								Mais ce n’est pas tout, en effet Jack Dorsey le PDG du réseau communautaire Twitter a mis en vente son tout premier Tweet, dans une vente aux enchères où les montants approchent les 2 millions d’euros. Dans la même idée, l’artiste musicienne canadienne
+																																																																												Grimes (également compagne d’Elon Musk, tous deux aussi fantasques l’un que l’autre) a mis en vente en ligne certaines de ses productions numériques qui ont atteint les 6 millions.
+							</p>
+						</div>
+					</div>
+					<h3>
+						<u>Top 10 des NFT les plus marquantes :</u>
+					</h3>
+					<div class="top" id="top">
+						<div class="nft_marquant">
+							<ol>
+								<li>Everydays: The First 5000 Days vendue à 69,9 millions de dollars, un record</li>
+								<li>CrytoPunk #7804 - Un punk pixellisé à 7,6 millions de dollars</li>
+								<li>Jack Dorsey - Le premier tweet en NFT - 2,9 millions de dollars</li>
+								<li>3Lau - Première vente d'album sous forme de NFT - total 11,7 millions de dollars</li>
+								<li>Stay Free, l'autoportrait d'Edward Snowden - 5 millions de dollars</li>
+								<li>NBA Top Shot - 500 millions de dollars au total</li>
+								<li>Grimes -5,8 millions de dollars pour la collection numérique</li>
+								<li>Nyat Cat - Un mème de chaton volant - 470 000 dollars</li>
+								<li>Oleksandra Oliynykova - Le bras d'une tenniswoman - 6 000 dollars</li>
+								<li>Un mariage sur la blockchain</li>
+							</ol>
+						</div>
+						<div class="gallerie">
+							<div class="img1">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/Everydays.jpg') }}">
+									<img src="{{ asset('apcrypto/img/nft/Everydays.jpg') }}" alt="beeple everydays "></a>
+							</div>
+							<div class="img2">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/aleksandra.jpg') }}">
+									<img src="{{ asset('apcrypto/img/nft/aleksandra.jpg') }}" alt="oleksandra nft"></a>
+							</div>
+							<div class="img3">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/cryptopunk.png') }}"><img src="{{ asset('apcrypto/img/nft/cryptopunk.png') }}" alt="cryptopunk nft"></a>
+							</div>
+							<div class="img4">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/edwar.jpg') }}"><img src="{{ asset('apcrypto/img/nft/edwar.jpg') }}" alt="edwar snowden nft"></a>
+							</div>
+							<div class="img5">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/3lau.jpg') }}">
+									<img src="{{ asset('apcrypto/img/nft/3lau.jpg') }}" alt="3lau album nft"></a>
+							</div>
+							<div class="img6">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/grimes.jpeg') }}">
+									<img src="{{ asset('apcrypto/img/nft/grimes.jpeg') }}" alt="grimes nft"></a>
+							</div>
+							<div class="img7">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/nyat.jpg') }}">
+									<img src="{{ asset('apcrypto/img/nft/nyat.jpg') }}" alt="nyat"></a>
+							</div>
+							<div class="img8">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/mariage.jpg') }}">
+									<img src="{{ asset('apcrypto/img/nft/mariage.jpg') }}" alt="mariage nft"></a>
+							</div>
+							<div class="img9">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/nba.jpg') }}"><img src="{{ asset('apcrypto/img/nft/nba.jpg') }}" alt="shoot nba nft"></a>
+							</div>
+							<div class="img10">
+								<a target="blank" href="{{ asset('apcrypto/img/nft/jack.jpg') }}"><img src="{{ asset('apcrypto/img/nft/jack.jpg') }}" alt="tweet nft"></a>
+							</div>
+						</div>
+					</div>
 
-{% block title %}NFT -
-	{{ parent() }}
-{% endblock %}
-
-{% block body %}
-	<main>
-		<div class="nft_container">
-			<h1 class="has-text-centered is-size-3 mb-4 is-underlined">NFT :</h1>
-			<div class="bloc_nft">
-				<div class="partie_nft">
-					<div class="image_nft">
-						<img src="{{ asset('apcrypto/img/crypto/nft-.jpg') }}" alt="NFT"/>
-					</div>
-					<div class="definition_nft">
-						<p>
-							Apparus en 2018, les NFT (Non Fungible Token ou token non fongible en français) désignent à la fois des certificats de propriété numérique et des objets. L'adjectif « fongible » est un terme économique et juridique qui désigne la capacité d'un actif à
-																																										être échangé contre un autre actif de même valeur. Par exemple, une pièce de deux euros est fongible, car elle peut être échangée contre une autre pièce de deux euros ou deux pièces d'un euro.
-						</p>
+					<h3>
+						<u>Le top collection NFT de tous les temps :</u>
+					</h3>
+					<div class="table_top">
+						<table>
+							<tr>
+								<th>Rang</th>
+								<th>Nom du token</th>
+								<th>Capitalisation boursière</th>
+								<th>Blockchain</th>
+								<th>Site officiel des actifs</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Bored Ape Yacht Club</td>
+								<td>1.187.753,34 ETH</td>
+								<td>Ethereum</td>
+								<td>
+									<a href="https://boredapeyachtclub.com/#/" target="blank">Site de Ape Yacht Club</a>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>CryptoPunks</td>
+								<td>605.230,9 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://www.larvalabs.com/cryptopunks" target="blank">Site de Cyptopunks</a>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Mutant Ape Yacht Club</td>
+								<td>482.005,74 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://boredapeyachtclub.com/#/" target="blank">Site de Ape Yacht Club</a>
+								</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>CLONE X</td>
+								<td>427.643,95 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://www.rtfkt.com/" target="blank">Site de clone x</a>
+								</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Azuki</td>
+								<td>291.362,34 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://www.azuki.com/" target="blank">Site de azuki</a>
+								</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Veefriends</td>
+								<td>178.719,94 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://veefriends.com/" target="blank">Site de veefriends</a>
+								</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Doodles</td>
+								<td>160.731,89 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://doodles.app/" target="blank">Site de doodles</a>
+								</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>Meebits</td>
+								<td>110.093,09 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://meebits.larvalabs.com/" target="blank">Site de meebits</a>
+								</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>NFT Worlds</td>
+								<td>101.011,17 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://www.nftworlds.com/" target="blank">Site de nft worlds</a>
+								</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>World of Women</td>
+								<td>90.731,47 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://worldofwomen.art/" target="blank">Site de world of women</a>
+								</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>Cool Cats</td>
+								<td>89.800,95 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://www.coolcatsnft.com/" target="blank">Site de cool cats</a>
+								</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>Space Doodles</td>
+								<td>77.632,69 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://doodles.app/" target="blank">Site de doodles</a>
+								</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>Bored Ape Kennel Club</td>
+								<td>77.549,4 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://boredapeyachtclub.com/#/kennel-club" target="blank">Site de bored ape kennel club</a>
+								</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>WIN NFT HORSE</td>
+								<td>210.410.473,62 BUSD</td>
+								<td>
+									Binance Smart Chain</td>
+								<td>
+									<a href="https://www.winnfthorse.io/" target="blank">Site de win nft horse</a>
+								</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>CyberBrokers</td>
+								<td>47.261,4 ETH</td>
+								<td>Ethereum</td>
+								<td>
+									<a href="https://cyberbrokers.io/" target="blank">Site de cyberbrokers</a>
+								</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td>Invisible Friends</td>
+								<td>38.479,91 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://invisiblefriends.io/" target="blank">Site de invisible friends</a>
+								</td>
+							</tr>
+							<tr>
+								<td>17</td>
+								<td>Fluf World</td>
+								<td>37.602,04 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://www.fluf.world/" target="blank">Site de fluf world</a>
+								</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>mfers</td>
+								<td>37.224,53 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="">Site de mfers</a>
+								</td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td>World of Women Galaxy</td>
+								<td>35.125,61 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://worldofwomen.art/wow-galaxy" target="blank">Site de world of women</a>
+								</td>
+							</tr>
+							<tr>
+								<td>20</td>
+								<td>CyberKongz</td>
+								<td>28.152,75 ETH</td>
+								<td>-</td>
+								<td>
+									<a href="https://worldofwomen.art/wow-galaxy" target="blank">Site de cyberkongz</a>
+								</td>
+							</tr>
+						</table>
 					</div>
 				</div>
-				<div class="texte_nft">
-					<p>
-						Derrière ce terme un peu barbare se cache une fonctionnalité de la blockchain qui rapporte des milliers (voire des millions) de dollars à certains artistes depuis quelque temps. Suffisamment pour aiguiser la curiosité du public ces dernières semaines,
-																																				ce qui en retour conduit à une soudaine popularité de ces cryptoactifs un peu particuliers. Si ceux-ci ont d’évidentes applications dans le monde de l’art et de la culture, l’idée s’applique aujourd’hui dans des domaines variés,
-																																				allant des jeux vidéo au secteur sportif.
-					</p>
-					<p>
-						Le marché de l’art numérique voit dans l’utilisation de ces tokens non fongibles un moyen de résoudre l’épineuse question de l’art à l’heure du numérique, en remplaçant de manière automatisée le précieux certificat d’authenticité d’une œuvre d’art.
-					</p>
-					<p>
-						Le premier SMS de l'histoire, transmis par l'opérateur britannique Vodafone le 3 décembre 1992, a été mis aux enchères sous forme de NFT, un bien numérique unique. 107.000, c'est le prix auquel s'est vendu le premier SMS de l'histoire mis aux enchères
-																																				par la maison Aguttes sous forme de NFT. L’artiste Mike Winkelmann a ainsi vu l’une de ses œuvres numériques vendues pour 69,3 millions de dollars (en cryptomonnaie) lors d’une vente aux enchères chez Christie’s au début du mois
-																																				de mars. Mais à ce prix, les acheteurs ne repartent pas avec une simple clé USB contenant une copie de l’œuvre en question : il s’agit plutôt du token unique correspondant à cette œuvre, et qui certifie que son possesseur est bien
-																																				le propriétaire légitime de l’œuvre.
-					</p>
-					<p>
-						Mais ce n’est pas tout, en effet Jack Dorsey le PDG du réseau communautaire Twitter a mis en vente son tout premier Tweet, dans une vente aux enchères où les montants approchent les 2 millions d’euros. Dans la même idée, l’artiste musicienne canadienne
-																																				Grimes (également compagne d’Elon Musk, tous deux aussi fantasques l’un que l’autre) a mis en vente en ligne certaines de ses productions numériques qui ont atteint les 6 millions.
-					</p>
-				</div>
-			</div>
-			<h3>
-				<u>Top 10 des NFT les plus marquantes :</u>
-			</h3>
-			<div class="top" id="top">
-				<div class="nft_marquant">
-					<ol>
-						<li>Everydays: The First 5000 Days vendue à 69,9 millions de dollars, un record</li>
-						<li>CrytoPunk #7804 - Un punk pixellisé à 7,6 millions de dollars</li>
-						<li>Jack Dorsey - Le premier tweet en NFT - 2,9 millions de dollars</li>
-						<li>3Lau - Première vente d'album sous forme de NFT - total 11,7 millions de dollars</li>
-						<li>Stay Free, l'autoportrait d'Edward Snowden - 5 millions de dollars</li>
-						<li>NBA Top Shot - 500 millions de dollars au total</li>
-						<li>Grimes -5,8 millions de dollars pour la collection numérique</li>
-						<li>Nyat Cat - Un mème de chaton volant - 470 000 dollars</li>
-						<li>Oleksandra Oliynykova - Le bras d'une tenniswoman - 6 000 dollars</li>
-						<li>Un mariage sur la blockchain</li>
-					</ol>
-				</div>
-				<div class="gallerie">
-					<div class="img1">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/Everydays.jpg') }}">
-							<img src="{{ asset('apcrypto/img/nft/Everydays.jpg') }}" alt="beeple everydays "></a>
-					</div>
-					<div class="img2">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/aleksandra.jpg') }}">
-							<img src="{{ asset('apcrypto/img/nft/aleksandra.jpg') }}" alt="oleksandra nft"></a>
-					</div>
-					<div class="img3">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/cryptopunk.png') }}"><img src="{{ asset('apcrypto/img/nft/cryptopunk.png') }}" alt="cryptopunk nft"></a>
-					</div>
-					<div class="img4">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/edwar.jpg') }}"><img src="{{ asset('apcrypto/img/nft/edwar.jpg') }}" alt="edwar snowden nft"></a>
-					</div>
-					<div class="img5">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/3lau.jpg') }}">
-							<img src="{{ asset('apcrypto/img/nft/3lau.jpg') }}" alt="3lau album nft"></a>
-					</div>
-					<div class="img6">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/grimes.jpeg') }}">
-							<img src="{{ asset('apcrypto/img/nft/grimes.jpeg') }}" alt="grimes nft"></a>
-					</div>
-					<div class="img7">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/nyat.jpg') }}">
-							<img src="{{ asset('apcrypto/img/nft/nyat.jpg') }}" alt="nyat"></a>
-					</div>
-					<div class="img8">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/mariage.jpg') }}">
-							<img src="{{ asset('apcrypto/img/nft/mariage.jpg') }}" alt="mariage nft"></a>
-					</div>
-					<div class="img9">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/nba.jpg') }}"><img src="{{ asset('apcrypto/img/nft/nba.jpg') }}" alt="shoot nba nft"></a>
-					</div>
-					<div class="img10">
-						<a target="blank" href="{{ asset('apcrypto/img/nft/jack.jpg') }}"><img src="{{ asset('apcrypto/img/nft/jack.jpg') }}" alt="tweet nft"></a>
-					</div>
-				</div>
-			</div>
-
-			<h3>
-				<u>Le top collection NFT de tous les temps :</u>
-			</h3>
-			<div class="table_top">
-				<table>
-					<tr>
-						<th>Rang</th>
-						<th>Nom du token</th>
-						<th>Capitalisation boursière</th>
-						<th>Blockchain</th>
-						<th>Site officiel des actifs</th>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>Bored Ape Yacht Club</td>
-						<td>1.187.753,34 ETH</td>
-						<td>Ethereum</td>
-						<td>
-							<a href="https://boredapeyachtclub.com/#/" target="blank">Site de Ape Yacht Club</a>
-						</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>CryptoPunks</td>
-						<td>605.230,9 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://www.larvalabs.com/cryptopunks" target="blank">Site de Cyptopunks</a>
-						</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>Mutant Ape Yacht Club</td>
-						<td>482.005,74 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://boredapeyachtclub.com/#/" target="blank">Site de Ape Yacht Club</a>
-						</td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td>CLONE X</td>
-						<td>427.643,95 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://www.rtfkt.com/" target="blank">Site de clone x</a>
-						</td>
-					</tr>
-					<tr>
-						<td>5</td>
-						<td>Azuki</td>
-						<td>291.362,34 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://www.azuki.com/" target="blank">Site de azuki</a>
-						</td>
-					</tr>
-					<tr>
-						<td>6</td>
-						<td>Veefriends</td>
-						<td>178.719,94 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://veefriends.com/" target="blank">Site de veefriends</a>
-						</td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td>Doodles</td>
-						<td>160.731,89 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://doodles.app/" target="blank">Site de doodles</a>
-						</td>
-					</tr>
-					<tr>
-						<td>8</td>
-						<td>Meebits</td>
-						<td>110.093,09 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://meebits.larvalabs.com/" target="blank">Site de meebits</a>
-						</td>
-					</tr>
-					<tr>
-						<td>9</td>
-						<td>NFT Worlds</td>
-						<td>101.011,17 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://www.nftworlds.com/" target="blank">Site de nft worlds</a>
-						</td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td>World of Women</td>
-						<td>90.731,47 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://worldofwomen.art/" target="blank">Site de world of women</a>
-						</td>
-					</tr>
-					<tr>
-						<td>11</td>
-						<td>Cool Cats</td>
-						<td>89.800,95 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://www.coolcatsnft.com/" target="blank">Site de cool cats</a>
-						</td>
-					</tr>
-					<tr>
-						<td>12</td>
-						<td>Space Doodles</td>
-						<td>77.632,69 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://doodles.app/" target="blank">Site de doodles</a>
-						</td>
-					</tr>
-					<tr>
-						<td>13</td>
-						<td>Bored Ape Kennel Club</td>
-						<td>77.549,4 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://boredapeyachtclub.com/#/kennel-club" target="blank">Site de bored ape kennel club</a>
-						</td>
-					</tr>
-					<tr>
-						<td>14</td>
-						<td>WIN NFT HORSE</td>
-						<td>210.410.473,62 BUSD</td>
-						<td>
-							Binance Smart Chain</td>
-						<td>
-							<a href="https://www.winnfthorse.io/" target="blank">Site de win nft horse</a>
-						</td>
-					</tr>
-					<tr>
-						<td>15</td>
-						<td>CyberBrokers</td>
-						<td>47.261,4 ETH</td>
-						<td>Ethereum</td>
-						<td>
-							<a href="https://cyberbrokers.io/" target="blank">Site de cyberbrokers</a>
-						</td>
-					</tr>
-					<tr>
-						<td>16</td>
-						<td>Invisible Friends</td>
-						<td>38.479,91 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://invisiblefriends.io/" target="blank">Site de invisible friends</a>
-						</td>
-					</tr>
-					<tr>
-						<td>17</td>
-						<td>Fluf World</td>
-						<td>37.602,04 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://www.fluf.world/" target="blank">Site de fluf world</a>
-						</td>
-					</tr>
-					<tr>
-						<td>18</td>
-						<td>mfers</td>
-						<td>37.224,53 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="">Site de mfers</a>
-						</td>
-					</tr>
-					<tr>
-						<td>19</td>
-						<td>World of Women Galaxy</td>
-						<td>35.125,61 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://worldofwomen.art/wow-galaxy" target="blank">Site de world of women</a>
-						</td>
-					</tr>
-					<tr>
-						<td>20</td>
-						<td>CyberKongz</td>
-						<td>28.152,75 ETH</td>
-						<td>-</td>
-						<td>
-							<a href="https://worldofwomen.art/wow-galaxy" target="blank">Site de cyberkongz</a>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-	</main>
-{% endblock %}
+			</main>
+		{% endblock %}
+		{% include 'layout/footer.html.twig' %}
+		{% block javascripts %}
+			<script src=" {{ asset('apcrypto/js/script.js') }} "></script>
+			<script src=" {{ asset('apcrypto/js/nft.js') }}"></script>
+		{% endblock %}
+	</body>
+</html>

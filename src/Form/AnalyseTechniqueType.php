@@ -30,7 +30,8 @@ class AnalyseTechniqueType extends AbstractType
                         'min' => 3,
                         'minMessage' => 'Le nom de l\'actif ne peut pas être inférieur à {{ limit }} caractères',
                         'max' => 25,
-                        'maxMessage' => 'Le nom de l\'actif ne peut pas être supérieur à {{ limit }} caractères'
+                        'maxMessage' => 'Le nom de l\'actif ne peut pas être supérieur à {{ limit }} caractères',
+
                     ]),
                 ],
             ])

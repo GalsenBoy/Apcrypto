@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Entity\Commentaire;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
@@ -24,7 +24,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @Email(
-     *     message = "The email '{{ value }}' is not a valid email."
+     *     message = "L'adresse e-mail '{{ value }}' n'est pas une adresse e-mail valide."
      * )
      */
     #[ORM\Column(type: 'string', length: 180, unique: true)]
@@ -33,6 +33,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
+
+    /**
+     * @Assert\Regex(
+     *     pattern     = "/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/"
+     * )
+     */
     #[ORM\Column(type: 'string')]
     private $password;
 

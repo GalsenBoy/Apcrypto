@@ -12,7 +12,7 @@
 					<div class="personne">
 						<div class="avata"></div>
 						<div class="identite">
-							<p class="">Pseudo</p>
+							<p class="">{{analyse.utilisateur}}</p>
 							<p id="">Publié le
 								{{analyse.date |date("d/m/Y à H:i","Europe/Paris")}}
 							</p>
@@ -43,4 +43,5 @@
 			{% endfor %}
 		</div>
 	</main>
+	{{knp_pagination_render(analyse,'layout/pagination.html.twig')}}
 {% endblock %}

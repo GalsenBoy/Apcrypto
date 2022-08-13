@@ -6,7 +6,6 @@ use App\Entity\AnalyseFondamentale;
 use App\Entity\AnalyseTechnique;
 use App\Entity\Commentaire;
 use App\Entity\CommentaireFonda;
-use App\Entity\User;
 use App\Form\AnalyseFondamentaleType;
 use App\Form\AnalyseTechniqueType;
 use App\Form\CommentaireFondaType;

@@ -2,12 +2,14 @@
 
 namespace App\Controller;
 
-use App\Entity\AnalyseFondamentale;
+use App\Entity\User;
 use App\Entity\Commentaire;
 use App\Entity\AnalyseTechnique;
 use App\Entity\CommentaireFonda;
-use App\Entity\User;
+use App\Entity\AnalyseFondamentale;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -19,11 +21,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
-    public function indexAdmin(ManagerRegistry $managerRegistry): Response
+    public function indexAdmin(Request $request, ManagerRegistry $managerRegistry, PaginatorInterface $paginatorInterface): Response
     {
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->findAll();
+
+        $analyse = $paginatorInterface->paginate(
+            $analyse,
+            $request->query->getInt(key: 'page', default: 1),
+            limit: 6,
+        );
 
 
         return $this->render('admin/index.html.twig', [
@@ -32,11 +40,17 @@ class AdminController extends AbstractController
     }
 
     #[Route('/admin/fonda', name: 'app_admin_fonda')]
-    public function indexFonda(ManagerRegistry $managerRegistry): Response
+    public function indexFonda(Request $request, ManagerRegistry $managerRegistry, PaginatorInterface $paginatorInterface): Response
     {
         $entityManager = $managerRegistry->getManager();
         $analyseFondaRepository = $entityManager->getRepository(AnalyseFondamentale::class);
         $analyseFonda = $analyseFondaRepository->findAll();
+
+        $analyseFonda = $paginatorInterface->paginate(
+            $analyseFonda,
+            $request->query->getInt(key: 'page', default: 1),
+            limit: 6,
+        );
 
 
         return $this->render('admin/adminFonda.html.twig', [

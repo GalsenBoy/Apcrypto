@@ -21,7 +21,7 @@ class Commentaire
     #[ORM\Column(type: 'boolean')]
     private $active = false;
 
-    #[ORM\Column(type: 'string', length: 255,nullable: true)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $email;
 
     #[ORM\Column(type: 'string', length: 255)]
@@ -34,7 +34,7 @@ class Commentaire
     #[ORM\JoinColumn(nullable: false)]
     private $analysetechnique;
 
-    #[ORM\ManyToOne(targetEntity:'App\Entity\User', inversedBy: 'commentaires')]
+    #[ORM\ManyToOne(targetEntity: 'App\Entity\User', inversedBy: 'commentaires')]
     #[ORM\JoinColumn(nullable: true)]
     private $user;
 

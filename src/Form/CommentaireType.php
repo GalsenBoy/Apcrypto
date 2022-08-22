@@ -8,6 +8,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -25,7 +27,7 @@ class CommentaireType extends AbstractType
                 ]
             ])
 */
-            /*
+
 
             ->add('pseudo', TextType::class, [
                 'label' => 'Votre pseudo',
@@ -44,7 +46,7 @@ class CommentaireType extends AbstractType
                     ]),
                 ],
             ])
-*/
+
             ->add('contenu', TextareaType::class, [
                 'label' => 'Commentaire',
                 'attr' => [

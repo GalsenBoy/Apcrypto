@@ -69,7 +69,7 @@ class IndexController extends AbstractController
         //Partie commentaire
         //On crée le commentaire
         $commentaire = new Commentaire;
-        $user = $this->getUser()->getUserIdentifier();
+
 
         //On génère le formulaire
         $commentaireForm = $this->createForm(CommentaireType::class, $commentaire);
@@ -79,7 +79,6 @@ class IndexController extends AbstractController
             $commentaire->setDate(new \DateTime("now"));
             $commentaire->setEmail('test@gmail.com');
             $commentaire->setAnalysetechnique($analyse);
-            $commentaire->setPseudo($user);
             $entityManager->persist($commentaire);
             $entityManager->flush();
             return $this->redirectToRoute('app_communaute');
@@ -174,7 +173,6 @@ class IndexController extends AbstractController
     public function displayAnalyseFondamentale(Request $request, int $fondamentaleId, ManagerRegistry $managerRegistry): Response
     {
         $entityManager = $managerRegistry->getManager();
-        $user = $this->getUser()->getUserIdentifier();
         $fondamentaleRepository = $entityManager->getRepository(AnalyseFondamentale::class);
         $fondamentale = $fondamentaleRepository->find($fondamentaleId);
         if (!$fondamentale) {
@@ -192,7 +190,6 @@ class IndexController extends AbstractController
         if ($commentaireFondaForm->isSubmitted() && $commentaireFondaForm->isValid()) {
             $commentaireFonda->setDate(new \DateTime("now"));
             $commentaireFonda->setanalyseFondamentale($fondamentale);
-            $commentaireFonda->setNickname($user);
             $entityManager->persist($commentaireFonda);
             $entityManager->flush();
             return $this->redirectToRoute('app_fondamentale');

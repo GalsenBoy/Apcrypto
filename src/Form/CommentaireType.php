@@ -28,7 +28,7 @@ class CommentaireType extends AbstractType
             ])
 */
 
-
+            /*
             ->add('pseudo', TextType::class, [
                 'label' => 'Votre pseudo',
                 'attr' => [
@@ -46,7 +46,7 @@ class CommentaireType extends AbstractType
                     ]),
                 ],
             ])
-
+*/
             ->add('contenu', TextareaType::class, [
                 'label' => 'Commentaire',
                 'attr' => [

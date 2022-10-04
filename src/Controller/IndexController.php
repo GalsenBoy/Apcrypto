@@ -59,6 +59,7 @@ class IndexController extends AbstractController
     #[Route('analyse/technique/{analyseId}', name: 'analyse_display')]
     public function displayAnalyse(int $analyseId, ManagerRegistry $managerRegistry, Request $request): Response
     {
+        $user = $this->getUser()->getUserIdentifier();
         $entityManager = $managerRegistry->getManager();
         $analyseRepository = $entityManager->getRepository(AnalyseTechnique::class);
         $analyse = $analyseRepository->find($analyseId);
@@ -79,6 +80,7 @@ class IndexController extends AbstractController
             $commentaire->setDate(new \DateTime("now"));
             $commentaire->setEmail('test@gmail.com');
             $commentaire->setAnalysetechnique($analyse);
+            $commentaire->setPseudo($user);
             $entityManager->persist($commentaire);
             $entityManager->flush();
             return $this->redirectToRoute('app_communaute');

@@ -49,7 +49,9 @@
 			<h2 class="is-size-4 mb-3">Ajouter un commentaire</h2>
 			{{form(dataForm)}}
 				{% else %}
-					<p>Veuillez vous connecter pour effectuer un commentaire:</p>
+					<button>
+						<a style="color:#110D26" href="{{ path('app_login')}}">Partager une analyse technique</a>
+					</button>
 			{% endif %}
 		</div>
 	{% endblock %}
